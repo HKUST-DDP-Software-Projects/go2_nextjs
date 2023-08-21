@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./features/counterSlice";
+import courseReducer from "./features/courseSlice";
+import plannerReducer from "./features/plannerSlice";
 
 const store = configureStore({
   reducer: {
     counterReducer,
+    courseReducer,
+    plannerReducer,
   },
 });
 
