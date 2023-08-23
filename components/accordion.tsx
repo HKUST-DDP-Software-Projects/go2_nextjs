@@ -1,22 +1,29 @@
 import { ReactNode, useState } from "react";
 
-export interface AccordionItem<T extends ReactNode> {
-  title: string;
-  content: T;
+export interface AccordionItem {
+  title: ReactNode;
+  content: ReactNode;
 }
 
-type AccordionProps<T extends ReactNode> = {
-  items: AccordionItem<T>[];
+type AccordionProps = {
+  items: AccordionItem[];
   defaultActive: boolean;
+  defaultActiveIndex?: number[];
 };
 
-export default function Accordion<T extends ReactNode>({
+export default function Accordion({
   items,
   defaultActive,
-}: AccordionProps<T>) {
+  defaultActiveIndex,
+}: AccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number[]>(
-    defaultActive ? items.map((_, index) => index) : [],
+    defaultActive ? items.map((_, index) => index) : defaultActiveIndex || [],
   );
+
+  // update activeIndex when defaultActiveIndex changes
+  if (defaultActiveIndex && activeIndex !== defaultActiveIndex) {
+    setActiveIndex(defaultActiveIndex);
+  }
 
   const handleClick = (index: number) => {
     console.log("handleClick", index);
@@ -28,10 +35,10 @@ export default function Accordion<T extends ReactNode>({
   };
 
   return (
-    <div className="mx-auto h-full overflow-y-auto">
+    <div className="mx-auto w-full h-full overflow-y-auto">
       {items.map((item, index) => (
         <div
-          key={item.title}
+          key={item.title?.toString()}
           className="border-b border-gray-200 max-h-full flex flex-col"
         >
           <div

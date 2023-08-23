@@ -2,6 +2,7 @@
 import { CourseEnrollment, CourseStatus } from "@/redux/features/courseSlice";
 import {
   CourseListMap,
+  CourseListObject,
   GR23,
   ProgrammeRequirement,
   Requirement,
@@ -83,20 +84,20 @@ function getRemainingCourses(
 // // helper function 8: get a list of courses that appears in a requirement
 function getListFromReq(req: Requirement): string[] {
   const courseSet = new Set<string>(
-    [...req.lists.values()].flatMap((rrs) => rrs),
+    Object.values(req.lists).flatMap((rrs) => rrs!),
   );
   return Array.from(courseSet);
 }
 
 // // helper function 9: check if a requirement rule can be fulfilled with given courses
-function checkRequirementRule(
+export function checkRequirementRule(
   r: Requirement,
   rr: RequirementRule,
   selectedCourses: string[],
 ): boolean {
   const courseList: string[] = [];
   rr.lists.forEach(
-    (list) => r.lists.has(list) && courseList.push(...r.lists.get(list)!),
+    (list) => r.lists[list] && courseList.push(...r.lists[list]!),
   );
   const vs = overlap(courseList, selectedCourses);
   const courseCount = vs.length;
@@ -124,7 +125,7 @@ function checkValidations(
 }
 
 // // helper function 11: check if a requirement rule set can be fulfilled with given courses
-function checkRequirementRuleSet(
+export function checkRequirementRuleSet(
   r: Requirement,
   rrs: RequirementRuleSet,
   selectedCourses: string[],
@@ -716,6 +717,46 @@ export function populateCourseListMap(
     newCourseListMap.set(courseListKey, newCourseList);
   }
   return newCourseListMap;
+}
+
+export function populateCourseListObject(
+  programme: ProgrammeRequirement,
+  courseListObject: CourseListObject,
+  courses: CourseEnrollment[],
+  gr23s: GR23[],
+): CourseListObject {
+  const courseCodes = courses.map((c) => c.code);
+  const newCourseListObject: CourseListObject = {};
+  const existingCourses = Object.values(courseListObject).flat();
+  for (const [courseListKey, courseList] of Object.entries(courseListObject)) {
+    const newCourseList: string[] = [];
+    for (const course of courseList!) {
+      if (course.endsWith("?")) {
+        newCourseList.push(
+          ...courseCodes.filter(
+            (c) =>
+              c.startsWith(course.slice(0, -1)) && !existingCourses.includes(c),
+          ),
+        );
+      } else {
+        newCourseList.push(course);
+      }
+    }
+
+    // Add GR23 courses
+    gr23s
+      .filter(
+        (gr23) =>
+          gr23.programme === programme.name &&
+          gr23.requirementListName === courseListKey,
+      )
+      .forEach((gr23) => {
+        newCourseList.push(gr23.courseToAdd);
+      });
+
+    newCourseListObject[courseListKey] = newCourseList;
+  }
+  return newCourseListObject;
 }
 
 export function calculateCga(

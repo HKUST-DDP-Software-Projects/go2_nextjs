@@ -1,11 +1,16 @@
 "use client";
 
-import { useAppSelector } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 // import { programRequirements } from "@/helpers/requirement";
 import Accordion from "@/components/accordion";
 import Tabs from "@/components/tab";
+import {
+  checkRequirementRule,
+  checkRequirementRuleSet,
+} from "@/helpers/matcher";
 import { Requirement, RequirementRule } from "@/helpers/requirement";
-import { useState } from "react";
+import { match, setSelectedProgrammes } from "@/redux/features/plannerSlice";
+import { useEffect, useState } from "react";
 
 interface ChipProps {
   label: string;
@@ -22,6 +27,17 @@ function Chip({ label }: ChipProps) {
 interface ListProps {
   name: string;
   courses: string[];
+}
+
+function ControlledCheckbox({ checked }: { checked: boolean }) {
+  return (
+    <input
+      type="checkbox"
+      className="form-checkbox h-5 w-5 text-indigo-600 transition duration-150 ease-in-out flex-shrink-0"
+      checked={checked}
+      readOnly
+    />
+  );
 }
 
 function getRuleString(rule: RequirementRule): string {
@@ -63,39 +79,61 @@ function List({ name, courses }: ListProps) {
 
 interface RequirementProps {
   requirement: Requirement;
+  planner: { [key: string]: string[] };
 }
 
-function RequirementComponent({ requirement }: RequirementProps) {
-  const [validatedRules, setValidatedRules] = useState<string[]>([]);
+function RequirementComponent({ requirement, planner }: RequirementProps) {
+  const selectedCourses = planner[requirement.name] || [];
+  // find the first valid ruleset
+  const validRulesetIdx = requirement.rulesets.findIndex((ruleset) =>
+    checkRequirementRuleSet(requirement, ruleset, selectedCourses),
+  );
 
-  const handleRuleChange = (ruleId: string) => {
-    if (validatedRules.includes(ruleId)) {
-      setValidatedRules(validatedRules.filter((id) => id !== ruleId));
-    } else {
-      setValidatedRules([...validatedRules, ruleId]);
-    }
-  };
+  // contain all indices other than the first valid ruleset
+  const defaultActiveIndex = requirement.rulesets
+    .map((_, index) => index)
+    .filter((index) => index !== validRulesetIdx);
 
   return (
-    <div className="pl-4 h-48 flex flex-col md:flex-row">
-      <div className="md:w-3/4 flex overflow-x-auto">
-        {Array.from(requirement.lists.entries()).map(([name, courses]) => (
-          <List key={name} name={name} courses={courses} />
+    <div className="pl-4 flex flex-col md:flex-row">
+      <div className="md:w-3/4 w-full h-48 flex-grow flex overflow-x-auto">
+        {Object.entries(requirement.lists).map(([name, courses]) => (
+          <List
+            key={name}
+            name={name}
+            courses={courses!.filter((course) =>
+              selectedCourses.includes(course),
+            )}
+          />
         ))}
       </div>
-      <div className="md:w-1/4 border-l border-gray-200 p-4">
+      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4">
         <Accordion
           items={requirement.rulesets.map((ruleset) => ({
-            title: ruleset.description,
+            title: (
+              <div className="flex items-center">
+                <ControlledCheckbox
+                  checked={checkRequirementRuleSet(
+                    requirement,
+                    ruleset,
+                    selectedCourses,
+                  )}
+                />
+                <h3 className="text-lg font-medium ml-2">
+                  {ruleset.description}
+                </h3>
+              </div>
+            ),
             content: (
               <div className="pl-4">
                 {ruleset.rules.map((rule) => (
                   <div key={rule.lists.join("")} className="flex items-center">
-                    <input
-                      type="checkbox"
-                      className="form-checkbox h-5 w-5 text-indigo-600 transition duration-150 ease-in-out flex-shrink-0"
-                      checked={validatedRules.includes(rule.lists.join(""))}
-                      onChange={() => handleRuleChange(rule.lists.join(""))}
+                    <ControlledCheckbox
+                      checked={checkRequirementRule(
+                        requirement,
+                        rule,
+                        selectedCourses,
+                      )}
                     />
                     <label
                       htmlFor="checkbox"
@@ -108,7 +146,8 @@ function RequirementComponent({ requirement }: RequirementProps) {
               </div>
             ),
           }))}
-          defaultActive={true}
+          defaultActive={false}
+          defaultActiveIndex={defaultActiveIndex}
         />
       </div>
     </div>
@@ -116,35 +155,78 @@ function RequirementComponent({ requirement }: RequirementProps) {
 }
 
 export default function Planner() {
+  const dispatch = useAppDispatch();
+  const courseEnrollments = useAppSelector(
+    (state) => state.courseReducer.courseHistory,
+  );
   const programmes = useAppSelector(
     (state) => state.plannerReducer.selectedProgrammes,
   );
+  const planner = useAppSelector((state) => state.plannerReducer.planner);
+  useEffect(() => {
+    dispatch(
+      setSelectedProgrammes([
+        courseEnrollments,
+        [
+          {
+            name: "BEng in Computer Science [1920]",
+            programmes: [
+              "Common Core [before 2022] (CC)",
+              "BEng in Computer Science [1920] (COMP)",
+            ],
+          },
+          {
+            name: "BBA in General Business Management [1920]",
+            programmes: [
+              "Common Core [before 2022] (CC)",
+              "BBA in General Business Management [1920] (GBM)",
+            ],
+          },
+        ],
+      ]),
+    );
+  }, [dispatch, courseEnrollments]);
 
   return (
     <main className="w-full h-full mx-auto p-4">
       <Tabs
-        tabs={programmes.map((degree) => ({
+        tabs={programmes.map((degree, degreeIdx) => ({
           label: degree.name,
           content: (
-            <Accordion
-              defaultActive={true}
-              items={degree.requirements.map((programme) => ({
-                title: programme.name,
-                content: (
-                  <Accordion
-                    defaultActive={true}
-                    items={programme.requirementGroups
-                      .flatMap((group) => group.requirements)
-                      .map((requirement) => ({
-                        title: requirement.name,
-                        content: (
-                          <RequirementComponent requirement={requirement} />
-                        ),
-                      }))}
-                  />
-                ),
-              }))}
-            />
+            <div className="flex flex-col">
+              <div className="flex flex-wrap">
+                <button
+                  className="bg-gray-200 rounded-sm px-4 py-2 mr-2 mb-2"
+                  onClick={() =>
+                    dispatch(match([courseEnrollments, degreeIdx]))
+                  }
+                >
+                  Match
+                </button>
+              </div>
+              <Accordion
+                defaultActive={true}
+                items={degree.requirements.map((programme, programmeIdx) => ({
+                  title: programme.name,
+                  content: (
+                    <Accordion
+                      defaultActive={true}
+                      items={programme.requirementGroups
+                        .flatMap((group) => group.requirements)
+                        .map((requirement) => ({
+                          title: requirement.name,
+                          content: (
+                            <RequirementComponent
+                              requirement={requirement}
+                              planner={planner[programmeIdx]}
+                            />
+                          ),
+                        }))}
+                    />
+                  ),
+                }))}
+              />
+            </div>
           ),
         }))}
       ></Tabs>

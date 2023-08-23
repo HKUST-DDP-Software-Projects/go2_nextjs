@@ -3,6 +3,7 @@ import { CourseEnrollment } from "@/redux/features/courseSlice";
 
 export type CourseEnrollmentListMap = Map<string, CourseEnrollment[]>;
 export type CourseListMap = Map<string, string[]>;
+export type CourseListObject = Record<string, string[] | undefined>;
 
 export interface RequirementRule {
   lists: string[];
@@ -27,7 +28,7 @@ export interface RequirementValidation {
 
 export interface Requirement {
   name: string;
-  lists: CourseListMap;
+  lists: CourseListObject;
   rulesets: RequirementRuleSet[]; // Disjunctive normal form / Sum of products / OR of ANDs
   validations: RequirementValidation[];
 }
@@ -70,7 +71,7 @@ export const programRequirements: ProgrammeRequirement[] = [
             (requirement) => {
               return {
                 ...requirement,
-                lists: new Map(Object.entries(requirement.lists)),
+                lists: requirement.lists,
               };
             },
           ),
