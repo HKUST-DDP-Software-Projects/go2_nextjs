@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 
 export interface AccordionItem {
+  key: string;
   title: ReactNode;
   content: ReactNode;
 }
@@ -38,7 +39,7 @@ export default function Accordion({
     <div className="mx-auto w-full h-full overflow-y-auto">
       {items.map((item, index) => (
         <div
-          key={item.title?.toString()}
+          key={item.key}
           className="border-b border-gray-200 max-h-full flex flex-col"
         >
           <div

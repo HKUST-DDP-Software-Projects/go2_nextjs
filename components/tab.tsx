@@ -27,7 +27,7 @@ export default function Tabs({ tabs }: { tabs: Tab[] }) {
           ))}
         </nav>
       </div>
-      <div className="mt-4">{tabs[activeIndex].content}</div>
+      <div className="mt-4">{tabs[activeIndex]?.content}</div>
     </div>
   );
 }

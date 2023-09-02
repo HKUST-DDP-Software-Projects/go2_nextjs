@@ -10,7 +10,7 @@ import {
 } from "@/helpers/matcher";
 import { Requirement, RequirementRule } from "@/helpers/requirement";
 import { match, setSelectedProgrammes } from "@/redux/features/plannerSlice";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface ChipProps {
   label: string;
@@ -64,7 +64,7 @@ function getRuleString(rule: RequirementRule): string {
 
 function List({ name, courses }: ListProps) {
   return (
-    <div className="border-r border-gray-200 mr-4 p-4 rounded-sm w-72 h-full flex-shrink-0 flex flex-col">
+    <div className="border-r border-gray-200 mr-4 p-4 rounded-sm w-72 h-full flex-shrink-0 flex flex-col bg-white">
       <div className="flex-shrink-0">
         <h3 className="text-lg font-medium">{name}</h3>
       </div>
@@ -83,7 +83,7 @@ interface RequirementProps {
 }
 
 function RequirementComponent({ requirement, planner }: RequirementProps) {
-  const selectedCourses = planner[requirement.name] || [];
+  const selectedCourses = planner?.[requirement.name] || [];
   // find the first valid ruleset
   const validRulesetIdx = requirement.rulesets.findIndex((ruleset) =>
     checkRequirementRuleSet(requirement, ruleset, selectedCourses),
@@ -109,43 +109,57 @@ function RequirementComponent({ requirement, planner }: RequirementProps) {
       </div>
       <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4">
         <Accordion
-          items={requirement.rulesets.map((ruleset) => ({
-            title: (
-              <div className="flex items-center">
-                <ControlledCheckbox
-                  checked={checkRequirementRuleSet(
-                    requirement,
-                    ruleset,
-                    selectedCourses,
-                  )}
-                />
-                <h3 className="text-lg font-medium ml-2">
-                  {ruleset.description}
-                </h3>
-              </div>
-            ),
-            content: (
-              <div className="pl-4">
-                {ruleset.rules.map((rule) => (
-                  <div key={rule.lists.join("")} className="flex items-center">
-                    <ControlledCheckbox
-                      checked={checkRequirementRule(
-                        requirement,
-                        rule,
-                        selectedCourses,
-                      )}
-                    />
-                    <label
-                      htmlFor="checkbox"
-                      className="ml-2 block text-sm leading-5 text-gray-900"
+          items={[...requirement.rulesets]
+            .sort(
+              (a, b) =>
+                Number(
+                  checkRequirementRuleSet(requirement, b, selectedCourses),
+                ) -
+                Number(
+                  checkRequirementRuleSet(requirement, a, selectedCourses),
+                ),
+            )
+            .map((ruleset) => ({
+              key: ruleset.description,
+              title: (
+                <div className="flex items-center">
+                  <ControlledCheckbox
+                    checked={checkRequirementRuleSet(
+                      requirement,
+                      ruleset,
+                      selectedCourses,
+                    )}
+                  />
+                  <h3 className="text-lg font-medium ml-2">
+                    {ruleset.description}
+                  </h3>
+                </div>
+              ),
+              content: (
+                <div className="pl-4">
+                  {ruleset.rules.map((rule) => (
+                    <div
+                      key={rule.lists.join("")}
+                      className="flex items-center"
                     >
-                      {getRuleString(rule)}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            ),
-          }))}
+                      <ControlledCheckbox
+                        checked={checkRequirementRule(
+                          requirement,
+                          rule,
+                          selectedCourses,
+                        )}
+                      />
+                      <label
+                        htmlFor="checkbox"
+                        className="ml-2 block text-sm leading-5 text-gray-900"
+                      >
+                        {getRuleString(rule)}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              ),
+            }))}
           defaultActive={false}
           defaultActiveIndex={defaultActiveIndex}
         />
@@ -160,7 +174,7 @@ export default function Planner() {
     (state) => state.courseReducer.courseHistory,
   );
   const programmes = useAppSelector(
-    (state) => state.plannerReducer.selectedProgrammes,
+    (state) => state.plannerReducer.selectedDegrees,
   );
   const planner = useAppSelector((state) => state.plannerReducer.planner);
   useEffect(() => {
@@ -171,15 +185,16 @@ export default function Planner() {
           {
             name: "BEng in Computer Science [1920]",
             programmes: [
-              "Common Core [before 2022] (CC)",
               "BEng in Computer Science [1920] (COMP)",
+              "Common Core [before 2022] (CC)",
             ],
           },
           {
             name: "BBA in General Business Management [1920]",
             programmes: [
-              "Common Core [before 2022] (CC)",
               "BBA in General Business Management [1920] (GBM)",
+              "SBM requirement for BBA students [1920]",
+              "Common Core [before 2022] (CC)",
             ],
           },
         ],
@@ -207,6 +222,7 @@ export default function Planner() {
               <Accordion
                 defaultActive={true}
                 items={degree.requirements.map((programme, programmeIdx) => ({
+                  key: programme.name,
                   title: programme.name,
                   content: (
                     <Accordion
@@ -214,11 +230,12 @@ export default function Planner() {
                       items={programme.requirementGroups
                         .flatMap((group) => group.requirements)
                         .map((requirement) => ({
+                          key: requirement.name,
                           title: requirement.name,
                           content: (
                             <RequirementComponent
                               requirement={requirement}
-                              planner={planner[programmeIdx]}
+                              planner={planner[degreeIdx][programmeIdx]}
                             />
                           ),
                         }))}

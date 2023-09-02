@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import rawCourses from "@/helpers/courses_1920.json";
 
 export type CourseDetail = {
   code: string;
@@ -21,9 +22,7 @@ export type CourseEnrollment = {
 
 export type CourseState = {
   courseHistory: CourseEnrollment[];
-  courseCatalog: {
-    [code: string]: CourseDetail;
-  };
+  courseCatalog: Record<string, CourseDetail>;
 };
 
 const initialState = {
@@ -589,7 +588,16 @@ const initialState = {
       status: "Taken",
     },
   ],
-  courseCatalog: {},
+  courseCatalog: Object.fromEntries(
+    rawCourses.map((course) => [
+      course.code,
+      {
+        code: course.code,
+        title: course.title,
+        units: parseInt(course.credits),
+      },
+    ]),
+  ),
 } as CourseState;
 
 export const course = createSlice({
@@ -609,8 +617,39 @@ export const course = createSlice({
         }
       });
     },
+    addCourseEnrollment: (state, action: PayloadAction<CourseEnrollment>) => {
+      state.courseHistory.push(action.payload);
+    },
+    editCourseEnrollment: (
+      state,
+      action: PayloadAction<[CourseEnrollment, CourseEnrollment]>,
+    ) => {
+      const [oldCourseEnrollment, newCourseEnrollment] = action.payload;
+      const index = state.courseHistory.findIndex(
+        (courseEnrollment) =>
+          courseEnrollment.code === oldCourseEnrollment.code &&
+          courseEnrollment.term === oldCourseEnrollment.term,
+      );
+      state.courseHistory[index] = newCourseEnrollment;
+    },
+    removeCourseEnrollment: (
+      state,
+      action: PayloadAction<CourseEnrollment>,
+    ) => {
+      const index = state.courseHistory.findIndex(
+        (courseEnrollment) =>
+          courseEnrollment.code === action.payload.code &&
+          courseEnrollment.term === action.payload.term,
+      );
+      state.courseHistory.splice(index, 1);
+    },
   },
 });
 
-export const { reset } = course.actions;
+export const {
+  reset,
+  addCourseEnrollment,
+  editCourseEnrollment,
+  removeCourseEnrollment,
+} = course.actions;
 export default course.reducer;

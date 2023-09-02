@@ -22,36 +22,15 @@ type DegreeSelection = {
 };
 
 type PlannerState = {
-  selectedProgrammes: Degree[];
-  planner: {
-    [key: string]: string[];
-  }[];
+  selectedDegrees: Degree[];
+  planner: Record<string, string[]>[][];
   gr23s: GR23[];
 };
 
 const initialState = {
-  selectedProgrammes: [
-    {
-      name: "BEng in Computer Science [1920]",
-      requirements: programRequirements.filter((programRequirements) => {
-        return [
-          "Common Core [before 2022] (CC)",
-          "BEng in Computer Science [1920] (COMP)",
-        ].includes(programRequirements.name);
-      }),
-    },
-    {
-      name: "BBA in General Business Management [1920]",
-      requirements: programRequirements.filter((programRequirements) => {
-        return [
-          "Common Core [before 2022] (CC)",
-          "BBA in General Business Management [1920] (GBM)",
-        ].includes(programRequirements.name);
-      }),
-    },
-  ],
+  selectedDegrees: [],
   gr23s: [],
-  planner: [{}, {}],
+  planner: [],
 } as PlannerState;
 
 export const planner = createSlice({
@@ -64,13 +43,13 @@ export const planner = createSlice({
       action: PayloadAction<[CourseEnrollment[], DegreeSelection[]]>,
     ) => {
       const [courseEnrollments, degreeSelections] = action.payload;
-      state.selectedProgrammes = degreeSelections.map((degreeSelection) => {
-        const originalRequirements = programRequirements.filter(
-          (programRequirements) => {
-            return degreeSelection.programmes.includes(
-              programRequirements.name,
-            );
-          },
+      state.planner = degreeSelections.map(() => []);
+      state.selectedDegrees = degreeSelections.map((degreeSelection) => {
+        const originalRequirements = degreeSelection.programmes.map(
+          (programmeName) =>
+            programRequirements.find(
+              (programme) => programme.name === programmeName,
+            )!,
         );
 
         const requirements = JSON.parse(
@@ -98,7 +77,7 @@ export const planner = createSlice({
     },
     match: (state, action: PayloadAction<[CourseEnrollment[], number]>) => {
       const [courseEnrollments, index] = action.payload;
-      const requirements = state.selectedProgrammes[index].requirements;
+      const requirements = state.selectedDegrees[index].requirements;
 
       const fullResult = assignCoursesToCourseLists(
         requirements,
@@ -109,7 +88,7 @@ export const planner = createSlice({
         alert(
           "No suitable full matching. Partial matching, if available, is displayed.",
         );
-        state.planner = assignCoursesToCourseListsPartial(
+        state.planner[index] = assignCoursesToCourseListsPartial(
           requirements,
           courseEnrollments,
         ).map((courseListMap) =>
@@ -121,10 +100,10 @@ export const planner = createSlice({
           ),
         );
       } else {
-        state.planner = fullResult.map.map((courseListMap) =>
+        state.planner[index] = fullResult.map.map((courseListMap) =>
           Object.fromEntries(
             [...courseListMap.entries()].map(([key, value]) => [
-              key.split(" ")[1],
+              key.split(": ")[1],
               value,
             ]),
           ),

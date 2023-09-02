@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@heroicons/react", "virtual:85cc93b2d28dccdf14a33ca058b7b9f8cebfe10bb820d2ec1e0de486e5e06befd46e798e63d623f4813aa84229315031b621728a71683f1fc879f841da06f725#npm:1.0.6"],\
             ["@reduxjs/toolkit", "virtual:85cc93b2d28dccdf14a33ca058b7b9f8cebfe10bb820d2ec1e0de486e5e06befd46e798e63d623f4813aa84229315031b621728a71683f1fc879f841da06f725#npm:1.9.5"],\
             ["@types/node", "npm:20.5.1"],\
             ["@types/react", "npm:18.2.20"],\
@@ -137,6 +138,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@eslint-js-npm-8.47.0-ecde461ef4-0ef57fe27b.zip/node_modules/@eslint/js/",\
           "packageDependencies": [\
             ["@eslint/js", "npm:8.47.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@heroicons/react", [\
+        ["npm:1.0.6", {\
+          "packageLocation": "./.yarn/cache/@heroicons-react-npm-1.0.6-51f92ebbfd-372b1eda3c.zip/node_modules/@heroicons/react/",\
+          "packageDependencies": [\
+            ["@heroicons/react", "npm:1.0.6"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:85cc93b2d28dccdf14a33ca058b7b9f8cebfe10bb820d2ec1e0de486e5e06befd46e798e63d623f4813aa84229315031b621728a71683f1fc879f841da06f725#npm:1.0.6", {\
+          "packageLocation": "./.yarn/__virtual__/@heroicons-react-virtual-d9fa3775f8/0/cache/@heroicons-react-npm-1.0.6-51f92ebbfd-372b1eda3c.zip/node_modules/@heroicons/react/",\
+          "packageDependencies": [\
+            ["@heroicons/react", "virtual:85cc93b2d28dccdf14a33ca058b7b9f8cebfe10bb820d2ec1e0de486e5e06befd46e798e63d623f4813aa84229315031b621728a71683f1fc879f841da06f725#npm:1.0.6"],\
+            ["@types/react", "npm:18.2.20"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2714,6 +2737,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["go2_new", "workspace:."],\
+            ["@heroicons/react", "virtual:85cc93b2d28dccdf14a33ca058b7b9f8cebfe10bb820d2ec1e0de486e5e06befd46e798e63d623f4813aa84229315031b621728a71683f1fc879f841da06f725#npm:1.0.6"],\
             ["@reduxjs/toolkit", "virtual:85cc93b2d28dccdf14a33ca058b7b9f8cebfe10bb820d2ec1e0de486e5e06befd46e798e63d623f4813aa84229315031b621728a71683f1fc879f841da06f725#npm:1.9.5"],\
             ["@types/node", "npm:20.5.1"],\
             ["@types/react", "npm:18.2.20"],\
