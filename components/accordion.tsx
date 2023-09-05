@@ -43,7 +43,7 @@ export default function Accordion({
           className="border-b border-gray-200 max-h-full flex flex-col"
         >
           <div
-            className="flex items-center justify-between py-4 cursor-pointer flex-shrink-0"
+            className="flex items-center justify-between p-4 cursor-pointer flex-shrink-0"
             onClick={() => handleClick(index)}
           >
             <h3 className="text-lg font-medium">{item.title}</h3>

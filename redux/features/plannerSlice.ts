@@ -16,7 +16,7 @@ type Degree = {
   requirements: ProgrammeRequirement[];
 };
 
-type DegreeSelection = {
+export type DegreeSelection = {
   name: string;
   programmes: string[];
 };
@@ -79,10 +79,15 @@ export const planner = createSlice({
       const [courseEnrollments, index] = action.payload;
       const requirements = state.selectedDegrees[index].requirements;
 
-      const fullResult = assignCoursesToCourseLists(
-        requirements,
-        courseEnrollments,
-      );
+      // remove courseEnrollments that have duplicate course codes
+      const courseEnrollmentsMap = new Map<string, CourseEnrollment>();
+      courseEnrollments.forEach((courseEnrollment) => {
+        courseEnrollmentsMap.set(courseEnrollment.code, courseEnrollment);
+      });
+
+      const fullResult = assignCoursesToCourseLists(requirements, [
+        ...courseEnrollmentsMap.values(),
+      ]);
 
       if (!fullResult) {
         alert(

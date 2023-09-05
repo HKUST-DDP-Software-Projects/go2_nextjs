@@ -1,5 +1,8 @@
 "use client";
 
+import Autocomplete from "@/components/autocomplete";
+import Modal from "@/components/modal";
+import Table from "@/components/table";
 import {
   CourseDetail,
   CourseEnrollment,
@@ -7,6 +10,7 @@ import {
   addCourseEnrollment,
   editCourseEnrollment,
   removeCourseEnrollment,
+  handleImport,
 } from "@/redux/features/courseSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/outline";
@@ -21,56 +25,14 @@ const CourseAutocomplete = ({
     (state) => state.courseReducer.courseCatalog,
   );
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState<CourseDetail[]>([]);
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-    const results = Object.values(courseCatalog).filter((course) =>
-      course.code.toLowerCase().includes(event.target.value.toLowerCase()),
-    );
-    setSearchResults(results);
-  };
-
   return (
-    <div className="mb-4">
-      <label
-        htmlFor="courseName"
-        className="block text-gray-700 font-medium mb-2"
-      >
-        Search Course
-      </label>
-      <input
-        type="text"
-        id="courseName"
-        name="courseName"
-        value={searchTerm}
-        onChange={handleSearchChange}
-        onBlur={() => {
-          setTimeout(() => {
-            setSearchResults([]);
-          }, 200);
-        }}
-        className="border border-gray-300 px-4 py-2 w-full rounded-md"
-      />
-      {searchResults.length > 0 && (
-        <ul className="absolute z-10 bg-white border border-gray-300 mt-1 overflow-y-scroll h-full">
-          {searchResults.map((course) => (
-            <li
-              key={`${course.code}-${course.title}`}
-              className="px-4 py-2 cursor-pointer hover:bg-gray-200 w-full"
-              onClick={() => {
-                setSearchTerm("");
-                setSearchResults([]);
-                handleSelectCourse(course);
-              }}
-            >
-              {course.title} ({course.code} - {course.units} units)
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <Autocomplete
+      options={Object.values(courseCatalog)}
+      onSelect={handleSelectCourse}
+      label="Search Course"
+      placeholder="Search Course"
+      displayOption={(course) => `${course.title} (${course.code})`}
+    />
   );
 };
 
@@ -80,7 +42,10 @@ const CoursePage = () => {
     (state) => state.courseReducer.courseHistory,
   );
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEditCourseEnrollmentModalOpen, setIsEditCourseEnrollmentModalOpen] =
+    useState(false);
+  const [isImportCourseModalOpen, setIsImportCourseModalOpen] = useState(false);
+
   const [selectedCourseEnrollment, setSelectedCourseEnrollment] =
     useState<CourseEnrollment | null>(null);
   const initialFormData = {
@@ -103,7 +68,7 @@ const CoursePage = () => {
   const handleAddCourseEnrollment = () => {
     dispatch(addCourseEnrollment(formData));
     setFormData(initialFormData);
-    setIsModalOpen(false);
+    setIsEditCourseEnrollmentModalOpen(false);
   };
 
   const handleEditCourseEnrollment = () => {
@@ -111,7 +76,7 @@ const CoursePage = () => {
     dispatch(editCourseEnrollment([selectedCourseEnrollment, formData]));
     setFormData(initialFormData);
     setSelectedCourseEnrollment(null);
-    setIsModalOpen(false);
+    setIsEditCourseEnrollmentModalOpen(false);
   };
 
   const handleRemoveCourseEnrollment = (courseEnrollment: CourseEnrollment) => {
@@ -123,59 +88,75 @@ const CoursePage = () => {
       <h3 className="text-lg font-medium mb-4">Course Enrollment</h3>
       <div className="flex justify-end mb-4">
         <button
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mr-2"
+          onClick={() => setIsImportCourseModalOpen(true)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 inline-block mr-2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
+            />
+          </svg>
+          Import Course
+        </button>
+        <button
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => setIsEditCourseEnrollmentModalOpen(true)}
         >
           <PlusIcon className="h-5 w-5 inline-block mr-2" />
           Add Course Enrollment
         </button>
       </div>
-      <table className="w-full border-collapse">
-        <thead>
-          <tr>
-            <th className="border border-gray-300 px-4 py-2">Course Code</th>
-            <th className="border border-gray-300 px-4 py-2">Course Name</th>
-            <th className="border border-gray-300 px-4 py-2">Units</th>
-            <th className="border border-gray-300 px-4 py-2">Term</th>
-            <th className="border border-gray-300 px-4 py-2">Grade</th>
-            <th className="border border-gray-300 px-4 py-2">Status</th>
-            <th className="border border-gray-300 px-4 py-2">
-              Used in requirements
-            </th>
-            <th className="border border-gray-300 px-4 py-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {courseEnrollments.map((courseEnrollment) => (
-            <tr key={`${courseEnrollment.code}-${courseEnrollment.term}`}>
-              <td className="border border-gray-300 px-4 py-2">
-                {courseEnrollment.code}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {courseEnrollment.title}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {courseEnrollment.units}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {courseEnrollment.term}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {courseEnrollment.grade}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {courseEnrollment.status}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                To be implemented
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
+      <Table
+        columns={[
+          {
+            key: "code",
+            header: "Course Code",
+          },
+          {
+            key: "title",
+            header: "Course Name",
+          },
+          {
+            key: "units",
+            header: "Units",
+          },
+          {
+            key: "term",
+            header: "Term",
+          },
+          {
+            key: "grade",
+            header: "Grade",
+          },
+          {
+            key: "status",
+            header: "Status",
+          },
+          {
+            key: "custom",
+            header: "Used in requirements",
+            format: () => "To be implemented",
+          },
+          {
+            key: "custom",
+            header: "Actions",
+            format: (courseEnrollment: CourseEnrollment) => (
+              <>
                 <button
                   className="text-blue-500 hover:text-blue-700 mr-2"
                   onClick={() => {
                     setSelectedCourseEnrollment(courseEnrollment);
                     setFormData(courseEnrollment);
-                    setIsModalOpen(true);
+                    setIsEditCourseEnrollmentModalOpen(true);
                   }}
                 >
                   <PencilIcon className="h-5 w-5 inline-block" />
@@ -186,153 +167,176 @@ const CoursePage = () => {
                 >
                   <TrashIcon className="h-5 w-5 inline-block" />
                 </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
-          <div className="bg-white rounded-lg p-4 w-1/2 overflow-y-auto max-h-full">
-            <h3 className="text-lg font-medium mb-4">
-              {selectedCourseEnrollment
-                ? "Edit Course Enrollment"
-                : "Add Course Enrollment"}
-            </h3>
-            <CourseAutocomplete
-              handleSelectCourse={(course) => {
-                setFormData({
-                  ...formData,
-                  code: course.code,
-                  title: course.title,
-                  units: course.units,
-                });
-              }}
-            />
-            <div className="mb-4">
-              <label
-                htmlFor="courseCode"
-                className="block text-gray-700 font-medium mb-2"
-              >
-                Course Code
-              </label>
-              <input
-                type="text"
-                id="courseCode"
-                name="courseCode"
-                value={formData.code}
-                onChange={handleInputChange}
-                className="border border-gray-300 px-4 py-2 w-full rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="courseName"
-                className="block text-gray-700 font-medium mb-2"
-              >
-                Course Name
-              </label>
-              <input
-                type="text"
-                id="courseName"
-                name="courseName"
-                value={formData.title}
-                onChange={handleInputChange}
-                className="border border-gray-300 px-4 py-2 w-full rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="units"
-                className="block text-gray-700 font-medium mb-2"
-              >
-                Units
-              </label>
-              <input
-                type="number"
-                id="units"
-                name="units"
-                value={formData.units}
-                onChange={handleInputChange}
-                className="border border-gray-300 px-4 py-2 w-full rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="term"
-                className="block text-gray-700 font-medium mb-2"
-              >
-                Term
-              </label>
-              <input
-                type="text"
-                id="term"
-                name="term"
-                value={formData.term}
-                onChange={handleInputChange}
-                className="border border-gray-300 px-4 py-2 w-full rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="grade"
-                className="block text-gray-700 font-medium mb-2"
-              >
-                Grade
-              </label>
-              <input
-                type="text"
-                id="grade"
-                name="grade"
-                value={formData.grade}
-                onChange={handleInputChange}
-                className="border border-gray-300 px-4 py-2 w-full rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="status"
-                className="block text-gray-700 font-medium mb-2"
-              >
-                Status
-              </label>
-              <select
-                id="status"
-                name="status"
-                value={formData.status}
-                onChange={handleInputChange}
-                className="border border-gray-300 px-4 py-2 w-full rounded-md"
-              >
-                <option value={CourseStatus.PLANNED}>Planned</option>
-                <option value={CourseStatus.IN_PROGRESS}>In Progress</option>
-                <option value={CourseStatus.TAKEN}>Taken</option>
-              </select>
-            </div>
-            <div className="flex justify-end">
-              <button
-                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mr-2"
-                onClick={
-                  selectedCourseEnrollment
-                    ? handleEditCourseEnrollment
-                    : handleAddCourseEnrollment
-                }
-              >
-                {selectedCourseEnrollment ? "Save" : "Add"}
-              </button>
-              <button
-                className="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400"
-                onClick={() => {
-                  setSelectedCourseEnrollment(null);
-                  setFormData({ courseName: "", courseCode: "", grade: "" });
-                  setIsModalOpen(false);
-                }}
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
+              </>
+            ),
+          },
+        ]}
+        data={courseEnrollments}
+        keyFunc={(course) => `${course.code}-${course.term}`}
+      />
+      <Modal
+        isModalOpen={isEditCourseEnrollmentModalOpen}
+        title={
+          selectedCourseEnrollment
+            ? "Edit Course Enrollment"
+            : "Add Course Enrollment"
+        }
+        actionText={selectedCourseEnrollment ? "Save" : "Add"}
+        onAction={
+          selectedCourseEnrollment
+            ? handleEditCourseEnrollment
+            : handleAddCourseEnrollment
+        }
+        onCancel={() => {
+          setSelectedCourseEnrollment(null);
+          setFormData(initialFormData);
+          setIsEditCourseEnrollmentModalOpen(false);
+        }}
+      >
+        <CourseAutocomplete
+          handleSelectCourse={(course) => {
+            setFormData({
+              ...formData,
+              code: course.code,
+              title: course.title,
+              units: course.units,
+            });
+          }}
+        />
+        <div className="mb-4">
+          <label
+            htmlFor="courseCode"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Course Code
+          </label>
+          <input
+            type="text"
+            id="courseCode"
+            name="courseCode"
+            value={formData.code}
+            onChange={handleInputChange}
+            className="border border-gray-300 px-4 py-2 w-full rounded-md"
+          />
         </div>
-      )}
+        <div className="mb-4">
+          <label
+            htmlFor="courseName"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Course Name
+          </label>
+          <input
+            type="text"
+            id="courseName"
+            name="courseName"
+            value={formData.title}
+            onChange={handleInputChange}
+            className="border border-gray-300 px-4 py-2 w-full rounded-md"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="units"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Units
+          </label>
+          <input
+            type="number"
+            id="units"
+            name="units"
+            value={formData.units}
+            onChange={handleInputChange}
+            className="border border-gray-300 px-4 py-2 w-full rounded-md"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="term"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Term
+          </label>
+          <input
+            type="text"
+            id="term"
+            name="term"
+            value={formData.term}
+            onChange={handleInputChange}
+            className="border border-gray-300 px-4 py-2 w-full rounded-md"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="grade"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Grade
+          </label>
+          <input
+            type="text"
+            id="grade"
+            name="grade"
+            value={formData.grade}
+            onChange={handleInputChange}
+            className="border border-gray-300 px-4 py-2 w-full rounded-md"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="status"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Status
+          </label>
+          <select
+            id="status"
+            name="status"
+            value={formData.status}
+            onChange={handleInputChange}
+            className="border border-gray-300 px-4 py-2 w-full rounded-md"
+          >
+            <option value={CourseStatus.PLANNED}>Planned</option>
+            <option value={CourseStatus.IN_PROGRESS}>In Progress</option>
+            <option value={CourseStatus.TAKEN}>Taken</option>
+          </select>
+        </div>
+      </Modal>
+      <Modal
+        isModalOpen={isImportCourseModalOpen}
+        title="Import Course"
+        actionText="Import"
+        onAction={() => {}}
+        onCancel={() => setIsImportCourseModalOpen(false)}
+      >
+        <ol className="list-decimal list-inside mb-4">
+          <li>
+            Go to the{" "}
+            <a
+              href="https://sisprod.psft.ust.hk/psc/SISPROD/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSS_MY_CRSEHIST.GBL?Page=SSS_MY_CRSEHIST&Action=U"
+              target="_blank"
+              className="text-blue-500 hover:text-blue-700"
+            >
+              My Course History on HKUST SIS
+            </a>
+          </li>
+          <li>
+            &ldquo;Select All&rdquo; the page and copy, or press Ctrl+A and
+            Ctrl+C
+          </li>
+          <li>Paste the copied text into the textbox below</li>
+        </ol>
+        <textarea
+          className="border border-gray-300 px-4 py-2 w-full rounded-md"
+          onPaste={(event) => {
+            console.log(event);
+            event.preventDefault();
+            dispatch(handleImport(event.clipboardData.getData("text/plain")));
+            setIsImportCourseModalOpen(false);
+          }}
+        />
+      </Modal>
     </div>
   );
 };

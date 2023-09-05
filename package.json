@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hello-pangea/dnd": "^16.3.0",
     "@heroicons/react": "v1",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.5.1",
