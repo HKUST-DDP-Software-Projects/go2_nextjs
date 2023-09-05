@@ -115,18 +115,6 @@ export const planner = createSlice({
         );
       }
     },
-    // addProgramme: (
-    //   state,
-    //   action: PayloadAction<[number, ProgrammeRequirement]>,
-    // ) => {
-    //   const [index, programme] = action.payload;
-    //   state.selectedProgrammes[index].push(programme);
-    // },
-    // removeProgramme: (state, action: PayloadAction<string>) => {
-    //   state.selectedProgrammes = state.selectedProgrammes.filter(
-    //     (program) => program.name !== action.payload,
-    //   );
-    // },
   },
 });
 

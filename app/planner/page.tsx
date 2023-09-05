@@ -9,8 +9,7 @@ import {
   checkRequirementRuleSet,
 } from "@/helpers/matcher";
 import { Requirement, RequirementRule } from "@/helpers/requirement";
-import { match, setSelectedProgrammes } from "@/redux/features/plannerSlice";
-import { useEffect } from "react";
+import { match } from "@/redux/features/plannerSlice";
 
 interface ChipProps {
   label: string;
@@ -177,30 +176,6 @@ export default function Planner() {
     (state) => state.plannerReducer.selectedDegrees,
   );
   const planner = useAppSelector((state) => state.plannerReducer.planner);
-  useEffect(() => {
-    dispatch(
-      setSelectedProgrammes([
-        courseEnrollments,
-        [
-          {
-            name: "BEng in Computer Science [1920]",
-            programmes: [
-              "BEng in Computer Science [1920] (COMP)",
-              "Common Core [before 2022] (CC)",
-            ],
-          },
-          {
-            name: "BBA in General Business Management [1920]",
-            programmes: [
-              "BBA in General Business Management [1920] (GBM)",
-              "SBM requirement for BBA students [1920]",
-              "Common Core [before 2022] (CC)",
-            ],
-          },
-        ],
-      ]),
-    );
-  }, [dispatch, courseEnrollments]);
 
   return (
     <main className="w-full h-full mx-auto p-4">

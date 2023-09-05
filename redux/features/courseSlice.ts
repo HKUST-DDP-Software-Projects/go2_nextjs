@@ -26,9 +26,7 @@ export type CourseState = {
 };
 
 const initialState = {
-  courseHistory: JSON.parse(
-    window.localStorage.getItem("courseHistory") || "[]",
-  ),
+  courseHistory: [],
   courseCatalog: Object.fromEntries(
     rawCourses.map((course) => [
       course.code,
@@ -60,10 +58,10 @@ export const course = createSlice({
     },
     addCourseEnrollment: (state, action: PayloadAction<CourseEnrollment>) => {
       state.courseHistory.push(action.payload);
-      window.localStorage.setItem(
-        "courseHistory",
-        JSON.stringify(state.courseHistory),
-      );
+      // window.localStorage.setItem(
+      //   "courseHistory",
+      //   JSON.stringify(state.courseHistory),
+      // );
     },
     editCourseEnrollment: (
       state,
@@ -76,10 +74,10 @@ export const course = createSlice({
           courseEnrollment.term === oldCourseEnrollment.term,
       );
       state.courseHistory[index] = newCourseEnrollment;
-      window.localStorage.setItem(
-        "courseHistory",
-        JSON.stringify(state.courseHistory),
-      );
+      // window.localStorage.setItem(
+      //   "courseHistory",
+      //   JSON.stringify(state.courseHistory),
+      // );
     },
     removeCourseEnrollment: (
       state,
@@ -91,10 +89,10 @@ export const course = createSlice({
           courseEnrollment.term === action.payload.term,
       );
       state.courseHistory.splice(index, 1);
-      window.localStorage.setItem(
-        "courseHistory",
-        JSON.stringify(state.courseHistory),
-      );
+      // window.localStorage.setItem(
+      //   "courseHistory",
+      //   JSON.stringify(state.courseHistory),
+      // );
     },
     handleImport: (state, action: PayloadAction<string>) => {
       const rawData = action.payload;
@@ -145,10 +143,10 @@ export const course = createSlice({
       });
 
       state.courseHistory = courses;
-      window.localStorage.setItem(
-        "courseHistory",
-        JSON.stringify(state.courseHistory),
-      );
+      // window.localStorage.setItem(
+      //   "courseHistory",
+      //   JSON.stringify(state.courseHistory),
+      // );
     },
   },
 });
