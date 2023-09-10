@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 export interface AccordionItem {
   key: string;
@@ -22,12 +22,13 @@ export default function Accordion({
   );
 
   // update activeIndex when defaultActiveIndex changes
-  if (defaultActiveIndex && activeIndex !== defaultActiveIndex) {
-    setActiveIndex(defaultActiveIndex);
-  }
+  useEffect(() => {
+    if (defaultActiveIndex) {
+      setActiveIndex(defaultActiveIndex);
+    }
+  }, [defaultActiveIndex]);
 
   const handleClick = (index: number) => {
-    console.log("handleClick", index);
     if (activeIndex.includes(index)) {
       setActiveIndex(activeIndex.filter((item) => item !== index));
     } else {
