@@ -330,7 +330,6 @@ const CoursePage = () => {
         <textarea
           className="border border-gray-300 px-4 py-2 w-full rounded-md"
           onPaste={(event) => {
-            console.log(event);
             event.preventDefault();
             dispatch(handleImport(event.clipboardData.getData("text/plain")));
             setIsImportCourseModalOpen(false);

@@ -88,89 +88,106 @@ export default function ProgrammeSelection() {
   };
 
   return (
-    <div className="flex justify-center">
-      <DragDropContext onDragEnd={handleDragEnd}>
-        {degrees.map((degree, degreeIndex) => (
-          <div key={degree.name} className="p-4 w-96">
-            {editingDegreeIndex === degreeIndex ? (
-              <div className="flex items-start justify-between">
-                <input
-                  type="text"
-                  value={editingDegreeName}
-                  onChange={(e) => setEditingDegreeName(e.currentTarget.value)}
-                  className="text-lg font-medium mb-2 border-b border-gray-300 focus:outline-none w-full"
-                />
-                <SaveIcon
-                  className="h-6 w-6 ml-2 text-green-500 cursor-pointer"
-                  onClick={() => {
-                    handleDegreeNameSave(degreeIndex, editingDegreeName);
-                    setEditingDegreeIndex(null);
-                  }}
-                />
-              </div>
-            ) : (
-              <div className="flex items-start justify-between">
-                <h3 className="text-lg font-medium mb-2 text-ellipsis whitespace-nowrap overflow-hidden">
-                  {degree.name}
-                </h3>
-                <PencilIcon
-                  className="h-6 w-6 ml-2 text-gray-500 cursor-pointer"
-                  onClick={() => handleDegreeNameEdit(degreeIndex)}
-                />
-              </div>
-            )}
-            <div className="mt-2">
-              <Autocomplete
-                options={programRequirements.map((program) => program.name)}
-                onSelect={(program) =>
-                  handleProgramSelect(program, degree.name)
-                }
-                placeholder="Add programme"
-                label=""
-                displayOption={(option) => option}
-                clearOnSelect
-              />
-            </div>
-            <Droppable droppableId={degree.name}>
-              {(provided) => (
-                <ul
-                  {...provided.droppableProps}
-                  ref={provided.innerRef}
-                  className="border border-gray-300 p-2 rounded-md"
-                >
-                  {degree.programmes.map((program, index) => (
-                    <Draggable
-                      key={`${degreeIndex}-${program}`}
-                      draggableId={`${degreeIndex}-${program}`}
-                      index={index}
-                    >
-                      {(provided) => (
-                        <li
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          ref={provided.innerRef}
-                          className="flex justify-between items-center bg-white rounded-md p-2 mb-2 shadow-sm"
-                        >
-                          <span>{program}</span>
-                          <button
-                            onClick={() =>
-                              handleProgramRemove(program, degree.name)
-                            }
-                            className="text-red-500 hover:text-red-700"
-                          >
-                            <TrashIcon className="h-5 w-5" />
-                          </button>
-                        </li>
-                      )}
-                    </Draggable>
-                  ))}
-                  {provided.placeholder}
-                </ul>
+    <div className="flex flex-col justify-center items-center">
+      {/* Add degree button */}
+      <button
+        className="bg-gray-200 rounded-sm px-4 py-2 mr-2 mb-2"
+        onClick={() => {
+          setDegrees([
+            ...degrees,
+            { name: "New program", programmes: [] },
+          ] as DegreeSelection[]);
+          dispatch(setSelectedProgrammes([courseEnrollments, degrees]));
+        }}
+      >
+        Add degree
+      </button>
+      <div className="flex">
+        <DragDropContext onDragEnd={handleDragEnd}>
+          {degrees.map((degree, degreeIndex) => (
+            <div key={degree.name} className="p-4 w-96">
+              {editingDegreeIndex === degreeIndex ? (
+                <div className="flex items-start justify-between">
+                  <input
+                    type="text"
+                    value={editingDegreeName}
+                    onChange={(e) =>
+                      setEditingDegreeName(e.currentTarget.value)
+                    }
+                    className="text-lg font-medium mb-2 border-b border-gray-300 focus:outline-none w-full"
+                  />
+                  <SaveIcon
+                    className="h-6 w-6 ml-2 text-green-500 cursor-pointer"
+                    onClick={() => {
+                      handleDegreeNameSave(degreeIndex, editingDegreeName);
+                      setEditingDegreeIndex(null);
+                    }}
+                  />
+                </div>
+              ) : (
+                <div className="flex items-start justify-between">
+                  <h3 className="text-lg font-medium mb-2 text-ellipsis whitespace-nowrap overflow-hidden">
+                    {degree.name}
+                  </h3>
+                  <PencilIcon
+                    className="h-6 w-6 ml-2 text-gray-500 cursor-pointer"
+                    onClick={() => handleDegreeNameEdit(degreeIndex)}
+                  />
+                </div>
               )}
-            </Droppable>
-          </div>
-        ))}
-      </DragDropContext>
+              <div className="mt-2">
+                <Autocomplete
+                  options={programRequirements.map((program) => program.name)}
+                  onSelect={(program) =>
+                    handleProgramSelect(program, degree.name)
+                  }
+                  placeholder="Add programme"
+                  label=""
+                  displayOption={(option) => option}
+                  clearOnSelect
+                />
+              </div>
+              <Droppable droppableId={degree.name}>
+                {(provided) => (
+                  <ul
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                    className="border border-gray-300 p-2 rounded-md"
+                  >
+                    {degree.programmes.map((program, index) => (
+                      <Draggable
+                        key={`${degreeIndex}-${program}`}
+                        draggableId={`${degreeIndex}-${program}`}
+                        index={index}
+                      >
+                        {(provided) => (
+                          <li
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            ref={provided.innerRef}
+                            className="flex justify-between items-center bg-white rounded-md p-2 mb-2 shadow-sm"
+                          >
+                            <span>{program}</span>
+                            <button
+                              onClick={() =>
+                                handleProgramRemove(program, degree.name)
+                              }
+                              className="text-red-500 hover:text-red-700"
+                            >
+                              <TrashIcon className="h-5 w-5" />
+                            </button>
+                          </li>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </ul>
+                )}
+              </Droppable>
+            </div>
+          ))}
+        </DragDropContext>
+      </div>
     </div>
   );
 }

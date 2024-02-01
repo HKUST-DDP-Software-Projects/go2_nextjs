@@ -10,6 +10,9 @@ import {
 } from "@/helpers/matcher";
 import { Requirement, RequirementRule } from "@/helpers/requirement";
 import { match } from "@/redux/features/plannerSlice";
+import { useState } from "react";
+import CourseSelectionModal from "../course/selection_modal";
+import { PencilIcon } from "@heroicons/react/outline";
 
 interface ChipProps {
   label: string;
@@ -23,9 +26,18 @@ function Chip({ label }: ChipProps) {
   );
 }
 
-interface ListProps {
+type OpenCourseSelectionModal = (
+  degreeIdx: number,
+  programmeIdx: number,
+  requirementName: string,
+  courseListName: string,
+) => void;
+
+interface RequirementListProps {
   name: string;
-  courses: string[];
+  selectedCourses: string[];
+  courseList: string[];
+  openCourseSelectionModal: OpenCourseSelectionModal;
 }
 
 function ControlledCheckbox({ checked }: { checked: boolean }) {
@@ -61,17 +73,28 @@ function getRuleString(rule: RequirementRule): string {
   return ruleString;
 }
 
-function List({ name, courses }: ListProps) {
+function RequirementList({
+  name,
+  selectedCourses,
+  courseList,
+  openCourseSelectionModal,
+}: RequirementListProps) {
   return (
-    <div className="border-r border-gray-200 mr-4 p-4 rounded-sm w-72 h-full flex-shrink-0 flex flex-col bg-white">
+    <div className="border-r border-gray-200 mr-4 p-4 rounded-sm w-72 h-full flex-shrink-0 flex flex-col bg-white relative">
       <div className="flex-shrink-0">
         <h3 className="text-lg font-medium">{name}</h3>
       </div>
       <div className="pl-4 flex flex-wrap overflow-y-scroll">
-        {courses.map((course) => (
+        {selectedCourses.map((course) => (
           <Chip key={course} label={course} />
         ))}
       </div>
+      <button
+        className="absolute bottom-2 right-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+        onClick={() => openCourseSelectionModal(courseList, selectedCourses)}
+      >
+        <PencilIcon className="h-5 w-5" />
+      </button>
     </div>
   );
 }
@@ -79,9 +102,17 @@ function List({ name, courses }: ListProps) {
 interface RequirementProps {
   requirement: Requirement;
   planner: { [key: string]: string[] };
+  openCourseSelectionModal: (
+    courseList: string[],
+    selectedCourses: string[],
+  ) => void;
 }
 
-function RequirementComponent({ requirement, planner }: RequirementProps) {
+function RequirementComponent({
+  requirement,
+  planner,
+  openCourseSelectionModal,
+}: RequirementProps) {
   const selectedCourses = planner?.[requirement.name] || [];
   // find the first valid ruleset
   const validRulesetIdx = requirement.rulesets.findIndex((ruleset) =>
@@ -96,13 +127,19 @@ function RequirementComponent({ requirement, planner }: RequirementProps) {
   return (
     <div className="pl-4 flex flex-col md:flex-row">
       <div className="md:w-3/4 w-full h-48 flex-grow flex overflow-x-auto">
-        {Object.entries(requirement.lists).map(([name, courses]) => (
-          <List
+        {Object.entries(requirement.lists).map(([name, courseList]) => (
+          <RequirementList
             key={name}
             name={name}
-            courses={courses!.filter((course) =>
-              selectedCourses.includes(course),
-            )}
+            selectedCourses={[
+              ...new Set(
+                courseList!.filter((course) =>
+                  selectedCourses.includes(course),
+                ),
+              ),
+            ]}
+            courseList={courseList!}
+            openCourseSelectionModal={openCourseSelectionModal}
           />
         ))}
       </div>
@@ -177,6 +214,11 @@ export default function Planner() {
   );
   const planner = useAppSelector((state) => state.plannerReducer.planner);
 
+  const [isCourseSelectionModalOpen, setIsCourseSelectionModalOpen] =
+    useState(false);
+  const [courseList, setCourseList] = useState<string[]>([]);
+  const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
+
   return (
     <main className="w-full h-full mx-auto p-4">
       <Tabs
@@ -211,6 +253,14 @@ export default function Planner() {
                             <RequirementComponent
                               requirement={requirement}
                               planner={planner[degreeIdx][programmeIdx]}
+                              openCourseSelectionModal={(
+                                courseList,
+                                selectedCourses,
+                              ) => {
+                                setIsCourseSelectionModalOpen(true);
+                                setCourseList(courseList);
+                                setSelectedCourses(selectedCourses);
+                              }}
                             />
                           ),
                         }))}
@@ -222,6 +272,12 @@ export default function Planner() {
           ),
         }))}
       ></Tabs>
+      <CourseSelectionModal
+        isOpen={isCourseSelectionModalOpen}
+        onClose={() => setIsCourseSelectionModalOpen(false)}
+        selectedCourses={selectedCourses}
+        courseList={courseList}
+      />
     </main>
   );
 }

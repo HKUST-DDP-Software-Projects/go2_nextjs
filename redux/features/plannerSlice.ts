@@ -115,8 +115,21 @@ export const planner = createSlice({
         );
       }
     },
+    setSelectedCoursesInRequirement: (
+      state,
+      action: PayloadAction<[number, number, string, string[]]>,
+    ) => {
+      const [degreeIdx, programmeIdx, requirementName, courseCodes] =
+        action.payload;
+      state.planner[degreeIdx][programmeIdx][requirementName] = courseCodes;
+    },
   },
 });
 
-export const { reset, match, setSelectedProgrammes } = planner.actions;
+export const {
+  reset,
+  match,
+  setSelectedProgrammes,
+  setSelectedCoursesInRequirement,
+} = planner.actions;
 export default planner.reducer;
