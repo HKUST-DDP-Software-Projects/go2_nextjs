@@ -14,11 +14,63 @@ export enum CourseStatus {
   PLANNED = "Planned",
 }
 
+export type CourseGrade =
+  | "A+"
+  | "A"
+  | "A-"
+  | "B+"
+  | "B"
+  | "B-"
+  | "C+"
+  | "C"
+  | "C-"
+  | "D"
+  | "F"
+  | "AU"
+  | "DI"
+  | "PA"
+  | "I"
+  | "P"
+  | "PP"
+  | "T"
+  | "W";
+
 export type CourseEnrollment = {
   term: string;
-  grade: string;
+  grade: CourseGrade;
   status: CourseStatus;
 } & CourseDetail;
+
+export function gradeToNumber(grade: string): number {
+  switch (grade) {
+    case "A+":
+      return 4.3;
+    case "A":
+      return 4;
+    case "A-":
+      return 3.7;
+    case "B+":
+      return 3.3;
+    case "B":
+      return 3;
+    case "B-":
+      return 2.7;
+    case "C+":
+      return 2.3;
+    case "C":
+      return 2;
+    case "C-":
+      return 1.7;
+    case "D":
+      return 1;
+    default:
+      return 0;
+  }
+}
+
+export function isCourseGradeRelevant(grade: CourseGrade): boolean {
+  return !["AU", "DI", "PA", "I", "P", "PP", "T", "W"].includes(grade);
+}
 
 export type CourseState = {
   courseHistory: CourseEnrollment[];
