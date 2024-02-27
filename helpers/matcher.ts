@@ -1,5 +1,10 @@
 // import { CourseEnrollment } from './course-enrollment-interface'
-import { CourseEnrollment, CourseStatus, gradeToNumber, isCourseGradeRelevant } from "@/redux/features/courseSlice";
+import {
+  CourseEnrollment,
+  CourseStatus,
+  gradeToNumber,
+  isCourseGradeRelevant,
+} from "@/redux/features/courseSlice";
 import {
   CourseListMap,
   CourseListObject,
@@ -725,7 +730,9 @@ export function populateCourseListObject(
   courses: CourseEnrollment[],
   gr23s: GR23[],
 ): CourseListObject {
-  const courseCodes = courses.filter(courseEnrollment => courseEnrollment.status !== "").map((c) => c.code);
+  const courseCodes = courses
+    .filter((courseEnrollment) => isCourseGradeRelevant(courseEnrollment.grade))
+    .map((c) => c.code);
   const newCourseListObject: CourseListObject = {};
   const existingCourses = Object.values(courseListObject).flat();
   for (const [courseListKey, courseList] of Object.entries(courseListObject)) {

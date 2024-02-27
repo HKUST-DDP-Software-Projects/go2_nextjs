@@ -55,7 +55,7 @@ const CoursePage = () => {
     term: "",
     grade: "",
     status: CourseStatus.PLANNED,
-  };
+  } satisfies CourseEnrollment;
   const [formData, setFormData] = useState<CourseEnrollment>(initialFormData);
 
   const handleInputChange = (

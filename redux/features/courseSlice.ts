@@ -33,7 +33,8 @@ export type CourseGrade =
   | "P"
   | "PP"
   | "T"
-  | "W";
+  | "W"
+  | "";
 
 export type CourseEnrollment = {
   term: string;
@@ -69,7 +70,7 @@ export function gradeToNumber(grade: string): number {
 }
 
 export function isCourseGradeRelevant(grade: CourseGrade): boolean {
-  return !["AU", "DI", "PA", "I", "P", "PP", "T", "W"].includes(grade);
+  return !["AU", "DI", "PA", "I", "P", "PP", "T", "W", ""].includes(grade);
 }
 
 export type CourseState = {
