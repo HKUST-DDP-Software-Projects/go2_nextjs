@@ -10,8 +10,6 @@ import {
 } from "@/helpers/matcher";
 import { Requirement, RequirementRule } from "@/helpers/requirement";
 import { match } from "@/redux/features/plannerSlice";
-import { useState } from "react";
-import CourseSelectionModal from "../course/selection_modal";
 import { PencilIcon } from "@heroicons/react/outline";
 
 interface ChipProps {
@@ -27,10 +25,8 @@ function Chip({ label }: ChipProps) {
 }
 
 type OpenCourseSelectionModal = (
-  degreeIdx: number,
-  programmeIdx: number,
-  requirementName: string,
-  courseListName: string,
+  courseList: string[],
+  selectedCourses: string[],
 ) => void;
 
 interface RequirementListProps {
@@ -214,10 +210,10 @@ export default function Planner() {
   );
   const planner = useAppSelector((state) => state.plannerReducer.planner);
 
-  const [isCourseSelectionModalOpen, setIsCourseSelectionModalOpen] =
-    useState(false);
-  const [courseList, setCourseList] = useState<string[]>([]);
-  const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
+  // const [isCourseSelectionModalOpen, setIsCourseSelectionModalOpen] =
+  //   useState(false);
+  // const [courseList, setCourseList] = useState<string[]>([]);
+  // const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
 
   return (
     <main className="w-full h-full mx-auto p-4">
@@ -253,14 +249,7 @@ export default function Planner() {
                             <RequirementComponent
                               requirement={requirement}
                               planner={planner[degreeIdx][programmeIdx]}
-                              openCourseSelectionModal={(
-                                courseList,
-                                selectedCourses,
-                              ) => {
-                                setIsCourseSelectionModalOpen(true);
-                                setCourseList(courseList);
-                                setSelectedCourses(selectedCourses);
-                              }}
+                              openCourseSelectionModal={() => {}}
                             />
                           ),
                         }))}
@@ -272,12 +261,12 @@ export default function Planner() {
           ),
         }))}
       ></Tabs>
-      <CourseSelectionModal
+      {/* <CourseSelectionModal
         isOpen={isCourseSelectionModalOpen}
         onClose={() => setIsCourseSelectionModalOpen(false)}
         selectedCourses={selectedCourses}
         courseList={courseList}
-      />
+      /> */}
     </main>
   );
 }
