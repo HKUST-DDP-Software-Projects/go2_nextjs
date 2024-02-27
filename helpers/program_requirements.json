@@ -507,7 +507,7 @@
           {
             "name": "LANG 2030",
             "lists": {
-              "LANG 2030": ["LANG 2030"]
+              "LANG 2030": ["LANG 2030", "LANG 2030H"]
             },
             "rulesets": [
               {
@@ -1276,7 +1276,7 @@
           {
             "name": "LANG 2030",
             "lists": {
-              "LANG 2030": ["LANG 2030"]
+              "LANG 2030": ["LANG 2030", "LANG 2030H"]
             },
             "rulesets": [
               {
@@ -1655,7 +1655,7 @@
           {
             "name": "LANG 2030",
             "lists": {
-              "LANG 2030": ["LANG 2030"]
+              "LANG 2030": ["LANG 2030", "LANG 2030H"]
             },
             "rulesets": [
               {
@@ -7584,7 +7584,7 @@
           {
             "name": "LANG 2030",
             "lists": {
-              "LANG 2030": ["LANG 2030"]
+              "LANG 2030": ["LANG 2030", "LANG 2030H"]
             },
             "rulesets": [
               {
@@ -8384,7 +8384,7 @@
           {
             "name": "LANG 2030",
             "lists": {
-              "LANG 2030": ["LANG 2030"]
+              "LANG 2030": ["LANG 2030", "LANG 2030H"]
             },
             "rulesets": [
               {
@@ -9677,7 +9677,7 @@
           {
             "name": "Technical Communication I",
             "lists": {
-              "LANG 2030": ["LANG 2030"]
+              "LANG 2030": ["LANG 2030", "LANG 2030H"]
             },
             "rulesets": [
               {
