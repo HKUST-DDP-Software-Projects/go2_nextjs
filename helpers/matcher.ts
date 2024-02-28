@@ -4,6 +4,7 @@ import {
   CourseStatus,
   gradeToNumber,
   isCourseGradeRelevant,
+  isCourseRelevant,
 } from "@/redux/features/courseSlice";
 import {
   CourseListMap,
@@ -475,7 +476,9 @@ export function assignCoursesToCourseLists(
   globalRecursionCount = 0;
   globalProgramValidateCount = 0;
 
-  const courseCodes = courses.map((c) => c.code);
+  const courseCodes = courses
+    .filter((courseEnrollment) => isCourseRelevant(courseEnrollment))
+    .map((c) => c.code);
 
   // courseUsableCount[idx of programme][idx of course] = number of times the course can be used
   const courseUsableCount: number[][] = [];
@@ -652,7 +655,9 @@ export function assignCoursesToCourseListsPartial(
   courses: CourseEnrollment[],
 ): CourseListMap[] {
   const courseUsableCount: number[][] = [];
-  const courseCodes = courses.map((c) => c.code);
+  const courseCodes = courses
+    .filter((courseEnrollment) => isCourseRelevant(courseEnrollment))
+    .map((c) => c.code);
 
   requirements.forEach((programme, i) => {
     // if a course is in the reusable list, it can be used twice
@@ -690,7 +695,9 @@ export function populateCourseListMap(
   courses: CourseEnrollment[],
   gr23s: GR23[],
 ): CourseListMap {
-  const courseCodes = courses.map((c) => c.code);
+  const courseCodes = courses
+    .filter((courseEnrollment) => isCourseRelevant(courseEnrollment))
+    .map((c) => c.code);
   const newCourseListMap: CourseListMap = new Map();
   const existingCourses = [...courseListMap.values()].flat();
   for (const [courseListKey, courseList] of courseListMap) {
@@ -731,8 +738,9 @@ export function populateCourseListObject(
   gr23s: GR23[],
 ): CourseListObject {
   const courseCodes = courses
-    .filter((courseEnrollment) => isCourseGradeRelevant(courseEnrollment.grade))
+    .filter((courseEnrollment) => isCourseRelevant(courseEnrollment))
     .map((c) => c.code);
+
   const newCourseListObject: CourseListObject = {};
   const existingCourses = Object.values(courseListObject).flat();
   for (const [courseListKey, courseList] of Object.entries(courseListObject)) {

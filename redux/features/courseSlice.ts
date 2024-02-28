@@ -69,8 +69,18 @@ export function gradeToNumber(grade: string): number {
   }
 }
 
+// Return true if the grade is relevant to the GPA calculation
 export function isCourseGradeRelevant(grade: CourseGrade): boolean {
   return !["AU", "DI", "PA", "I", "P", "PP", "T", "W", ""].includes(grade);
+}
+
+// Return true if the course is relevant to requirement matching
+// TODO: Check if there is any other grade that makes the course irrelevant
+export function isCourseRelevant(course: CourseEnrollment): boolean {
+  return (
+    (course.status === CourseStatus.TAKEN && !["AU"].includes(course.grade)) ||
+    course.status === CourseStatus.TRANSFERRED
+  );
 }
 
 export type CourseState = {
