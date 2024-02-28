@@ -4,14 +4,12 @@ import Autocomplete from "@/components/autocomplete";
 import Modal from "@/components/modal";
 import Table from "@/components/table";
 import {
-  CourseDetail,
-  CourseEnrollment,
-  CourseStatus,
   addCourseEnrollment,
   editCourseEnrollment,
   removeCourseEnrollment,
   handleImport,
 } from "@/redux/features/courseSlice";
+import { CourseDetail, CourseEnrollment, CourseStatus } from "@/helpers/course";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/outline";
 import { useState } from "react";

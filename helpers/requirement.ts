@@ -1,6 +1,5 @@
 import rawProgramRequirements from "@/helpers/program_requirements.json";
-
-import { CourseEnrollment } from "@/redux/features/courseSlice";
+import { CourseEnrollment } from "@/helpers/course";
 
 export type CourseEnrollmentListMap = Map<string, CourseEnrollment[]>;
 export type CourseListMap = Map<string, string[]>;

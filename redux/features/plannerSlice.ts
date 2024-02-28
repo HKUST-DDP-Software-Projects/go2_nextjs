@@ -9,7 +9,7 @@ import {
   programRequirements,
 } from "@/helpers/requirement";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { CourseEnrollment } from "./courseSlice";
+import { CourseEnrollment } from "@/helpers/course";
 
 type Degree = {
   name: string;

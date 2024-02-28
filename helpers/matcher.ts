@@ -5,7 +5,7 @@ import {
   gradeToNumber,
   isCourseGradeRelevant,
   isCourseRelevant,
-} from "@/redux/features/courseSlice";
+} from "@/helpers/course";
 import {
   CourseListMap,
   CourseListObject,
