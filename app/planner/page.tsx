@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 // import { programRequirements } from "@/helpers/requirement";
@@ -119,6 +120,39 @@ function RequirementComponent({
   const defaultActiveIndex = requirement.rulesets
     .map((_, index) => index)
     .filter((index) => index !== validRulesetIdx);
+  
+  // Step 1: Create a list with courses that are not taken under unfulfilled requirements
+  let isRequirementMet = false;
+  for (let ruleset of requirement.rulesets) {
+    if (checkRequirementRuleSet(requirement, ruleset, selectedCourses)) {
+      isRequirementMet = true;
+      break;
+    }
+  }
+  let courseList = [];
+  if (!isRequirementMet){
+    
+    let requirementList = [];
+    for (let ruleset of requirement.rulesets) {
+      // Assume this ruleset is not fulfilled
+      for (let rule of ruleset.rules) {
+        if (!checkRequirementRule(requirement, rule, selectedCourses)) {
+          requirementList.push(...rule.lists);
+        }
+      }
+    }
+    // console.log("requirementList", requirementList);
+    for (let [list_name, course_list] of Object.entries(requirement.lists)) {
+      if (requirementList.includes(list_name)) {
+        if(course_list){
+          courseList.push(...course_list);
+        }
+      }
+    }
+    // console.log("courseList", courseList);
+  }
+  //Step 2: Filter out courses with unfulfilled prerequisites
+
 
   return (
     <div className="pl-4 flex flex-col md:flex-row">
@@ -192,6 +226,34 @@ function RequirementComponent({
                 </div>
               ),
             }))}
+
+          defaultActive={false}
+          defaultActiveIndex={defaultActiveIndex}
+        />
+        
+      </div>
+      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4">
+        <Accordion
+          items={[
+            {
+              key: "selectable courses",
+              title: (
+                <div className="flex items-center">
+                  <ControlledCheckbox checked={isRequirementMet} />
+                  <h3 className="text-lg font-medium ml-2">
+                    Selectable Courses
+                  </h3>
+                </div>
+              ),
+              content: (
+                <ul>
+                  {courseList.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              )
+            }
+          ]}
           defaultActive={false}
           defaultActiveIndex={defaultActiveIndex}
         />
