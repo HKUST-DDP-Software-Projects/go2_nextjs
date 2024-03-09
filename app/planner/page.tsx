@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+// import all_courses_w_prereq from "@/helpers/all_courses_w_prereq.json";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 // import { programRequirements } from "@/helpers/requirement";
@@ -10,6 +11,8 @@ import {
   checkRequirementRuleSet,
 } from "@/helpers/matcher";
 import { Requirement, RequirementRule } from "@/helpers/requirement";
+import { courseCatalog, Course, checkPrerequisiteGroup } from "@/helpers/courses";
+
 import { match } from "@/redux/features/plannerSlice";
 import { PencilIcon } from "@heroicons/react/outline";
 
@@ -105,6 +108,48 @@ interface RequirementProps {
   ) => void;
 }
 
+function courseForNextSem(
+  requirement: Requirement, 
+  selectedCourses: string[]
+  // courseCatalog: Course[]
+  ){
+  let isRequirementMet = false;
+  for (let ruleset of requirement.rulesets) {
+    if (checkRequirementRuleSet(requirement, ruleset, selectedCourses)) {
+      isRequirementMet = true;
+      break;
+    }
+  }
+  let courseList = [];
+  if (!isRequirementMet) {
+    let requirementList = [];
+    for (let ruleset of requirement.rulesets) {
+      // Assume this ruleset is not fulfilled
+      for (let rule of ruleset.rules) {
+        if (!checkRequirementRule(requirement, rule, selectedCourses)) {
+          requirementList.push(...rule.lists);
+        }
+      }
+    }
+    for (let [list_name, course_list] of Object.entries(requirement.lists)) {
+      if (requirementList.includes(list_name)) {
+        if (course_list) {
+          courseList.push(...course_list);
+        }
+      }
+    }
+  }
+  console.log("courseList", courseList)
+  //Step 2: Filter out courses with unfulfilled prerequisites
+  
+  const filteredCourses = courseList
+    .map((course) => courseCatalog.find((c) => c.code === course))
+    .filter((course) => !(course && checkPrerequisiteGroup(course, selectedCourses)));
+  console.log("filteredCourses", filteredCourses)
+  return filteredCourses
+}
+
+
 function RequirementComponent({
   requirement,
   planner,
@@ -121,38 +166,8 @@ function RequirementComponent({
     .map((_, index) => index)
     .filter((index) => index !== validRulesetIdx);
   
-  // Step 1: Create a list with courses that are not taken under unfulfilled requirements
-  let isRequirementMet = false;
-  for (let ruleset of requirement.rulesets) {
-    if (checkRequirementRuleSet(requirement, ruleset, selectedCourses)) {
-      isRequirementMet = true;
-      break;
-    }
-  }
-  let courseList = [];
-  if (!isRequirementMet){
-    
-    let requirementList = [];
-    for (let ruleset of requirement.rulesets) {
-      // Assume this ruleset is not fulfilled
-      for (let rule of ruleset.rules) {
-        if (!checkRequirementRule(requirement, rule, selectedCourses)) {
-          requirementList.push(...rule.lists);
-        }
-      }
-    }
-    // console.log("requirementList", requirementList);
-    for (let [list_name, course_list] of Object.entries(requirement.lists)) {
-      if (requirementList.includes(list_name)) {
-        if(course_list){
-          courseList.push(...course_list);
-        }
-      }
-    }
-    // console.log("courseList", courseList);
-  }
-  //Step 2: Filter out courses with unfulfilled prerequisites
-
+  
+  
 
   return (
     <div className="pl-4 flex flex-col md:flex-row">
@@ -239,7 +254,7 @@ function RequirementComponent({
               key: "selectable courses",
               title: (
                 <div className="flex items-center">
-                  <ControlledCheckbox checked={isRequirementMet} />
+                  
                   <h3 className="text-lg font-medium ml-2">
                     Selectable Courses
                   </h3>
@@ -247,8 +262,8 @@ function RequirementComponent({
               ),
               content: (
                 <ul>
-                  {courseList.map((item, index) => (
-                    <li key={index}>{item}</li>
+                  {courseForNextSem(requirement, selectedCourses).map((course, index) => (
+                    <li key={index}>{course?.code}</li>
                   ))}
                 </ul>
               )
