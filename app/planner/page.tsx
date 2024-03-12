@@ -165,8 +165,8 @@ function selectableCourses(
     {uniqueFilteredCourses.length > 0 ? (
       <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
         {uniqueFilteredCourses.map((course) => (
-          <li key={course.code} style={{ marginBottom: '10px', backgroundColor: '#ecf0f1', padding: '10px', borderRadius: '5px' }}>
-            {course.code}
+          <li key={course?.code} style={{ marginBottom: '10px', backgroundColor: '#ecf0f1', padding: '10px', borderRadius: '5px' }}>
+            {course?.code}
           </li>
         ))}
       </ul>
