@@ -11,10 +11,12 @@ import {
   checkRequirementRuleSet,
 } from "@/helpers/matcher";
 import { Requirement, RequirementRule } from "@/helpers/requirement";
-import { courseCatalog, Course, checkPrerequisiteGroup } from "@/helpers/courses";
+import { courseCatalog, Course, checkPrerequisiteGroup, returnCorequisiteGroup, checkExclusionGroup } from "@/helpers/courses";
 
 import { match } from "@/redux/features/plannerSlice";
 import { PencilIcon } from "@heroicons/react/outline";
+import { selectCourseCodes, CourseEnrollment, CourseStatus } from "@/redux/features/courseSlice";
+
 
 interface ChipProps {
   label: string;
@@ -108,11 +110,12 @@ interface RequirementProps {
   ) => void;
 }
 
-function courseForNextSem(
+
+function selectableCourses(
   requirement: Requirement, 
   selectedCourses: string[]
-  // courseCatalog: Course[]
   ){
+  // console.log("courseCodes", courseCodes)
   let isRequirementMet = false;
   for (let ruleset of requirement.rulesets) {
     if (checkRequirementRuleSet(requirement, ruleset, selectedCourses)) {
@@ -139,16 +142,55 @@ function courseForNextSem(
       }
     }
   }
-  console.log("courseList", courseList)
-  //Step 2: Filter out courses with unfulfilled prerequisites
-  
+
+  // Prerequisites & Exclusions Filtering
+  const courseCodes = useAppSelector((state) => selectCourseCodes(state.courseReducer));
   const filteredCourses = courseList
     .map((course) => courseCatalog.find((c) => c.code === course))
-    .filter((course) => !(course && checkPrerequisiteGroup(course, selectedCourses)));
-  console.log("filteredCourses", filteredCourses)
-  return filteredCourses
-}
+    .filter((course) => course && checkPrerequisiteGroup(course, courseCodes) && !checkExclusionGroup(course, courseCodes));
+  const uniqueFilteredCourses = Array.from(new Set(filteredCourses));
+  console.log("uniqueFilteredCourses", uniqueFilteredCourses);
+  // Corequisite listing
+  const corequisiteDict: { [key: string]: string[] } = {};
+  uniqueFilteredCourses.forEach((course) => {
+    const corequisites = returnCorequisiteGroup(course, courseCodes);
+    if (course && corequisites.length > 0) {
+      corequisiteDict[course.code] = corequisites;
+    }
+  });
+  // return { corequisiteDict, uniqueFilteredCourses };
+  return (
+    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+    <h2 style={{ color: '#2c3e50', marginBottom: '10px' }}>Selectable Courses:</h2>
+    {uniqueFilteredCourses.length > 0 ? (
+      <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
+        {uniqueFilteredCourses.map((course) => (
+          <li key={course.code} style={{ marginBottom: '10px', backgroundColor: '#ecf0f1', padding: '10px', borderRadius: '5px' }}>
+            {course.code}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No courses available.</p>
+    )}
 
+    <h2 style={{ color: '#2c3e50', marginTop: '20px', marginBottom: '10px' }}>Corequisite List:</h2>
+    {Object.keys(corequisiteDict).length > 0 ? (
+      <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
+        {Object.entries(corequisiteDict).map(([courseCode, corequisites]) => (
+          <li key={courseCode} style={{ marginBottom: '10px', backgroundColor: '#ecf0f1', padding: '10px', borderRadius: '5px' }}>
+            <strong>{courseCode}:</strong> {corequisites.join(", ")}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No corequisites available.</p>
+    )}
+  </div>
+
+  );
+  
+}
 
 function RequirementComponent({
   requirement,
@@ -166,12 +208,10 @@ function RequirementComponent({
     .map((_, index) => index)
     .filter((index) => index !== validRulesetIdx);
   
-  
-  
-
   return (
     <div className="pl-4 flex flex-col md:flex-row">
-      <div className="md:w-3/4 w-full h-48 flex-grow flex overflow-x-auto">
+      <div className="md:w-2/4 w-full h-48 flex-grow flex overflow-x-auto bg-white shadow rounded-lg p-4">
+        <h2 className="text-2xl font-bold mb-4">Course Requirements</h2>
         {Object.entries(requirement.lists).map(([name, courseList]) => (
           <RequirementList
             key={name}
@@ -188,7 +228,8 @@ function RequirementComponent({
           />
         ))}
       </div>
-      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4">
+      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4 bg-white shadow rounded-lg mt-4 md:mt-0 md:ml-4">
+        <h2 className="text-2xl font-bold mb-4">Rulesets</h2>
         <Accordion
           items={[...requirement.rulesets]
             .sort(
@@ -245,28 +286,21 @@ function RequirementComponent({
           defaultActive={false}
           defaultActiveIndex={defaultActiveIndex}
         />
-        
       </div>
-      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4">
+      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4 bg-white shadow rounded-lg mt-4 md:mt-0 md:ml-4">
+        <h2 className="text-2xl font-bold mb-4">Courses for You</h2>
         <Accordion
           items={[
             {
               key: "selectable courses",
               title: (
                 <div className="flex items-center">
-                  
                   <h3 className="text-lg font-medium ml-2">
                     Selectable Courses
                   </h3>
                 </div>
               ),
-              content: (
-                <ul>
-                  {courseForNextSem(requirement, selectedCourses).map((course, index) => (
-                    <li key={index}>{course?.code}</li>
-                  ))}
-                </ul>
-              )
+              content: selectableCourses(requirement, selectedCourses)
             }
           ]}
           defaultActive={false}

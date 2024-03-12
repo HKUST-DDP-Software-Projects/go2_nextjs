@@ -1,5 +1,5 @@
 import rawCourses from "@/helpers/courses_1920.json";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, createSelector } from "@reduxjs/toolkit";
 
 export type CourseDetail = {
   code: string;
@@ -24,6 +24,11 @@ export type CourseState = {
   courseHistory: CourseEnrollment[];
   courseCatalog: Record<string, CourseDetail>;
 };
+
+export const selectCourseCodes = createSelector(
+  (state: CourseState) => state.courseHistory, // Provide the correct type for the 'courseEnrollments' parameter
+  (courseEnrollments) => courseEnrollments.map((course) => course.code)
+);
 
 const initialState = {
   courseHistory: [],
