@@ -209,8 +209,8 @@ function RequirementComponent({
     .filter((index) => index !== validRulesetIdx);
   
   return (
-    <div className="pl-4 flex flex-col md:flex-row">
-      <div className="md:w-2/4 w-full h-48 flex-grow flex overflow-x-auto bg-white shadow rounded-lg p-4">
+    <div className="pl-4 flex flex-col md:flex-row" style={{ height: '300px' }}>
+      <div className="md:w-2/4 w-full h-48 flex-grow flex overflow-x-auto bg-white shadow rounded-lg p-4" style={{ height: '300px' }}>
         <h2 className="text-2xl font-bold mb-4">Course Requirements</h2>
         {Object.entries(requirement.lists).map(([name, courseList]) => (
           <RequirementList
@@ -228,7 +228,7 @@ function RequirementComponent({
           />
         ))}
       </div>
-      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4 bg-white shadow rounded-lg mt-4 md:mt-0 md:ml-4">
+      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4 bg-white shadow rounded-lg mt-4 md:mt-0 md:ml-4" style={{ height: '300px' }}>
         <h2 className="text-2xl font-bold mb-4">Rulesets</h2>
         <Accordion
           items={[...requirement.rulesets]
@@ -287,7 +287,7 @@ function RequirementComponent({
           defaultActiveIndex={defaultActiveIndex}
         />
       </div>
-      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4 bg-white shadow rounded-lg mt-4 md:mt-0 md:ml-4">
+      <div className="md:w-1/4 w-full h-48 md:border-l border-gray-200 p-4 bg-white shadow rounded-lg mt-4 md:mt-0 md:ml-4" style={{ height: '300px' }} >
         <h2 className="text-2xl font-bold mb-4">Courses for You</h2>
         <Accordion
           items={[

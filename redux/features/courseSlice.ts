@@ -1,4 +1,4 @@
-import rawCourses from "@/helpers/courses_1920.json";
+import rawCourses from "@/helpers/all_courses_w_prereq.json";
 import { createSlice, PayloadAction, createSelector } from "@reduxjs/toolkit";
 
 export type CourseDetail = {
