@@ -1,5 +1,11 @@
 // import { CourseEnrollment } from './course-enrollment-interface'
-import { CourseEnrollment, CourseStatus } from "@/redux/features/courseSlice";
+import {
+  CourseEnrollment,
+  CourseStatus,
+  gradeToNumber,
+  isCourseGradeRelevant,
+  isCourseRelevant,
+} from "@/helpers/course";
 import {
   CourseListMap,
   CourseListObject,
@@ -470,7 +476,9 @@ export function assignCoursesToCourseLists(
   globalRecursionCount = 0;
   globalProgramValidateCount = 0;
 
-  const courseCodes = courses.map((c) => c.code);
+  const courseCodes = courses
+    .filter((courseEnrollment) => isCourseRelevant(courseEnrollment))
+    .map((c) => c.code);
 
   // courseUsableCount[idx of programme][idx of course] = number of times the course can be used
   const courseUsableCount: number[][] = [];
@@ -647,7 +655,9 @@ export function assignCoursesToCourseListsPartial(
   courses: CourseEnrollment[],
 ): CourseListMap[] {
   const courseUsableCount: number[][] = [];
-  const courseCodes = courses.map((c) => c.code);
+  const courseCodes = courses
+    .filter((courseEnrollment) => isCourseRelevant(courseEnrollment))
+    .map((c) => c.code);
 
   requirements.forEach((programme, i) => {
     // if a course is in the reusable list, it can be used twice
@@ -685,7 +695,9 @@ export function populateCourseListMap(
   courses: CourseEnrollment[],
   gr23s: GR23[],
 ): CourseListMap {
-  const courseCodes = courses.map((c) => c.code);
+  const courseCodes = courses
+    .filter((courseEnrollment) => isCourseRelevant(courseEnrollment))
+    .map((c) => c.code);
   const newCourseListMap: CourseListMap = new Map();
   const existingCourses = [...courseListMap.values()].flat();
   for (const [courseListKey, courseList] of courseListMap) {
@@ -725,7 +737,10 @@ export function populateCourseListObject(
   courses: CourseEnrollment[],
   gr23s: GR23[],
 ): CourseListObject {
-  const courseCodes = courses.map((c) => c.code);
+  const courseCodes = courses
+    .filter((courseEnrollment) => isCourseRelevant(courseEnrollment))
+    .map((c) => c.code);
+
   const newCourseListObject: CourseListObject = {};
   const existingCourses = Object.values(courseListObject).flat();
   for (const [courseListKey, courseList] of Object.entries(courseListObject)) {
@@ -781,7 +796,7 @@ export function calculateCga(
     (course) =>
       (!mcga || relevantCourseCodes.includes(course.code)) &&
       course.status === CourseStatus.TAKEN &&
-      !["PP", "P"].includes(course.grade),
+      isCourseGradeRelevant(course.grade),
   );
 
   const creditCnt = relevantCourses.reduce(
@@ -798,31 +813,4 @@ export function calculateCga(
   }
 
   return gradeSum / creditCnt;
-}
-
-export function gradeToNumber(grade: string): number {
-  switch (grade) {
-    case "A+":
-      return 4.3;
-    case "A":
-      return 4;
-    case "A-":
-      return 3.7;
-    case "B+":
-      return 3.3;
-    case "B":
-      return 3;
-    case "B-":
-      return 2.7;
-    case "C+":
-      return 2.3;
-    case "C":
-      return 2;
-    case "C-":
-      return 1.7;
-    case "D":
-      return 1;
-    default:
-      return 0;
-  }
 }

@@ -1,24 +1,10 @@
-import rawCourses from "@/helpers/all_courses_w_prereq.json";
-import { createSlice, PayloadAction, createSelector } from "@reduxjs/toolkit";
-
-export type CourseDetail = {
-  code: string;
-  title: string;
-  units: number;
-};
-
-export enum CourseStatus {
-  TAKEN = "Taken",
-  TRANSFERRED = "Transferred",
-  IN_PROGRESS = "In Progress",
-  PLANNED = "Planned",
-}
-
-export type CourseEnrollment = {
-  term: string;
-  grade: string;
-  status: CourseStatus;
-} & CourseDetail;
+import {
+  CourseDetail,
+  CourseEnrollment,
+  CourseStatus,
+  COURSE_CATALOG,
+} from "@/helpers/course";
+import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 
 export type CourseState = {
   courseHistory: CourseEnrollment[];
@@ -27,20 +13,13 @@ export type CourseState = {
 
 export const selectCourseCodes = createSelector(
   (state: CourseState) => state.courseHistory, // Provide the correct type for the 'courseEnrollments' parameter
-  (courseEnrollments) => courseEnrollments.map((course) => course.code)
+  (courseEnrollments) => courseEnrollments.map((course) => course.code),
 );
 
 const initialState = {
   courseHistory: [],
   courseCatalog: Object.fromEntries(
-    rawCourses.map((course) => [
-      course.code,
-      {
-        code: course.code,
-        title: course.title,
-        units: parseInt(course.credits),
-      },
-    ]),
+    COURSE_CATALOG.map((course) => [course.code, course]),
   ),
 } as CourseState;
 
@@ -57,6 +36,9 @@ export const course = createSlice({
             code: course.code,
             title: course.title,
             units: course.units,
+            prerequisites: [],
+            exclusions: [],
+            corequisites: [],
           };
         }
       });
