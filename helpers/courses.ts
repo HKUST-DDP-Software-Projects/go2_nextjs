@@ -147,6 +147,6 @@ export function checkExclusionGroup(
     course: Course,
     selectedCourses: string[],
     ): boolean {
-    if (!course.exclusions) return true;
+    if (!course.exclusions) return false;
     return course.exclusions.some((pSet) => checkExclusionSet(pSet, selectedCourses));
     }
