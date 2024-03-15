@@ -53,6 +53,9 @@ const CoursePage = () => {
     term: "",
     grade: "",
     status: CourseStatus.PLANNED,
+    prerequisites: [],
+    corequisites: [],
+    exclusions: [],
   } satisfies CourseEnrollment;
   const [formData, setFormData] = useState<CourseEnrollment>(initialFormData);
 
