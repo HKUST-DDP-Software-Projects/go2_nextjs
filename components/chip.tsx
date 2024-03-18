@@ -3,9 +3,10 @@ import React from "react";
 interface ChipProps {
   label: string;
   color?: "red" | "green" | "gray";
+  className?: string; // Add className prop
 }
 
-export default function Chip({ label, color = "gray" }: ChipProps) {
+export default function Chip({ label, color = "gray", className }: ChipProps) {
   const getColorClass = () => {
     switch (color) {
       case "red":
@@ -20,7 +21,7 @@ export default function Chip({ label, color = "gray" }: ChipProps) {
 
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium ${getColorClass()} mr-2 mb-2`}
+      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium ${getColorClass()} ${className}`}
     >
       {label}
     </span>
