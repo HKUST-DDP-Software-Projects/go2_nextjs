@@ -47,7 +47,7 @@ export default function Accordion({
             className="flex items-center justify-between p-4 cursor-pointer flex-shrink-0"
             onClick={() => handleClick(index)}
           >
-            <h3 className="text-lg font-medium">{item.title}</h3>
+            <h3 className="text-lg font-bold">{item.title}</h3>
             <svg
               className={`w-6 h-6 transition-transform ${
                 activeIndex.includes(index) ? "transform rotate-180" : ""
