@@ -70,6 +70,16 @@ export default function PreEnrollment() {
 
   return (
     <div>
+      <div className="mb-4">
+        <h4 className="text-lg font-semibold">Legend</h4>
+        <div className="flex flex-wrap">
+          <Chip label="Taken" color="gray" className="line-through" />
+          <Chip label="Excluded" color="red" className="line-through" />
+          <Chip label="Available to pre-enrol" color="green" />
+          <Chip label="Unfulfilled prerequisites" color="red" />
+          <Chip label="Unknown" />
+        </div>
+      </div>
       <Accordion
         items={requirementGroups.map((requirementGroup) => ({
           key: requirementGroup.name,
