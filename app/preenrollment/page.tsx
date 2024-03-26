@@ -8,6 +8,7 @@ import {
   checkPrerequisiteGroup,
 } from "@/helpers/course";
 import { useAppSelector } from "@/redux/hooks";
+import { useState } from "react";
 
 export default function PreEnrollment() {
   // TODO: Validate if all the requirements are required, not electives
@@ -32,6 +33,8 @@ export default function PreEnrollment() {
   const courseHistory = useAppSelector((state) =>
     state.courseReducer.courseHistory.map((course) => course.code),
   );
+
+  const [coursesSelected, setCoursesSelected] = useState<string[]>([]);
 
   const CourseChip = ({ course }: { course: string }) => {
     const taken = courseHistory.includes(course);
@@ -62,56 +65,88 @@ export default function PreEnrollment() {
     );
 
     if (fulfilledPreRequisites) {
-      return <Chip label={course} color="green" />;
+      return (
+        <Chip
+          label={course}
+          color="green"
+          onClick={() => {
+            if (coursesSelected.includes(course)) {
+              setCoursesSelected(coursesSelected.filter((c) => c !== course));
+            } else {
+              setCoursesSelected([...coursesSelected, course]);
+            }
+          }}
+        />
+      );
     }
 
     return <Chip label={course} color="red" />;
   };
 
   return (
-    <div>
-      <div className="mb-4">
-        <h4 className="text-lg font-semibold">Legend</h4>
+    <div className="flex">
+      <div className="flex-1">
+        <div className="mb-4">
+          <h4 className="text-lg font-semibold">Legend</h4>
+          <div className="flex flex-wrap">
+            <Chip label="Taken" color="gray" className="line-through" />
+            <Chip label="Excluded" color="red" className="line-through" />
+            <Chip label="Available to pre-enrol" color="green" />
+            <Chip label="Unfulfilled prerequisites" color="red" />
+            <Chip label="Unknown" />
+          </div>
+        </div>
+        <Accordion
+          items={requirementGroups.map((requirementGroup) => ({
+            key: requirementGroup.name,
+            title: requirementGroup.name,
+            content: (
+              <div>
+                {requirementGroup.requirements.map((requirement) => {
+                  const courses = [
+                    ...new Set(
+                      Object.values(requirement.lists)
+                        .filter((list): list is string[] => list !== undefined)
+                        .flat(),
+                    ),
+                  ];
+                  return (
+                    <div key={requirement.name} className="mb-4">
+                      <h4 className="text-lg font-semibold">
+                        {requirement.name}
+                      </h4>
+                      <div className="flex flex-wrap">
+                        {courses.map((course) => {
+                          return <CourseChip key={course} course={course} />;
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ),
+          }))}
+          defaultActive={true}
+        />
+      </div>
+      <div className="w-1/4 pl-4 border-l border-gray-300 bg-white">
+        <h4 className="text-lg font-semibold pb-3">Shopping Cart</h4>
         <div className="flex flex-wrap">
-          <Chip label="Taken" color="gray" className="line-through" />
-          <Chip label="Excluded" color="red" className="line-through" />
-          <Chip label="Available to pre-enrol" color="green" />
-          <Chip label="Unfulfilled prerequisites" color="red" />
-          <Chip label="Unknown" />
+          {coursesSelected.map((course) => {
+            return (
+              <Chip
+                key={course}
+                label={course}
+                onClick={() =>
+                  setCoursesSelected(
+                    coursesSelected.filter((c) => c !== course),
+                  )
+                }
+              />
+            );
+          })}
         </div>
       </div>
-      <Accordion
-        items={requirementGroups.map((requirementGroup) => ({
-          key: requirementGroup.name,
-          title: requirementGroup.name,
-          content: (
-            <div>
-              {requirementGroup.requirements.map((requirement) => {
-                const courses = [
-                  ...new Set(
-                    Object.values(requirement.lists)
-                      .filter((list): list is string[] => list !== undefined)
-                      .flat(),
-                  ),
-                ];
-                return (
-                  <div key={requirement.name} className="mb-4">
-                    <h4 className="text-lg font-semibold">
-                      {requirement.name}
-                    </h4>
-                    <div className="flex flex-wrap">
-                      {courses.map((course) => {
-                        return <CourseChip key={course} course={course} />;
-                      })}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          ),
-        }))}
-        defaultActive={true}
-      />
     </div>
   );
 }
