@@ -61,6 +61,14 @@ export default function RootLayout({
                     Planner
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="preenrollment"
+                    className="block text-gray-700 hover:text-gray-900 font-medium"
+                  >
+                    Pre-enrollment
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="flex-1 flex flex-col h-screen overflow-y-auto">

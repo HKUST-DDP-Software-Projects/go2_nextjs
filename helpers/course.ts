@@ -154,7 +154,7 @@ export function checkPrerequisiteGroup(
   course: CourseDetail,
   selectedCourses: string[],
 ): boolean {
-  if (!course.prerequisites) return true;
+  if (!course.prerequisites || course.prerequisites.length === 0) return true;
   const result = course.prerequisites.some((pSet) =>
     checkPrerequisiteSet(pSet, selectedCourses),
   );
@@ -228,7 +228,7 @@ export function checkExclusionGroup(
   course: CourseDetail,
   selectedCourses: string[],
 ): boolean {
-  if (!course.exclusions) return false;
+  if (!course.exclusions || course.exclusions.length === 0) return false;
   return course.exclusions.some((pSet) =>
     checkExclusionSet(pSet, selectedCourses),
   );

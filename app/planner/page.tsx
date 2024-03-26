@@ -20,18 +20,7 @@ import { Requirement, RequirementRule } from "@/helpers/requirement";
 
 import { match } from "@/redux/features/plannerSlice";
 import { PencilIcon } from "@heroicons/react/outline";
-
-interface ChipProps {
-  label: string;
-}
-
-function Chip({ label }: ChipProps) {
-  return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800 mr-2 mb-2">
-      {label}
-    </span>
-  );
-}
+import Chip from "@/components/chip";
 
 type OpenCourseSelectionModal = (
   courseList: string[],
