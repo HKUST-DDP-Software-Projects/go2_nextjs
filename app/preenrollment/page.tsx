@@ -4,6 +4,7 @@ import Accordion from "@/components/accordion";
 import Chip from "@/components/chip";
 import {
   COURSE_CATALOG,
+  CourseDetail,
   checkExclusionGroup,
   checkPrerequisiteGroup,
 } from "@/helpers/course";
@@ -34,7 +35,15 @@ export default function PreEnrollment() {
     state.courseReducer.courseHistory.map((course) => course.code),
   );
 
-  const [coursesSelected, setCoursesSelected] = useState<string[]>([]);
+  // const [coursesSelected, setCoursesSelected] = useState<string[]>([]);
+  const [selectedCourse, setSelectedCourse] = useState<CourseDetail | null>(
+    null,
+  );
+  const [shoppingCart, setShoppingCart] = useState<CourseDetail[]>([]);
+  const [creditCnt, setCreditCnt] = useState<number>(0);
+
+  const isSelectedCourseInCart =
+    shoppingCart.find((c) => c.code === selectedCourse?.code) !== undefined;
 
   const CourseChip = ({ course }: { course: string }) => {
     const taken = courseHistory.includes(course);
@@ -56,7 +65,16 @@ export default function PreEnrollment() {
 
     const excluded = checkExclusionGroup(courseDetail, courseHistory);
     if (excluded) {
-      return <Chip label={course} color="red" className={"line-through"} />;
+      return (
+        <Chip
+          label={course}
+          color="red"
+          className={"line-through"}
+          onClick={() => {
+            setSelectedCourse(courseDetail);
+          }}
+        />
+      );
     }
 
     const fulfilledPreRequisites = checkPrerequisiteGroup(
@@ -70,22 +88,26 @@ export default function PreEnrollment() {
           label={course}
           color="green"
           onClick={() => {
-            if (coursesSelected.includes(course)) {
-              setCoursesSelected(coursesSelected.filter((c) => c !== course));
-            } else {
-              setCoursesSelected([...coursesSelected, course]);
-            }
+            setSelectedCourse(courseDetail);
           }}
         />
       );
     }
 
-    return <Chip label={course} color="red" />;
+    return (
+      <Chip
+        label={course}
+        color="red"
+        onClick={() => {
+          setSelectedCourse(courseDetail);
+        }}
+      />
+    );
   };
 
   return (
-    <div className="flex">
-      <div className="flex-1 p-4">
+    <div className="flex h-full">
+      <div className="flex-1 p-4 h-full overflow-y-auto">
         <div className="mb-4">
           <h4 className="text-lg font-semibold">Legend</h4>
           <div className="flex flex-wrap">
@@ -129,23 +151,149 @@ export default function PreEnrollment() {
           defaultActive={true}
         />
       </div>
-      <div className="w-1/4 pl-4 border-l border-gray-300 bg-white">
-        <h4 className="text-lg font-semibold pb-3">Shopping Cart</h4>
-        <div className="flex flex-wrap">
-          {coursesSelected.map((course) => {
-            return (
-              <Chip
-                key={course}
-                label={course}
-                onClick={() =>
-                  setCoursesSelected(
-                    coursesSelected.filter((c) => c !== course),
-                  )
-                }
-              />
-            );
-          })}
-        </div>
+      <div className="w-1/4 border-l border-gray-300 bg-white">
+        <Accordion
+          items={[
+            {
+              key: "course-detail",
+              title: "Course Detail",
+              content: selectedCourse ? (
+                <div className="flex-grow">
+                  <h4 className="text-lg font-semibold">
+                    {selectedCourse.code} ({selectedCourse.units} credits)
+                  </h4>
+                  <p>{selectedCourse.title}</p>
+                  <div>
+                    <h4 className="text-lg font-semibold pt-2">
+                      Prerequisites
+                    </h4>
+                    {selectedCourse.prerequisites &&
+                    selectedCourse.prerequisites.length > 0 ? (
+                      selectedCourse.prerequisites.map((prerequisite) => (
+                        <div key={prerequisite.description}>
+                          <h5>{prerequisite.description}</h5>
+                          {prerequisite.needManualCheck ? (
+                            <Chip label="Manual check required" />
+                          ) : checkPrerequisiteGroup(
+                              selectedCourse,
+                              courseHistory,
+                            ) ? (
+                            <Chip label="Fulfilled" color="green" />
+                          ) : (
+                            <Chip label="Unfulfilled" color="red" />
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      <p>No prerequisites</p>
+                    )}
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold pt-2">Exclusions</h4>
+                    {selectedCourse.exclusions &&
+                    selectedCourse.exclusions.length > 0 ? (
+                      selectedCourse.exclusions.map((exclusion) => (
+                        <div key={exclusion.description}>
+                          <h5>{exclusion.description}</h5>
+                          {exclusion.needManualCheck ? (
+                            <Chip label="Manual check required" />
+                          ) : checkExclusionGroup(
+                              selectedCourse,
+                              courseHistory,
+                            ) ? (
+                            <Chip label="Excluded" color="red" />
+                          ) : (
+                            <Chip label="Not excluded" color="green" />
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      <p>No exclusions</p>
+                    )}
+                  </div>
+                  <div className="flex justify-between pt-4">
+                    <button
+                      className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+                        isSelectedCourseInCart ||
+                        checkExclusionGroup(selectedCourse, courseHistory)
+                          ? "opacity-50 cursor-not-allowed"
+                          : "text-black"
+                      }`}
+                      onClick={() => {
+                        if (selectedCourse) {
+                          setShoppingCart((shoppingCart) => [
+                            ...shoppingCart,
+                            selectedCourse,
+                          ]);
+
+                          setCreditCnt(
+                            (creditCnt) => creditCnt + selectedCourse.units,
+                          );
+                        }
+                      }}
+                      disabled={
+                        isSelectedCourseInCart ||
+                        checkExclusionGroup(selectedCourse, courseHistory)
+                      }
+                    >
+                      Add to Cart
+                    </button>
+                    <button
+                      className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+                        !isSelectedCourseInCart
+                          ? "opacity-50 cursor-not-allowed"
+                          : "text-black"
+                      }`}
+                      onClick={() => {
+                        if (selectedCourse) {
+                          setShoppingCart((shoppingCart) =>
+                            shoppingCart.filter(
+                              (course) => course.code !== selectedCourse.code,
+                            ),
+                          );
+
+                          setCreditCnt(
+                            (creditCnt) => creditCnt - selectedCourse.units,
+                          );
+                        }
+                      }}
+                      disabled={!isSelectedCourseInCart}
+                    >
+                      Remove from Cart
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <p>Select a course to view details</p>
+              ),
+            },
+            {
+              key: "shopping-cart",
+              title: "Shopping Cart",
+              content: (
+                <div>
+                  <p className={creditCnt > 18 ? "text-red-500" : ""}>
+                    Total Credits: {creditCnt} / 18
+                  </p>
+                  <div className="flex flex-wrap">
+                    {shoppingCart.map((course) => {
+                      return (
+                        <Chip
+                          key={course.code}
+                          label={course.code}
+                          onClick={() => {
+                            setSelectedCourse(course);
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              ),
+            },
+          ]}
+          defaultActive={true}
+        />
       </div>
     </div>
   );
