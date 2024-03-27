@@ -143,11 +143,14 @@ function checkPrerequisite(
   return false;
 }
 
-function checkPrerequisiteSet(
+export function checkPrerequisiteSet(
   pSet: CoursePrerequisite,
   selectedCourses: string[],
 ): boolean {
-  return pSet.rules.every((rule) => checkPrerequisite(rule, selectedCourses));
+  return (
+    !pSet.needManualCheck &&
+    pSet.rules.every((rule) => checkPrerequisite(rule, selectedCourses))
+  );
 }
 
 export function checkPrerequisiteGroup(
@@ -155,9 +158,8 @@ export function checkPrerequisiteGroup(
   selectedCourses: string[],
 ): boolean {
   if (!course.prerequisites || course.prerequisites.length === 0) return true;
-  const result = course.prerequisites.some(
-    (pSet) =>
-      !pSet.needManualCheck && checkPrerequisiteSet(pSet, selectedCourses),
+  const result = course.prerequisites.some((pSet) =>
+    checkPrerequisiteSet(pSet, selectedCourses),
   );
 
   // console.log("result", result, course.code);
@@ -218,11 +220,14 @@ function checkExclusion(
   return true;
 }
 
-function checkExclusionSet(
+export function checkExclusionSet(
   pSet: CourseExclusion,
   selectedCourses: string[],
 ): boolean {
-  return pSet.rules.every((rule) => checkExclusion(rule, selectedCourses));
+  return (
+    !pSet.needManualCheck &&
+    pSet.rules.every((rule) => checkExclusion(rule, selectedCourses))
+  );
 }
 
 export function checkExclusionGroup(
@@ -230,7 +235,7 @@ export function checkExclusionGroup(
   selectedCourses: string[],
 ): boolean {
   if (!course.exclusions || course.exclusions.length === 0) return false;
-  return course.exclusions.some(
-    (pSet) => !pSet.needManualCheck && checkExclusionSet(pSet, selectedCourses),
+  return course.exclusions.some((pSet) =>
+    checkExclusionSet(pSet, selectedCourses),
   );
 }
