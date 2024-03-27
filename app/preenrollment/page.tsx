@@ -85,7 +85,7 @@ export default function PreEnrollment() {
 
   return (
     <div className="flex">
-      <div className="flex-1">
+      <div className="flex-1 p-4">
         <div className="mb-4">
           <h4 className="text-lg font-semibold">Legend</h4>
           <div className="flex flex-wrap">

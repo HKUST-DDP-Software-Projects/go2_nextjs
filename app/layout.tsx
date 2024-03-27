@@ -78,7 +78,7 @@ export default function RootLayout({
               >
                 Toggle Sidebar
               </button>
-              <div className="p-4 w-full">{children}</div>
+              <div className="w-full">{children}</div>
             </div>
           </div>
         </Providers>
