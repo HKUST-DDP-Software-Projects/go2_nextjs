@@ -45,22 +45,22 @@ export default function RootLayout({
                     Programme
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="gr23"
                     className="block text-gray-700 hover:text-gray-900 font-medium"
                   >
                     Gr23
                   </Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <Link
                     href="planner"
                     className="block text-gray-700 hover:text-gray-900 font-medium"
                   >
                     Planner
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     href="preenrollment"
