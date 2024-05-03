@@ -112,6 +112,12 @@ export interface CourseRequisiteRule {
   needManualCheck?: boolean;
 }
 
+export enum CourseValidationResult {
+  SATISFIED = "Satisfied",
+  UNSATISFIED = "Unsatisfied",
+  NEED_MANUAL_CHECK = "Need Manual Check",
+}
+
 export const COURSE_CATALOG = courses.map((course) => {
   return {
     ...course,
@@ -143,69 +149,83 @@ function checkPrerequisite(
   return false;
 }
 
+// Return SATISFIED if the prerequisite set is satisfied, UNSATISFIED if the prerequisite set is not satisfied, NEED_MANUAL_CHECK if the prerequisite set needs manual check
 export function checkPrerequisiteSet(
   pSet: CoursePrerequisite,
   selectedCourses: string[],
-): boolean {
-  return (
-    !pSet.needManualCheck &&
-    pSet.rules.every((rule) => checkPrerequisite(rule, selectedCourses))
-  );
+): CourseValidationResult {
+  if (pSet.needManualCheck) return CourseValidationResult.NEED_MANUAL_CHECK;
+  if (pSet.rules.some((rule) => checkPrerequisite(rule, selectedCourses))) {
+    return CourseValidationResult.SATISFIED;
+  }
+  return CourseValidationResult.UNSATISFIED;
 }
 
+// Return SATISFIED if the student can take the course, UNSATISFIED if the student cannot take the course, NEED_MANUAL_CHECK if the student needs manual check
 export function checkPrerequisiteGroup(
   course: CourseDetail,
   selectedCourses: string[],
-): boolean {
-  if (!course.prerequisites || course.prerequisites.length === 0) return true;
-  const result = course.prerequisites.some((pSet) =>
+): CourseValidationResult {
+  if (!course.prerequisites || course.prerequisites.length === 0)
+    return CourseValidationResult.SATISFIED;
+
+  const validationResults = course.prerequisites.map((pSet) =>
     checkPrerequisiteSet(pSet, selectedCourses),
   );
 
-  // console.log("result", result, course.code);
-  return result;
+  // Return satisfied if any of the prerequisite sets are satisfied
+  if (validationResults.includes(CourseValidationResult.SATISFIED)) {
+    return CourseValidationResult.SATISFIED;
+  }
+
+  // Return need manual check if any of the prerequisite sets need manual check
+  if (validationResults.includes(CourseValidationResult.NEED_MANUAL_CHECK)) {
+    return CourseValidationResult.NEED_MANUAL_CHECK;
+  }
+
+  return CourseValidationResult.UNSATISFIED;
 }
 
-function checkCorequisite(
-  rule: CourseRequisiteRule,
-  selectedCourses: string[],
-): boolean {
-  // const courseList: string[] = [];
-  // courseList.push(...rule.courses)
+// function checkCorequisite(
+//   rule: CourseRequisiteRule,
+//   selectedCourses: string[],
+// ): boolean {
+//   // const courseList: string[] = [];
+//   // courseList.push(...rule.courses)
 
-  const vs = overlap(rule.courses, selectedCourses);
-  const courseCount = vs.length;
-  if (rule.minCourseCnt && courseCount < rule.minCourseCnt) return false;
-  return true;
-}
+//   const vs = overlap(rule.courses, selectedCourses);
+//   const courseCount = vs.length;
+//   if (rule.minCourseCnt && courseCount < rule.minCourseCnt) return false;
+//   return true;
+// }
 
-function returnCorequisiteSet(
-  pSet: CourseCorequisite,
-  selectedCourses: string[],
-): string[] {
-  const excludedCourses: string[] = [];
-  pSet.rules.forEach((rule) => {
-    if (!checkCorequisite(rule, selectedCourses)) {
-      excludedCourses.push(...rule.courses);
-    }
-  });
-  return excludedCourses;
-}
+// function returnCorequisiteSet(
+//   pSet: CourseCorequisite,
+//   selectedCourses: string[],
+// ): string[] {
+//   const excludedCourses: string[] = [];
+//   pSet.rules.forEach((rule) => {
+//     if (!checkCorequisite(rule, selectedCourses)) {
+//       excludedCourses.push(...rule.courses);
+//     }
+//   });
+//   return excludedCourses;
+// }
 
-export function returnCorequisiteGroup(
-  course: CourseDetail | undefined,
-  selectedCourses: string[],
-): string[] {
-  if (!course) return [];
-  if (!course.corequisites) return [];
-  const eCourses: string[] = [];
-  course.corequisites.forEach((pSet) => {
-    if (returnCorequisiteSet(pSet, selectedCourses).length > 0) {
-      return returnCorequisiteSet(pSet, selectedCourses);
-    }
-  });
-  return [];
-}
+// export function returnCorequisiteGroup(
+//   course: CourseDetail | undefined,
+//   selectedCourses: string[],
+// ): string[] {
+//   if (!course) return [];
+//   if (!course.corequisites) return [];
+//   const eCourses: string[] = [];
+//   course.corequisites.forEach((pSet) => {
+//     if (returnCorequisiteSet(pSet, selectedCourses).length > 0) {
+//       return returnCorequisiteSet(pSet, selectedCourses);
+//     }
+//   });
+//   return [];
+// }
 
 function checkExclusion(
   rule: CourseRequisiteRule,
@@ -220,22 +240,39 @@ function checkExclusion(
   return true;
 }
 
+// Return SATISFIED if the exclusion set is satisfied, UNSATISFIED if the exclusion set is not satisfied, NEED_MANUAL_CHECK if the exclusion set needs manual check
 export function checkExclusionSet(
   pSet: CourseExclusion,
   selectedCourses: string[],
-): boolean {
-  return (
-    !pSet.needManualCheck &&
-    pSet.rules.every((rule) => checkExclusion(rule, selectedCourses))
-  );
+): CourseValidationResult {
+  if (pSet.needManualCheck) return CourseValidationResult.NEED_MANUAL_CHECK;
+  if (pSet.rules.some((rule) => checkExclusion(rule, selectedCourses))) {
+    return CourseValidationResult.UNSATISFIED;
+  }
+  return CourseValidationResult.SATISFIED;
 }
 
+// Return SATISFIED if the student can take the course, UNSATISFIED if the student cannot take the course, NEED_MANUAL_CHECK if the student needs manual check
 export function checkExclusionGroup(
   course: CourseDetail,
   selectedCourses: string[],
-): boolean {
-  if (!course.exclusions || course.exclusions.length === 0) return false;
-  return course.exclusions.some((pSet) =>
+) {
+  if (!course.exclusions || course.exclusions.length === 0)
+    return CourseValidationResult.SATISFIED;
+
+  const validationResults = course.exclusions.map((pSet) =>
     checkExclusionSet(pSet, selectedCourses),
   );
+
+  // Return unsatisfied if any of the exclusion sets are unsatisfied
+  if (validationResults.includes(CourseValidationResult.UNSATISFIED)) {
+    return CourseValidationResult.UNSATISFIED;
+  }
+
+  // Return need manual check if any of the exclusion sets need manual check
+  if (validationResults.includes(CourseValidationResult.NEED_MANUAL_CHECK)) {
+    return CourseValidationResult.NEED_MANUAL_CHECK;
+  }
+
+  return CourseValidationResult.SATISFIED;
 }

@@ -5,11 +5,14 @@ import Chip from "@/components/chip";
 import {
   COURSE_CATALOG,
   CourseDetail,
+  CourseValidationResult,
   checkExclusionGroup,
+  checkExclusionSet,
   checkPrerequisiteGroup,
+  checkPrerequisiteSet,
 } from "@/helpers/course";
 import { useAppSelector } from "@/redux/hooks";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 export default function PreEnrollment() {
   // TODO: Validate if all the requirements are required, not electives
@@ -63,8 +66,8 @@ export default function PreEnrollment() {
       return <Chip label={course} />;
     }
 
-    const excluded = checkExclusionGroup(courseDetail, courseHistory);
-    if (excluded) {
+    const exclusionResult = checkExclusionGroup(courseDetail, courseHistory);
+    if (exclusionResult === CourseValidationResult.UNSATISFIED) {
       return (
         <Chip
           label={course}
@@ -77,12 +80,12 @@ export default function PreEnrollment() {
       );
     }
 
-    const fulfilledPreRequisites = checkPrerequisiteGroup(
+    const prerequisiteResult = checkPrerequisiteGroup(
       courseDetail,
       courseHistory,
     );
 
-    if (fulfilledPreRequisites) {
+    if (prerequisiteResult === CourseValidationResult.SATISFIED) {
       return (
         <Chip
           label={course}
@@ -138,6 +141,114 @@ export default function PreEnrollment() {
     }
   };
 
+  const CourseDetail = useMemo(() => {
+    if (!selectedCourse) {
+      return <p>Select a course to view details</p>;
+    }
+
+    const prerequisiteResult = checkPrerequisiteGroup(
+      selectedCourse,
+      courseHistory,
+    );
+    const exclusionResult = checkExclusionGroup(selectedCourse, courseHistory);
+    const canAddToCart =
+      prerequisiteResult === CourseValidationResult.SATISFIED &&
+      exclusionResult !== CourseValidationResult.UNSATISFIED;
+
+    return (
+      <div className="flex-grow">
+        <h4 className="text-lg font-semibold">
+          {selectedCourse.code} ({selectedCourse.units} credits)
+        </h4>
+        <p>{selectedCourse.title}</p>
+        <div>
+          <h4 className="text-lg font-semibold pt-2">Prerequisites</h4>
+          {selectedCourse.prerequisites &&
+          selectedCourse.prerequisites.length > 0 ? (
+            selectedCourse.prerequisites.map((prerequisite) => (
+              <div key={prerequisite.description}>
+                <h5>{prerequisite.description}</h5>
+                {prerequisite.needManualCheck ? (
+                  <Chip label="Manual check required" />
+                ) : checkPrerequisiteSet(prerequisite, courseHistory) ===
+                  CourseValidationResult.SATISFIED ? (
+                  <Chip label="Fulfilled" color="green" />
+                ) : (
+                  <Chip label="Unfulfilled" color="red" />
+                )}
+              </div>
+            ))
+          ) : (
+            <p>No prerequisites</p>
+          )}
+        </div>
+        <div>
+          <h4 className="text-lg font-semibold pt-2">Exclusions</h4>
+          {selectedCourse.exclusions && selectedCourse.exclusions.length > 0 ? (
+            selectedCourse.exclusions.map((exclusion) => (
+              <div key={exclusion.description}>
+                <h5>{exclusion.description}</h5>
+                {exclusion.needManualCheck ? (
+                  <Chip label="Manual check required" />
+                ) : checkExclusionSet(exclusion, courseHistory) ===
+                  CourseValidationResult.UNSATISFIED ? (
+                  <Chip label="Excluded" color="red" />
+                ) : (
+                  <Chip label="Not excluded" color="green" />
+                )}
+              </div>
+            ))
+          ) : (
+            <p>No exclusions</p>
+          )}
+        </div>
+        <div className="flex justify-between pt-4">
+          <button
+            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+              isSelectedCourseInCart || !canAddToCart
+                ? "opacity-50 cursor-not-allowed"
+                : "text-black"
+            }`}
+            onClick={() => {
+              if (selectedCourse) {
+                setShoppingCart((shoppingCart) => [
+                  ...shoppingCart,
+                  selectedCourse,
+                ]);
+
+                setCreditCnt((creditCnt) => creditCnt + selectedCourse.units);
+              }
+            }}
+            disabled={isSelectedCourseInCart || !canAddToCart}
+          >
+            Add to Cart
+          </button>
+          <button
+            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+              !isSelectedCourseInCart
+                ? "opacity-50 cursor-not-allowed"
+                : "text-black"
+            }`}
+            onClick={() => {
+              if (selectedCourse) {
+                setShoppingCart((shoppingCart) =>
+                  shoppingCart.filter(
+                    (course) => course.code !== selectedCourse.code,
+                  ),
+                );
+
+                setCreditCnt((creditCnt) => creditCnt - selectedCourse.units);
+              }
+            }}
+            disabled={!isSelectedCourseInCart}
+          >
+            Remove from Cart
+          </button>
+        </div>
+      </div>
+    );
+  }, [selectedCourse, isSelectedCourseInCart, courseHistory]);
+
   return (
     <div className="flex h-full">
       <div className="flex-1 p-4 h-full overflow-y-auto">
@@ -190,115 +301,7 @@ export default function PreEnrollment() {
             {
               key: "course-detail",
               title: "Course Detail",
-              content: selectedCourse ? (
-                <div className="flex-grow">
-                  <h4 className="text-lg font-semibold">
-                    {selectedCourse.code} ({selectedCourse.units} credits)
-                  </h4>
-                  <p>{selectedCourse.title}</p>
-                  <div>
-                    <h4 className="text-lg font-semibold pt-2">
-                      Prerequisites
-                    </h4>
-                    {selectedCourse.prerequisites &&
-                    selectedCourse.prerequisites.length > 0 ? (
-                      selectedCourse.prerequisites.map((prerequisite) => (
-                        <div key={prerequisite.description}>
-                          <h5>{prerequisite.description}</h5>
-                          {prerequisite.needManualCheck ? (
-                            <Chip label="Manual check required" />
-                          ) : checkPrerequisiteGroup(
-                              selectedCourse,
-                              courseHistory,
-                            ) ? (
-                            <Chip label="Fulfilled" color="green" />
-                          ) : (
-                            <Chip label="Unfulfilled" color="red" />
-                          )}
-                        </div>
-                      ))
-                    ) : (
-                      <p>No prerequisites</p>
-                    )}
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold pt-2">Exclusions</h4>
-                    {selectedCourse.exclusions &&
-                    selectedCourse.exclusions.length > 0 ? (
-                      selectedCourse.exclusions.map((exclusion) => (
-                        <div key={exclusion.description}>
-                          <h5>{exclusion.description}</h5>
-                          {exclusion.needManualCheck ? (
-                            <Chip label="Manual check required" />
-                          ) : checkExclusionGroup(
-                              selectedCourse,
-                              courseHistory,
-                            ) ? (
-                            <Chip label="Excluded" color="red" />
-                          ) : (
-                            <Chip label="Not excluded" color="green" />
-                          )}
-                        </div>
-                      ))
-                    ) : (
-                      <p>No exclusions</p>
-                    )}
-                  </div>
-                  <div className="flex justify-between pt-4">
-                    <button
-                      className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
-                        isSelectedCourseInCart ||
-                        checkExclusionGroup(selectedCourse, courseHistory)
-                          ? "opacity-50 cursor-not-allowed"
-                          : "text-black"
-                      }`}
-                      onClick={() => {
-                        if (selectedCourse) {
-                          setShoppingCart((shoppingCart) => [
-                            ...shoppingCart,
-                            selectedCourse,
-                          ]);
-
-                          setCreditCnt(
-                            (creditCnt) => creditCnt + selectedCourse.units,
-                          );
-                        }
-                      }}
-                      disabled={
-                        isSelectedCourseInCart ||
-                        checkExclusionGroup(selectedCourse, courseHistory)
-                      }
-                    >
-                      Add to Cart
-                    </button>
-                    <button
-                      className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
-                        !isSelectedCourseInCart
-                          ? "opacity-50 cursor-not-allowed"
-                          : "text-black"
-                      }`}
-                      onClick={() => {
-                        if (selectedCourse) {
-                          setShoppingCart((shoppingCart) =>
-                            shoppingCart.filter(
-                              (course) => course.code !== selectedCourse.code,
-                            ),
-                          );
-
-                          setCreditCnt(
-                            (creditCnt) => creditCnt - selectedCourse.units,
-                          );
-                        }
-                      }}
-                      disabled={!isSelectedCourseInCart}
-                    >
-                      Remove from Cart
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <p>Select a course to view details</p>
-              ),
+              content: CourseDetail,
             },
             {
               key: "shopping-cart",
