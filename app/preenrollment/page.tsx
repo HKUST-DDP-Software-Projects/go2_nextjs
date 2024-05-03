@@ -72,6 +72,31 @@ export default function PreEnrollment() {
       courseHistory,
     );
 
+    if (exclusionResult === CourseValidationResult.UNSATISFIED) {
+      return (
+        <Chip
+          label={course}
+          color="red"
+          className={"line-through"}
+          onClick={() => {
+            setSelectedCourse(courseDetail);
+          }}
+        />
+      );
+    }
+
+    if (prerequisiteResult === CourseValidationResult.UNSATISFIED) {
+      return (
+        <Chip
+          label={course}
+          color="red"
+          onClick={() => {
+            setSelectedCourse(courseDetail);
+          }}
+        />
+      );
+    }
+
     if (
       exclusionResult === CourseValidationResult.NEED_MANUAL_CHECK ||
       prerequisiteResult === CourseValidationResult.NEED_MANUAL_CHECK
@@ -87,35 +112,10 @@ export default function PreEnrollment() {
       );
     }
 
-    if (exclusionResult === CourseValidationResult.UNSATISFIED) {
-      return (
-        <Chip
-          label={course}
-          color="red"
-          className={"line-through"}
-          onClick={() => {
-            setSelectedCourse(courseDetail);
-          }}
-        />
-      );
-    }
-
-    if (prerequisiteResult === CourseValidationResult.SATISFIED) {
-      return (
-        <Chip
-          label={course}
-          color="green"
-          onClick={() => {
-            setSelectedCourse(courseDetail);
-          }}
-        />
-      );
-    }
-
     return (
       <Chip
         label={course}
-        color="red"
+        color="green"
         onClick={() => {
           setSelectedCourse(courseDetail);
         }}
