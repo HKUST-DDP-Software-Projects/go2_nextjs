@@ -15,9 +15,6 @@ export default function RootLayout({
 }) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -72,12 +69,6 @@ export default function RootLayout({
               </ul>
             </div>
             <div className="flex-1 flex flex-col h-screen overflow-y-auto">
-              <button
-                className="bg-gray-200 text-gray-700 px-4 py-2 border-r border-gray-300"
-                onClick={toggleSidebar}
-              >
-                Toggle Sidebar
-              </button>
               <div className="w-full h-full">{children}</div>
             </div>
           </div>

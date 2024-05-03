@@ -337,7 +337,7 @@ export default function PreEnrollment() {
 
   return (
     <div className="flex h-full">
-      <div className="flex-1 p-4 h-full overflow-y-auto">
+      <div className="flex-1 p-4 h-full flex flex-col">
         <div className="mb-4">
           <h4 className="text-lg font-semibold">Legend</h4>
           <div className="flex flex-wrap">
@@ -349,38 +349,42 @@ export default function PreEnrollment() {
             <Chip label="Unknown" />
           </div>
         </div>
-        <Accordion
-          items={requirementGroups.map((requirementGroup) => ({
-            key: requirementGroup.name,
-            title: requirementGroup.name,
-            content: (
-              <div>
-                {requirementGroup.requirements.map((requirement) => {
-                  const courses = [
-                    ...new Set(
-                      Object.values(requirement.lists)
-                        .filter((list): list is string[] => list !== undefined)
-                        .flat(),
-                    ),
-                  ];
-                  return (
-                    <div key={requirement.name} className="mb-4">
-                      <h4 className="text-lg font-semibold">
-                        {requirement.name}
-                      </h4>
-                      <div className="flex flex-wrap">
-                        {courses.map((course) => {
-                          return <CourseChip key={course} course={course} />;
-                        })}
+        <div className="overflow-y-auto">
+          <Accordion
+            items={requirementGroups.map((requirementGroup) => ({
+              key: requirementGroup.name,
+              title: requirementGroup.name,
+              content: (
+                <div>
+                  {requirementGroup.requirements.map((requirement) => {
+                    const courses = [
+                      ...new Set(
+                        Object.values(requirement.lists)
+                          .filter(
+                            (list): list is string[] => list !== undefined,
+                          )
+                          .flat(),
+                      ),
+                    ];
+                    return (
+                      <div key={requirement.name} className="mb-4">
+                        <h4 className="text-lg font-semibold">
+                          {requirement.name}
+                        </h4>
+                        <div className="flex flex-wrap">
+                          {courses.map((course) => {
+                            return <CourseChip key={course} course={course} />;
+                          })}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-            ),
-          }))}
-          defaultActive={true}
-        />
+                    );
+                  })}
+                </div>
+              ),
+            }))}
+            defaultActive={true}
+          />
+        </div>
       </div>
       <div className="w-1/4 border-l border-gray-300 bg-white">
         <Accordion
