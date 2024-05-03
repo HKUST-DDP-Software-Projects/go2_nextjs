@@ -125,6 +125,7 @@ export default function PreEnrollment() {
 
   const submitForm = async () => {
     try {
+      let remarks = "";
       const program = degrees[0].name;
       const admissionYear = "2023";
       const courses = shoppingCart.map((course) => {
@@ -142,6 +143,30 @@ export default function PreEnrollment() {
           return course.code;
         }
 
+        if (prerequisiteResult === CourseValidationResult.NEED_MANUAL_CHECK) {
+          course.prerequisites
+            .filter(
+              (prerequisite) =>
+                checkPrerequisiteSet(prerequisite, courseHistory) ===
+                CourseValidationResult.NEED_MANUAL_CHECK,
+            )
+            .forEach((prerequisite) => {
+              remarks += `Prerequisite ${prerequisite.description} needs manual check.\n`;
+            });
+        }
+
+        if (exclusionResult === CourseValidationResult.NEED_MANUAL_CHECK) {
+          course.exclusions
+            .filter(
+              (exclusion) =>
+                checkExclusionSet(exclusion, courseHistory) ===
+                CourseValidationResult.NEED_MANUAL_CHECK,
+            )
+            .forEach((exclusion) => {
+              remarks += `Exclusion ${exclusion.description} needs manual check.\n`;
+            });
+        }
+
         return course.code + "*";
       });
       const studentName = "John Doe";
@@ -156,7 +181,7 @@ export default function PreEnrollment() {
           referrer:
             "https://docs.google.com/forms/d/e/1FAIpQLSchhd8OQgSKAP-47CW8uDz7BfN5NLtcC56MC-nxYSeFOLoQ_w/viewform?fbzx=-934056360836122432",
           referrerPolicy: "strict-origin-when-cross-origin",
-          body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179`,
+          body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
           method: "POST",
           mode: "no-cors",
           credentials: "include",
