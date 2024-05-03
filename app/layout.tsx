@@ -2,9 +2,8 @@
 
 import { Providers } from "@/redux/provider";
 import { Inter } from "next/font/google";
-import { useState } from "react";
-import "./globals.css";
 import Link from "next/link";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +12,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isOpen, setIsOpen] = useState(true);
+  // const [isOpen, setIsOpen] = useState(true);
 
   return (
     <html lang="en">
@@ -22,7 +21,8 @@ export default function RootLayout({
           <div className="flex w-screen h-screen bg-gray-100">
             <div
               className={`${
-                isOpen ? "block" : "hidden"
+                // eslint-disable-next-line no-constant-condition
+                true ? "block" : "hidden"
               } bg-white w-64 px-4 py-8 border-r border-gray-200 flex-shrink-0`}
             >
               <ul className="space-y-4">
