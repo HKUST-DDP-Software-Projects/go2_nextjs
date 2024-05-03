@@ -2,7 +2,7 @@ import React from "react";
 
 interface ChipProps {
   label: string;
-  color?: "red" | "green" | "gray";
+  color?: "red" | "green" | "gray" | "yellow";
   className?: string;
   onClick?: () => void;
 }
@@ -19,6 +19,8 @@ export default function Chip({
         return "bg-red-100 text-red-800";
       case "green":
         return "bg-green-100 text-green-800";
+      case "yellow":
+        return "bg-yellow-100 text-yellow-800";
       case "gray":
       default:
         return "bg-gray-100 text-gray-800";

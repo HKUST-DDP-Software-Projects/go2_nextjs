@@ -67,6 +67,26 @@ export default function PreEnrollment() {
     }
 
     const exclusionResult = checkExclusionGroup(courseDetail, courseHistory);
+    const prerequisiteResult = checkPrerequisiteGroup(
+      courseDetail,
+      courseHistory,
+    );
+
+    if (
+      exclusionResult === CourseValidationResult.NEED_MANUAL_CHECK ||
+      prerequisiteResult === CourseValidationResult.NEED_MANUAL_CHECK
+    ) {
+      return (
+        <Chip
+          label={course}
+          color="yellow"
+          onClick={() => {
+            setSelectedCourse(courseDetail);
+          }}
+        />
+      );
+    }
+
     if (exclusionResult === CourseValidationResult.UNSATISFIED) {
       return (
         <Chip
@@ -79,11 +99,6 @@ export default function PreEnrollment() {
         />
       );
     }
-
-    const prerequisiteResult = checkPrerequisiteGroup(
-      courseDetail,
-      courseHistory,
-    );
 
     if (prerequisiteResult === CourseValidationResult.SATISFIED) {
       return (
@@ -152,7 +167,7 @@ export default function PreEnrollment() {
     );
     const exclusionResult = checkExclusionGroup(selectedCourse, courseHistory);
     const canAddToCart =
-      prerequisiteResult === CourseValidationResult.SATISFIED &&
+      prerequisiteResult !== CourseValidationResult.UNSATISFIED &&
       exclusionResult !== CourseValidationResult.UNSATISFIED;
 
     return (
@@ -259,6 +274,7 @@ export default function PreEnrollment() {
             <Chip label="Excluded" color="red" className="line-through" />
             <Chip label="Available to pre-enrol" color="green" />
             <Chip label="Unfulfilled prerequisites" color="red" />
+            <Chip label="Manual check required" color="yellow" />
             <Chip label="Unknown" />
           </div>
         </div>
