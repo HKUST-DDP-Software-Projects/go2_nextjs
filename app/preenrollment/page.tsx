@@ -5,11 +5,14 @@ import Chip from "@/components/chip";
 import {
   COURSE_CATALOG,
   CourseDetail,
+  CourseStatus,
   CourseValidationResult,
   checkExclusionGroup,
   checkExclusionSet,
   checkPrerequisiteGroup,
   checkPrerequisiteSet,
+  gradeToNumber,
+  isCourseGradeRelevant,
 } from "@/helpers/course";
 import { useAppSelector } from "@/redux/hooks";
 import { useMemo, useState } from "react";
@@ -38,6 +41,33 @@ export default function PreEnrollment() {
     state.courseReducer.courseHistory.map((course) => course.code),
   );
 
+  const cga = useAppSelector((state) => {
+    const courseHistory = state.courseReducer.courseHistory;
+    const relevantCourses = courseHistory.filter(
+      (course) =>
+        course.status === CourseStatus.TAKEN &&
+        isCourseGradeRelevant(course.grade),
+    );
+
+    console.log(relevantCourses);
+
+    const creditCnt = relevantCourses.reduce(
+      (acc, course) => acc + course.units,
+      0,
+    );
+    const gradeSum = relevantCourses.reduce(
+      (acc, course) => acc + gradeToNumber(course.grade) * course.units,
+      0,
+    );
+
+    if (creditCnt === 0) {
+      return 0;
+    }
+
+    return gradeSum / creditCnt;
+  });
+
+  const maxCredits = cga < 3 ? 20 : cga >= 3 && cga <= 3.29 ? 21 : 24;
   // const [coursesSelected, setCoursesSelected] = useState<string[]>([]);
   const [selectedCourse, setSelectedCourse] = useState<CourseDetail | null>(
     null,
@@ -356,6 +386,55 @@ export default function PreEnrollment() {
         <Accordion
           items={[
             {
+              key: "credit-overload",
+              title: "Credit Overload",
+              content: (
+                <div>
+                  <p className={creditCnt > 18 ? "text-red-500" : ""}>
+                    CGA: {cga.toFixed(3)}
+                  </p>
+                  <table className="border-collapse w-full">
+                    <thead>
+                      <tr>
+                        <th className="border border-gray-300 px-4 py-2">
+                          CGA
+                        </th>
+                        <th className="border border-gray-300 px-4 py-2">
+                          Max credits
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {"< 3"}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          20 {cga < 3 ? "✅" : ""}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-4 py-2">
+                          3 - 3.29
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          21 {cga >= 3 && cga <= 3.29 ? "✅" : ""}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {"> 3.3"}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          24 {cga >= 3.3 ? "✅" : ""}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              ),
+            },
+            {
               key: "course-detail",
               title: "Course Detail",
               content: CourseDetail,
@@ -365,8 +444,8 @@ export default function PreEnrollment() {
               title: "Shopping Cart",
               content: (
                 <div>
-                  <p className={creditCnt > 18 ? "text-red-500" : ""}>
-                    Total Credits: {creditCnt} / 18
+                  <p className={creditCnt > maxCredits ? "text-red-500" : ""}>
+                    Total Credits: {creditCnt} / {maxCredits}
                   </p>
                   <div className="flex flex-wrap">
                     {shoppingCart.map((course) => {
@@ -379,10 +458,12 @@ export default function PreEnrollment() {
                   {/* Submit button */}
                   <button
                     className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
-                      creditCnt > 18 ? "opacity-50 cursor-not-allowed" : ""
+                      creditCnt > maxCredits
+                        ? "opacity-50 cursor-not-allowed"
+                        : ""
                     }`}
                     onClick={submitForm}
-                    disabled={creditCnt > 18}
+                    disabled={creditCnt > maxCredits}
                   >
                     Submit
                   </button>
