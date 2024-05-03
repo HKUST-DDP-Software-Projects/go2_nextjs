@@ -330,13 +330,7 @@ export default function PreEnrollment() {
                   <div className="flex flex-wrap">
                     {shoppingCart.map((course) => {
                       return (
-                        <Chip
-                          key={course.code}
-                          label={course.code}
-                          onClick={() => {
-                            setSelectedCourse(course);
-                          }}
-                        />
+                        <CourseChip key={course.code} course={course.code} />
                       );
                     })}
                   </div>
