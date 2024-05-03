@@ -127,7 +127,23 @@ export default function PreEnrollment() {
     try {
       const program = degrees[0].name;
       const admissionYear = "2023";
-      const courses = shoppingCart.map((course) => course.code);
+      const courses = shoppingCart.map((course) => {
+        // Check if course requires manual check, add asterisk and append remarks if yes
+        const prerequisiteResult = checkPrerequisiteGroup(
+          course,
+          courseHistory,
+        );
+        const exclusionResult = checkExclusionGroup(course, courseHistory);
+
+        if (
+          prerequisiteResult === CourseValidationResult.SATISFIED &&
+          exclusionResult === CourseValidationResult.SATISFIED
+        ) {
+          return course.code;
+        }
+
+        return course.code + "*";
+      });
       const studentName = "John Doe";
       const studentId = "12345678";
 
