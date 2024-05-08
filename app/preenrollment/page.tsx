@@ -377,6 +377,30 @@ export default function PreEnrollment() {
           >
             Remove from Cart
           </button>
+          <button
+            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+              !isSelectedCourseInCart
+                ? "opacity-50 cursor-not-allowed"
+                : "text-black"
+            }`}
+            disabled={!isSelectedCourseInCart}
+            onClick={() => {
+              if (selectedCourse) {
+                setShoppingCart((shoppingCart) =>
+                  shoppingCart.filter(
+                    (course) => course.code !== selectedCourse.code,
+                  ),
+                );
+
+                setShoppingCart((shoppingCart) => [
+                  selectedCourse,
+                  ...shoppingCart,
+                ]);
+              }
+            }}
+          >
+            Move to Front
+          </button>
         </div>
       </div>
     );
@@ -430,7 +454,7 @@ export default function PreEnrollment() {
           />
         </div>
       </div>
-      <div className="w-1/4 border-l border-gray-300 bg-white">
+      <div className="w-1/4 border-l border-gray-300 bg-white overflow-y-auto">
         <Accordion
           items={[
             {
