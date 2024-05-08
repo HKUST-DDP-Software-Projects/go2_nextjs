@@ -83,6 +83,7 @@ export default function PreEnrollment() {
     shoppingCart.find((c) => c.code === selectedCourse?.code) !== undefined;
 
   const CourseChip = ({ course }: { course: string }) => {
+    const inShoppingCart = shoppingCart.find((c) => c.code === course) !== undefined;
     const taken = courseHistory.includes(course);
 
     if (taken) {
@@ -91,6 +92,7 @@ export default function PreEnrollment() {
           label={course}
           color="gray"
           className={taken ? "line-through" : ""}
+          border={inShoppingCart}
         />
       );
     }
@@ -115,6 +117,7 @@ export default function PreEnrollment() {
           onClick={() => {
             setSelectedCourse(courseDetail);
           }}
+          border={inShoppingCart}
         />
       );
     }
@@ -127,6 +130,7 @@ export default function PreEnrollment() {
           onClick={() => {
             setSelectedCourse(courseDetail);
           }}
+          border={inShoppingCart}
         />
       );
     }
@@ -142,6 +146,7 @@ export default function PreEnrollment() {
           onClick={() => {
             setSelectedCourse(courseDetail);
           }}
+          border={inShoppingCart}
         />
       );
     }
@@ -153,6 +158,7 @@ export default function PreEnrollment() {
         onClick={() => {
           setSelectedCourse(courseDetail);
         }}
+        border={inShoppingCart}
       />
     );
   };

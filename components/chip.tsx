@@ -5,6 +5,7 @@ interface ChipProps {
   color?: "red" | "green" | "gray" | "yellow";
   className?: string;
   onClick?: () => void;
+  border?: boolean;
 }
 
 export default function Chip({
@@ -12,6 +13,7 @@ export default function Chip({
   color = "gray",
   className,
   onClick,
+  border = false,
 }: ChipProps) {
   const getColorClass = () => {
     switch (color) {
@@ -27,9 +29,25 @@ export default function Chip({
     }
   };
 
+  const getBorderClass = () => {
+    if (!border) return "";
+
+    switch (color) {
+      case "red":
+        return "border-2 border-red-400";
+      case "green":
+        return "border-2 border-green-400";
+      case "yellow":
+        return "border-2 border-yellow-400";
+      case "gray":
+      default:
+        return "border-2 border-gray-400";
+    }
+  };
+
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium ${getColorClass()} ${className} ${onClick ? "cursor-pointer" : ""}`}
+      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium ${getColorClass()} ${getBorderClass()} ${className} ${onClick ? "cursor-pointer" : ""}`}
       onClick={onClick}
     >
       {label}
