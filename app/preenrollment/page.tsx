@@ -41,6 +41,10 @@ export default function PreEnrollment() {
     state.courseReducer.courseHistory.map((course) => course.code),
   );
 
+  const personalDetails = useAppSelector(
+    (state) => state.personalDetailsReducer,
+  );
+
   const cga = useAppSelector((state) => {
     const courseHistory = state.courseReducer.courseHistory;
     const relevantCourses = courseHistory.filter(
@@ -156,8 +160,17 @@ export default function PreEnrollment() {
   const submitForm = async () => {
     try {
       let remarks = "";
-      const program = degrees[0].name;
-      const admissionYear = "2023";
+
+      // const program = degrees[0].name;
+      // const admissionYear = "2023";
+      // const studentName = "John Doe";
+      // const studentId = "12345678";
+      const program =
+        personalDetails.engineeringMajor + personalDetails.businessMajor;
+      const admissionYear = personalDetails.admissionYear;
+      const studentName = personalDetails.name;
+      const studentId = personalDetails.studentId;
+
       const courses = shoppingCart.map((course) => {
         // Check if course requires manual check, add asterisk and append remarks if yes
         const prerequisiteResult = checkPrerequisiteGroup(
@@ -199,8 +212,6 @@ export default function PreEnrollment() {
 
         return course.code + "*";
       });
-      const studentName = "John Doe";
-      const studentId = "12345678";
 
       const result = await fetch(
         "https://docs.google.com/forms/d/e/1FAIpQLSchhd8OQgSKAP-47CW8uDz7BfN5NLtcC56MC-nxYSeFOLoQ_w/formResponse",

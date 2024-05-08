@@ -28,18 +28,18 @@ export default function RootLayout({
               <ul className="space-y-4">
                 <li>
                   <Link
-                    href="course"
+                    href="personal"
                     className="block text-gray-700 hover:text-gray-900 font-medium"
                   >
-                    Course
+                    Personal Details
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="programme"
+                    href="course"
                     className="block text-gray-700 hover:text-gray-900 font-medium"
                   >
-                    Programme
+                    Course Import
                   </Link>
                 </li>
                 {/* <li>
