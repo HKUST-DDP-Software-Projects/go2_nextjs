@@ -302,7 +302,7 @@ export default function PreEnrollment() {
               <div key={prerequisite.description}>
                 <h5>{prerequisite.description}</h5>
                 {prerequisite.needManualCheck ? (
-                  <Chip label="Manual check required" />
+                  <Chip label="Manual check required" color="yellow" />
                 ) : checkPrerequisiteSet(prerequisite, courseHistory) ===
                   CourseValidationResult.SATISFIED ? (
                   <Chip label="Fulfilled" color="green" />
