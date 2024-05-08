@@ -234,7 +234,7 @@ export default function PreEnrollment() {
                 CourseValidationResult.NEED_MANUAL_CHECK,
             )
             .forEach((prerequisite) => {
-              remarks += `Prerequisite ${prerequisite.description} needs manual check.\n`;
+              remarks += `Prerequisite for ${course.code}: ${prerequisite.description} needs manual check.\n`;
             });
         }
 
@@ -246,7 +246,7 @@ export default function PreEnrollment() {
                 CourseValidationResult.NEED_MANUAL_CHECK,
             )
             .forEach((exclusion) => {
-              remarks += `Exclusion ${exclusion.description} needs manual check.\n`;
+              remarks += `Exclusion for ${course.code}: ${exclusion.description} needs manual check.\n`;
             });
         }
 
