@@ -72,10 +72,10 @@ export default function PreEnrollment() {
   );
 
   const preenrollableCourses = {
-    ...CONFIG.engineeringMajors[personalDetails.admissionYear][
+    ...CONFIG.engineeringMajors?.[personalDetails.admissionYear]?.[
       personalDetails.engineeringMajor
     ],
-    ...CONFIG.businessMajors[personalDetails.admissionYear][
+    ...CONFIG.businessMajors?.[personalDetails.admissionYear]?.[
       personalDetails.businessMajor
     ],
   };
