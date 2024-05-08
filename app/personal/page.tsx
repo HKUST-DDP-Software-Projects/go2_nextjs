@@ -17,6 +17,10 @@ const ENGINEERING_MAJORS = [
     display: "Computer Science",
     value: "CO",
   },
+  {
+    display: "Decision Analytics",
+    value: "DA",
+  },
 ];
 
 const BUSINESS_MAJORS = [

@@ -2,6 +2,7 @@
 
 import Accordion from "@/components/accordion";
 import Chip from "@/components/chip";
+import { CONFIG } from "@/helpers/config";
 import {
   COURSE_CATALOG,
   CourseDetail,
@@ -14,15 +15,12 @@ import {
   gradeToNumber,
   isCourseGradeRelevant,
 } from "@/helpers/course";
+import { Degree } from "@/redux/features/plannerSlice";
 import { useAppSelector } from "@/redux/hooks";
 import { useMemo, useState } from "react";
 
-export default function PreEnrollment() {
-  // TODO: Validate if all the requirements are required, not electives
-  const degrees = useAppSelector(
-    (state) => state.plannerReducer.selectedDegrees,
-  );
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const parseDegrees = (degrees: Degree[]) => {
   const requirementGroups = degrees.flatMap((degree) =>
     degree.requirements
       .filter((requirement) =>
@@ -37,6 +35,34 @@ export default function PreEnrollment() {
       ),
   );
 
+  return Object.fromEntries(
+    requirementGroups.map((requirementGroup) => [
+      requirementGroup.name,
+      Object.fromEntries(
+        requirementGroup.requirements.map((requirement) => [
+          requirement.name,
+          [
+            ...new Set(
+              Object.values(requirement.lists)
+                .filter((list): list is string[] => list !== undefined)
+                .flat(),
+            ),
+          ],
+        ]),
+      ),
+    ]),
+  ) as Record<string, Record<string, string[]>>;
+};
+
+export default function PreEnrollment() {
+  // TODO: Validate if all the requirements are required, not electives
+  // const degrees = useAppSelector(
+  //   (state) => state.plannerReducer.selectedDegrees,
+  // );
+
+  // const preenrollableCourses = parseDegrees(degrees);
+  // console.log(preenrollableCourses);
+
   const courseHistory = useAppSelector((state) =>
     state.courseReducer.courseHistory.map((course) => course.code),
   );
@@ -45,6 +71,15 @@ export default function PreEnrollment() {
     (state) => state.personalDetailsReducer,
   );
 
+  const preenrollableCourses = {
+    ...CONFIG.engineeringMajors[personalDetails.admissionYear][
+      personalDetails.engineeringMajor
+    ],
+    ...CONFIG.businessMajors[personalDetails.admissionYear][
+      personalDetails.businessMajor
+    ],
+  };
+
   const cga = useAppSelector((state) => {
     const courseHistory = state.courseReducer.courseHistory;
     const relevantCourses = courseHistory.filter(
@@ -52,8 +87,6 @@ export default function PreEnrollment() {
         course.status === CourseStatus.TAKEN &&
         isCourseGradeRelevant(course.grade),
     );
-
-    console.log(relevantCourses);
 
     const creditCnt = relevantCourses.reduce(
       (acc, course) => acc + course.units,
@@ -83,7 +116,8 @@ export default function PreEnrollment() {
     shoppingCart.find((c) => c.code === selectedCourse?.code) !== undefined;
 
   const CourseChip = ({ course }: { course: string }) => {
-    const inShoppingCart = shoppingCart.find((c) => c.code === course) !== undefined;
+    const inShoppingCart =
+      shoppingCart.find((c) => c.code === course) !== undefined;
     const taken = courseHistory.includes(course);
 
     if (taken) {
@@ -219,21 +253,17 @@ export default function PreEnrollment() {
         return course.code + "*";
       });
 
-      const result = await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSchhd8OQgSKAP-47CW8uDz7BfN5NLtcC56MC-nxYSeFOLoQ_w/formResponse",
-        {
-          headers: {
-            "content-type": "application/x-www-form-urlencoded",
-          },
-          referrer:
-            "https://docs.google.com/forms/d/e/1FAIpQLSchhd8OQgSKAP-47CW8uDz7BfN5NLtcC56MC-nxYSeFOLoQ_w/viewform?fbzx=-934056360836122432",
-          referrerPolicy: "strict-origin-when-cross-origin",
-          body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
-          method: "POST",
-          mode: "no-cors",
-          credentials: "include",
+      const result = await fetch(`${CONFIG.googleFormUrl}/formResponse`, {
+        headers: {
+          "content-type": "application/x-www-form-urlencoded",
         },
-      );
+        referrer: `${CONFIG.googleFormUrl}/viewform?fbzx=-934056360836122432`,
+        referrerPolicy: "strict-origin-when-cross-origin",
+        body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
+        method: "POST",
+        mode: "no-cors",
+        credentials: "include",
+      });
       alert(
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
       );
@@ -368,37 +398,34 @@ export default function PreEnrollment() {
         </div>
         <div className="overflow-y-auto">
           <Accordion
-            items={requirementGroups.map((requirementGroup) => ({
-              key: requirementGroup.name,
-              title: requirementGroup.name,
-              content: (
-                <div>
-                  {requirementGroup.requirements.map((requirement) => {
-                    const courses = [
-                      ...new Set(
-                        Object.values(requirement.lists)
-                          .filter(
-                            (list): list is string[] => list !== undefined,
-                          )
-                          .flat(),
-                      ),
-                    ];
-                    return (
-                      <div key={requirement.name} className="mb-4">
-                        <h4 className="text-lg font-semibold">
-                          {requirement.name}
-                        </h4>
-                        <div className="flex flex-wrap">
-                          {courses.map((course) => {
-                            return <CourseChip key={course} course={course} />;
-                          })}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ),
-            }))}
+            items={Object.entries(preenrollableCourses).map(
+              ([requirementGroupName, requirements]) => ({
+                key: requirementGroupName,
+                title: requirementGroupName,
+                content: (
+                  <div>
+                    {Object.entries(requirements).map(
+                      ([requirementName, courses]) => {
+                        return (
+                          <div key={requirementName} className="mb-4">
+                            <h4 className="text-lg font-semibold">
+                              {requirementName}
+                            </h4>
+                            <div className="flex flex-wrap">
+                              {courses.map((course) => {
+                                return (
+                                  <CourseChip key={course} course={course} />
+                                );
+                              })}
+                            </div>
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                ),
+              }),
+            )}
             defaultActive={true}
           />
         </div>
