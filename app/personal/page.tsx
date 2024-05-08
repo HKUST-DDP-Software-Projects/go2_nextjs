@@ -94,6 +94,9 @@ export default function PersonalDetails() {
 
   return (
     <div className="flex flex-col space-y-4 m-4">
+      <h1 className="text-2xl font-bold">Personal Details</h1>
+
+      <label className="block text-gray-700 font-medium">Name</label>
       <input
         type="text"
         value={name}
@@ -101,6 +104,8 @@ export default function PersonalDetails() {
         placeholder="Name"
         className="border border-gray-300 rounded-md p-2"
       />
+
+      <label className="block text-gray-700 font-medium">Student ID</label>
       <input
         type="text"
         value={studentId}
@@ -108,6 +113,8 @@ export default function PersonalDetails() {
         placeholder="Student ID"
         className="border border-gray-300 rounded-md p-2"
       />
+
+      <label className="block text-gray-700 font-medium">Admission Year</label>
       <select
         value={admissionYear}
         onChange={handleAdmissionYearChange}
@@ -120,6 +127,10 @@ export default function PersonalDetails() {
           </option>
         ))}
       </select>
+
+      <label className="block text-gray-700 font-medium">
+        Engineering Major
+      </label>
       <select
         value={engineeringMajor}
         onChange={handleEngineeringMajorChange}
@@ -132,6 +143,8 @@ export default function PersonalDetails() {
           </option>
         ))}
       </select>
+
+      <label className="block text-gray-700 font-medium">Business Major</label>
       <select
         value={businessMajor}
         onChange={handleBusinessMajorChange}
