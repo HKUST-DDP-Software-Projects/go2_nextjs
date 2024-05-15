@@ -21,6 +21,50 @@ const ENGINEERING_MAJORS = [
     display: "Decision Analytics",
     value: "DA",
   },
+  {
+    display: "Aerospace Engineering",
+    value: "AE",
+  },
+  {
+    display: "Bioengineering",
+    value: "BE",
+  },
+  {
+    display: "Chemical Engineering",
+    value: "CE",
+  },
+  {
+    display: "Civil Engineering",
+    value: "CI",
+  },
+  {
+    display: "Civil and Environmental Engineering",
+    value: "CV",
+  },
+  {
+    display: "Computer Engineering",
+    value: "CP",
+  },
+  {
+    display: "Electrical Engineering",
+    value: "EE",
+  },
+  {
+    display: "Industrial Engineering & Engineering Management",
+    value: "IE",
+  },
+  {
+    display: "Integrative Systems and Design",
+    value: "ID",
+  },
+  {
+    display: "Mechanical Engineering",
+    value: "ME",
+  },
+  {
+    display: "Biotechnology",
+    value: "BT",
+  },
 ];
 
 const BUSINESS_MAJORS = [
