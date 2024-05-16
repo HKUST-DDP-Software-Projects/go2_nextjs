@@ -199,7 +199,7 @@ export default function PreEnrollment() {
 
   const prepareSubmission = () => {
     let remarks = "";
-    
+
     const program =
       personalDetails.engineeringMajor + personalDetails.businessMajor;
     const admissionYear = personalDetails.admissionYear;
@@ -208,10 +208,7 @@ export default function PreEnrollment() {
 
     const courses = shoppingCart.map((course) => {
       // Check if course requires manual check, add asterisk and append remarks if yes
-      const prerequisiteResult = checkPrerequisiteGroup(
-        course,
-        courseHistory,
-      );
+      const prerequisiteResult = checkPrerequisiteGroup(course, courseHistory);
       const exclusionResult = checkExclusionGroup(course, courseHistory);
 
       if (
@@ -261,28 +258,35 @@ export default function PreEnrollment() {
       courses,
       remarks,
     };
-  }
+  };
 
   const submitForm = async () => {
     try {
-      const { studentName, studentId, program, admissionYear, courses, remarks } = prepareSubmission();
+      const {
+        studentName,
+        studentId,
+        program,
+        admissionYear,
+        courses,
+        remarks,
+      } = prepareSubmission();
 
-      const result = await Promise.any(
-        [
-          new Promise((resolve, reject) => setTimeout(() => reject("timeout"), 5000)),
-          fetch(`${CONFIG.googleFormUrl}/formResponse`, {
-            headers: {
-              "content-type": "application/x-www-form-urlencoded",
-            },
-            referrer: `${CONFIG.googleFormUrl}/viewform?fbzx=-934056360836122432`,
-            referrerPolicy: "strict-origin-when-cross-origin",
-            body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
-            method: "POST",
-            mode: "no-cors",
-            credentials: "include",
-          }),
-        ]
-      );
+      const result = await Promise.any([
+        new Promise((resolve, reject) =>
+          setTimeout(() => reject("timeout"), 5000),
+        ),
+        fetch(`${CONFIG.googleFormUrl}/formResponse`, {
+          headers: {
+            "content-type": "application/x-www-form-urlencoded",
+          },
+          referrer: `${CONFIG.googleFormUrl}/viewform?fbzx=-934056360836122432`,
+          referrerPolicy: "strict-origin-when-cross-origin",
+          body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
+          method: "POST",
+          mode: "no-cors",
+          credentials: "include",
+        }),
+      ]);
 
       alert(
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
@@ -561,9 +565,7 @@ export default function PreEnrollment() {
                     onClick={() => {
                       const submission = prepareSubmission();
                       const blob = new Blob(
-                        [
-                          JSON.stringify(submission, null, 2),
-                        ],
+                        [JSON.stringify(submission, null, 2)],
                         {
                           type: "text/plain",
                         },
