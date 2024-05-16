@@ -253,6 +253,11 @@ export default function PreEnrollment() {
         return course.code + "*";
       });
 
+      if (creditCnt > maxCredits || maxCredits > 18) {
+        remarks += `Credit overload: ${creditCnt} / ${maxCredits}\n`;
+        remarks += `Student CGA: ${cga.toFixed(3)}\n`;
+      }
+
       const result = await fetch(`${CONFIG.googleFormUrl}/formResponse`, {
         headers: {
           "content-type": "application/x-www-form-urlencoded",
@@ -529,13 +534,8 @@ export default function PreEnrollment() {
 
                   {/* Submit button */}
                   <button
-                    className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
-                      creditCnt > maxCredits
-                        ? "opacity-50 cursor-not-allowed"
-                        : ""
-                    }`}
+                    className={`px-4 py-2 bg-gray-200 border border-gray-200`}
                     onClick={submitForm}
-                    disabled={creditCnt > maxCredits}
                   >
                     Submit
                   </button>
