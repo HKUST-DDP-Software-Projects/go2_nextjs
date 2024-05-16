@@ -197,78 +197,93 @@ export default function PreEnrollment() {
     );
   };
 
-  const submitForm = async () => {
-    try {
-      let remarks = "";
+  const prepareSubmission = () => {
+    let remarks = "";
+    
+    const program =
+      personalDetails.engineeringMajor + personalDetails.businessMajor;
+    const admissionYear = personalDetails.admissionYear;
+    const studentName = personalDetails.name;
+    const studentId = personalDetails.studentId;
 
-      // const program = degrees[0].name;
-      // const admissionYear = "2023";
-      // const studentName = "John Doe";
-      // const studentId = "12345678";
-      const program =
-        personalDetails.engineeringMajor + personalDetails.businessMajor;
-      const admissionYear = personalDetails.admissionYear;
-      const studentName = personalDetails.name;
-      const studentId = personalDetails.studentId;
+    const courses = shoppingCart.map((course) => {
+      // Check if course requires manual check, add asterisk and append remarks if yes
+      const prerequisiteResult = checkPrerequisiteGroup(
+        course,
+        courseHistory,
+      );
+      const exclusionResult = checkExclusionGroup(course, courseHistory);
 
-      const courses = shoppingCart.map((course) => {
-        // Check if course requires manual check, add asterisk and append remarks if yes
-        const prerequisiteResult = checkPrerequisiteGroup(
-          course,
-          courseHistory,
-        );
-        const exclusionResult = checkExclusionGroup(course, courseHistory);
-
-        if (
-          prerequisiteResult === CourseValidationResult.SATISFIED &&
-          exclusionResult === CourseValidationResult.SATISFIED
-        ) {
-          return course.code;
-        }
-
-        if (prerequisiteResult === CourseValidationResult.NEED_MANUAL_CHECK) {
-          course.prerequisites
-            .filter(
-              (prerequisite) =>
-                checkPrerequisiteSet(prerequisite, courseHistory) ===
-                CourseValidationResult.NEED_MANUAL_CHECK,
-            )
-            .forEach((prerequisite) => {
-              remarks += `Prerequisite for ${course.code}: ${prerequisite.description} needs manual check.\n`;
-            });
-        }
-
-        if (exclusionResult === CourseValidationResult.NEED_MANUAL_CHECK) {
-          course.exclusions
-            .filter(
-              (exclusion) =>
-                checkExclusionSet(exclusion, courseHistory) ===
-                CourseValidationResult.NEED_MANUAL_CHECK,
-            )
-            .forEach((exclusion) => {
-              remarks += `Exclusion for ${course.code}: ${exclusion.description} needs manual check.\n`;
-            });
-        }
-
-        return course.code + "*";
-      });
-
-      if (creditCnt > maxCredits || maxCredits > 18) {
-        remarks += `Credit overload: ${creditCnt} / ${maxCredits}\n`;
-        remarks += `Student CGA: ${cga.toFixed(3)}\n`;
+      if (
+        prerequisiteResult === CourseValidationResult.SATISFIED &&
+        exclusionResult === CourseValidationResult.SATISFIED
+      ) {
+        return course.code;
       }
 
-      const result = await fetch(`${CONFIG.googleFormUrl}/formResponse`, {
-        headers: {
-          "content-type": "application/x-www-form-urlencoded",
-        },
-        referrer: `${CONFIG.googleFormUrl}/viewform?fbzx=-934056360836122432`,
-        referrerPolicy: "strict-origin-when-cross-origin",
-        body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
-        method: "POST",
-        mode: "no-cors",
-        credentials: "include",
-      });
+      if (prerequisiteResult === CourseValidationResult.NEED_MANUAL_CHECK) {
+        course.prerequisites
+          .filter(
+            (prerequisite) =>
+              checkPrerequisiteSet(prerequisite, courseHistory) ===
+              CourseValidationResult.NEED_MANUAL_CHECK,
+          )
+          .forEach((prerequisite) => {
+            remarks += `Prerequisite for ${course.code}: ${prerequisite.description} needs manual check.\n`;
+          });
+      }
+
+      if (exclusionResult === CourseValidationResult.NEED_MANUAL_CHECK) {
+        course.exclusions
+          .filter(
+            (exclusion) =>
+              checkExclusionSet(exclusion, courseHistory) ===
+              CourseValidationResult.NEED_MANUAL_CHECK,
+          )
+          .forEach((exclusion) => {
+            remarks += `Exclusion for ${course.code}: ${exclusion.description} needs manual check.\n`;
+          });
+      }
+
+      return course.code + "*";
+    });
+
+    if (creditCnt > maxCredits || maxCredits > 18) {
+      remarks += `Credit overload: ${creditCnt} / ${maxCredits}\n`;
+      remarks += `Student CGA: ${cga.toFixed(3)}\n`;
+    }
+
+    return {
+      studentName,
+      studentId,
+      program,
+      admissionYear,
+      courses,
+      remarks,
+    };
+  }
+
+  const submitForm = async () => {
+    try {
+      const { studentName, studentId, program, admissionYear, courses, remarks } = prepareSubmission();
+
+      const result = await Promise.any(
+        [
+          new Promise((resolve, reject) => setTimeout(() => reject("timeout"), 5000)),
+          fetch(`${CONFIG.googleFormUrl}/formResponse`, {
+            headers: {
+              "content-type": "application/x-www-form-urlencoded",
+            },
+            referrer: `${CONFIG.googleFormUrl}/viewform?fbzx=-934056360836122432`,
+            referrerPolicy: "strict-origin-when-cross-origin",
+            body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
+            method: "POST",
+            mode: "no-cors",
+            credentials: "include",
+          }),
+        ]
+      );
+
       alert(
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
       );
@@ -538,6 +553,30 @@ export default function PreEnrollment() {
                     onClick={submitForm}
                   >
                     Submit
+                  </button>
+
+                  {/* Download submission */}
+                  <button
+                    className="px-4 py-2 bg-gray-200 border border-gray-200 ml-2"
+                    onClick={() => {
+                      const submission = prepareSubmission();
+                      const blob = new Blob(
+                        [
+                          JSON.stringify(submission, null, 2),
+                        ],
+                        {
+                          type: "text/plain",
+                        },
+                      );
+
+                      const url = URL.createObjectURL(blob);
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.download = `pre-enrollment-${personalDetails.studentId}.json`;
+                      a.click();
+                    }}
+                  >
+                    Download
                   </button>
                 </div>
               ),
