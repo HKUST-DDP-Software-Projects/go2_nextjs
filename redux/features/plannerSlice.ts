@@ -11,7 +11,7 @@ import {
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { CourseEnrollment } from "@/helpers/course";
 
-type Degree = {
+export type Degree = {
   name: string;
   requirements: ProgrammeRequirement[];
 };

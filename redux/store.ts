@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./features/counterSlice";
 import courseReducer from "./features/courseSlice";
 import plannerReducer from "./features/plannerSlice";
+import personalDetailsReducer from "./features/personalDetailsSlice";
 
 import { persistReducer } from "redux-persist";
 import persistStore from "redux-persist/es/persistStore";
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   counterReducer,
   courseReducer,
   plannerReducer,
+  personalDetailsReducer,
 });
 
 const persistConfig = {

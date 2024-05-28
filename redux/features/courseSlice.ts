@@ -125,7 +125,10 @@ export const course = createSlice({
           /(?<code>[^\t\n]*)\t(?<title>[^\t\n]*)\t(?<term>[^\t\n]*)\t(?<grade>[^\t\n]*)\t(?<units>[^\t\n]*)\t(?<status>[^\t\n]*)/g;
         const d = regex.exec(courseLine);
         if (d?.groups) {
-          courses.push(d.groups as unknown as CourseEnrollment);
+          courses.push({
+            ...d.groups,
+            units: parseFloat(d.groups.units),
+          } as CourseEnrollment);
         }
       });
 

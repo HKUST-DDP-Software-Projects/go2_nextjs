@@ -88,7 +88,7 @@ export default function ProgrammeSelection() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center p-4">
       {/* Add degree button */}
       <button
         className="bg-gray-200 rounded-sm px-4 py-2 mr-2 mb-2"

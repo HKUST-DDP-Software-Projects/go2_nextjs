@@ -37,7 +37,7 @@ export default function Accordion({
   };
 
   return (
-    <div className="mx-auto w-full h-full overflow-y-auto">
+    <div className="mx-auto">
       {items.map((item, index) => (
         <div
           key={item.key}
