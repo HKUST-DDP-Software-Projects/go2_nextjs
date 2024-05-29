@@ -104,6 +104,7 @@ export default function PersonalDetails() {
 
   const [name, setName] = useState(personalDetails.name);
   const [studentId, setStudentId] = useState(personalDetails.studentId);
+  const [email, setEmail] = useState(personalDetails.email);
   const [admissionYear, setAdmissionYear] = useState(
     personalDetails.admissionYear,
   );
@@ -147,6 +148,7 @@ export default function PersonalDetails() {
       setPersonalDetails({
         name,
         studentId,
+        email,
         admissionYear,
         engineeringMajor,
         businessMajor,
@@ -175,6 +177,15 @@ export default function PersonalDetails() {
         value={studentId}
         onChange={handleStudentIdChange}
         placeholder="Student ID"
+        className="border border-gray-300 rounded-md p-2"
+      />
+
+      <label className="block text-gray-700 font-medium">Email</label>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
         className="border border-gray-300 rounded-md p-2"
       />
 

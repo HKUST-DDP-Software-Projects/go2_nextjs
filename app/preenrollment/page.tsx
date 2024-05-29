@@ -205,6 +205,7 @@ export default function PreEnrollment() {
     const admissionYear = personalDetails.admissionYear;
     const studentName = personalDetails.name;
     const studentId = personalDetails.studentId;
+    const email = personalDetails.email;
 
     const courses = shoppingCart.map((course) => {
       // Check if course requires manual check, add asterisk and append remarks if yes
@@ -253,6 +254,7 @@ export default function PreEnrollment() {
     return {
       studentName,
       studentId,
+      email,
       program,
       admissionYear,
       courses,
@@ -266,6 +268,7 @@ export default function PreEnrollment() {
         studentName,
         studentId,
         program,
+        email,
         admissionYear,
         courses,
         remarks,
@@ -275,13 +278,14 @@ export default function PreEnrollment() {
         new Promise((resolve, reject) =>
           setTimeout(() => reject("timeout"), 5000),
         ),
+
         fetch(`${CONFIG.googleFormUrl}/formResponse`, {
           headers: {
             "content-type": "application/x-www-form-urlencoded",
           },
           referrer: `${CONFIG.googleFormUrl}/viewform?fbzx=-934056360836122432`,
           referrerPolicy: "strict-origin-when-cross-origin",
-          body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
+          body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1971011953=${email}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
           method: "POST",
           mode: "no-cors",
           credentials: "include",

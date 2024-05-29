@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 type PersonalDetailsState = {
   name: string;
   studentId: string;
+  email: string;
   admissionYear: string;
   engineeringMajor: string;
   businessMajor: string;
@@ -11,6 +12,7 @@ type PersonalDetailsState = {
 const initialState = {
   name: "",
   studentId: "",
+  email: "",
   admissionYear: "",
   engineeringMajor: "",
   businessMajor: "",
@@ -26,6 +28,7 @@ export const personalDetails = createSlice({
     ) => {
       state.name = action.payload.name;
       state.studentId = action.payload.studentId;
+      state.email = action.payload.email;
       state.admissionYear = action.payload.admissionYear;
       state.engineeringMajor = action.payload.engineeringMajor;
       state.businessMajor = action.payload.businessMajor;
