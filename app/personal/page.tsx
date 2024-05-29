@@ -4,23 +4,15 @@ import { setPersonalDetails } from "@/redux/features/personalDetailsSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { CONFIG } from "@/helpers/config";
 
-const ADMISSION_YEARS = [
-  {
-    display: "2022-2023",
-    value: "2022",
-  },
-];
+const ADMISSION_YEARS = Object.keys(CONFIG.engineeringMajors).map((year) => ({
+  // example: 2122 -> { display: "2021-2022", value: "2122" }
+  display: `20${year.slice(0, 2)}-20${year.slice(2, 4)}`,
+  value: year,
+}));
 
 const ENGINEERING_MAJORS = [
-  {
-    display: "Computer Science",
-    value: "CO",
-  },
-  {
-    display: "Decision Analytics",
-    value: "DA",
-  },
   {
     display: "Aerospace Engineering",
     value: "AE",
@@ -46,6 +38,14 @@ const ENGINEERING_MAJORS = [
     value: "CP",
   },
   {
+    display: "Computer Science",
+    value: "CO",
+  },
+  {
+    display: "Decision Analytics",
+    value: "DA",
+  },
+  {
     display: "Electrical Engineering",
     value: "EE",
   },
@@ -69,8 +69,28 @@ const ENGINEERING_MAJORS = [
 
 const BUSINESS_MAJORS = [
   {
+    display: "Economics",
+    value: "ECON",
+  },
+  {
+    display: "Finance",
+    value: "FINA",
+  },
+  {
     display: "General Business Management",
     value: "GBM",
+  },
+  {
+    display: "Global Business",
+    value: "GBUS",
+  },
+  {
+    display: "Management",
+    value: "MGMT",
+  },
+  {
+    display: "Marketing",
+    value: "MARK",
   },
 ];
 
@@ -181,7 +201,11 @@ export default function PersonalDetails() {
         className="border border-gray-300 rounded-md p-2"
       >
         <option value="">Select Engineering Major</option>
-        {ENGINEERING_MAJORS.map((major) => (
+        {ENGINEERING_MAJORS.filter(
+          (major) =>
+            CONFIG.engineeringMajors?.[admissionYear] &&
+            major.value in CONFIG.engineeringMajors[admissionYear],
+        ).map((major) => (
           <option key={major.value} value={major.value}>
             {major.display}
           </option>
@@ -195,7 +219,11 @@ export default function PersonalDetails() {
         className="border border-gray-300 rounded-md p-2"
       >
         <option value="">Select Business Major</option>
-        {BUSINESS_MAJORS.map((major) => (
+        {BUSINESS_MAJORS.filter(
+          (major) =>
+            CONFIG.businessMajors?.[admissionYear] &&
+            major.value in CONFIG.businessMajors[admissionYear],
+        ).map((major) => (
           <option key={major.value} value={major.value}>
             {major.display}
           </option>

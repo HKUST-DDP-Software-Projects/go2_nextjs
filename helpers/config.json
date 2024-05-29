@@ -1,141 +1,7 @@
 {
   "googleFormUrl": "https://docs.google.com/forms/d/10xFxbt5UCKmW-q2ow-JuFwEVg8ur3Y3zukuLSPe430w",
   "engineeringMajors": {
-    "2022": {
-      "CO": {
-        "Engineering Fundamental Courses": {
-          "Introductory COMP course": ["COMP 1021", "COMP 1022P", "COMP 1022Q"],
-          "Science Course": [
-            "CHEM 1004",
-            "CHEM 1010",
-            "CHEM 1020",
-            "LIFS 1901",
-            "PHYS 1001",
-            "PHYS 1112",
-            "PHYS 1312"
-          ],
-          "MATH Course": [
-            "MATH 1012",
-            "MATH 1013",
-            "MATH 1023",
-            "MATH 1014",
-            "MATH 1024",
-            "MATH 1020"
-          ],
-          "Engineering Introduction Course": [
-            "COMP 1021",
-            "BIEN 1010",
-            "CENG 1000",
-            "ELEC 1100",
-            "ELEC 1200",
-            "ENGG 1100",
-            "IEDA 2010",
-            "IEDA 2200",
-            "ISDN 1002",
-            "ISDN 1006",
-            "MECH 1901",
-            "MECH 1902",
-            "MECH 1905",
-            "MECH 1906",
-            "MECH 1907"
-          ],
-          "LANG 2030": ["LANG 2030", "LANG 2030H"],
-          "MATH 2111": ["MATH 2111"],
-          "ENGG 1010": ["ENGG 1010"]
-        },
-        "COMP Required Courses": {
-          "COMP Course I": ["COMP 2011", "COMP 2012", "COMP 2012H"],
-          "COMP 2711/3111/3711": [
-            "COMP 2711",
-            "COMP 2711H",
-            "COMP 3111",
-            "COMP 3111H",
-            "COMP 3711",
-            "COMP 3711H"
-          ],
-          "FYP / Coop / Industrial Experience": [
-            "COMP 4910",
-            "COMP 1991",
-            "COMP 4981",
-            "COMP 4981H"
-          ],
-          "ELEC / IELM / MATH Course - Statistics": [
-            "ELEC 2600",
-            "ELEC 2600H",
-            "IEDA 2520",
-            "IEDA 2540",
-            "MATH 2411",
-            "MATH 2421",
-            "MATH 2431"
-          ],
-          "COMP 2611/3511": ["COMP 2611", "COMP 3511"],
-          "ENGG 2010": ["ENGG 2010"],
-          "LANG 4030": ["LANG 4030"],
-          "COMP 4900": ["COMP 4900"]
-        }
-      },
-      "DA": {
-        "Engineering Fundamental Courses": {
-          "Introductory COMP course": [
-            "COMP 1021",
-            "COMP 1022P",
-            "COMP 1022Q",
-            "COMP 2011"
-          ],
-          "Academic Orientation": ["ENGG 1010"],
-          "Science Course": [
-            "CHEM 1010",
-            "CHEM 1020",
-            "PHYS 1112",
-            "PHYS 1312"
-          ],
-          "Technical Communication I": ["LANG 2030", "LANG 2030H"],
-          "MATH Course": [
-            "MATH 1012",
-            "MATH 1013",
-            "MATH 1023",
-            "MATH 1014",
-            "MATH 1024",
-            "MATH 1020"
-          ],
-          "MATH 2011": ["MATH 2011"],
-          "MATH 2111": ["MATH 2111"],
-          "Engineering Introduction Course": [
-            "BIEN 1010",
-            "CENG 1000",
-            "CIVL 1100",
-            "COMP 1021",
-            "ELEC 1100",
-            "ELEC 1200",
-            "ENGG 1100",
-            "IEDA 2010",
-            "IEDA 2200",
-            "ISDN 1002",
-            "ISDN 1006",
-            "MECH 1901",
-            "MECH 1902",
-            "MECH 1905",
-            "MECH 1906",
-            "MECH 1907"
-          ]
-        },
-        "DA Required Courses": {
-          "IEDA 1010": ["IEDA 1010"],
-          "IEDA 1020": ["IEDA 1020"],
-          "Industrial Experience": ["IEDA 1990", "IEDA 1991"],
-          "IEDA 2520": ["IEDA 2520"],
-          "IEDA 2540": ["IEDA 2540"],
-          "IEDA 3010": ["IEDA 3010"],
-          "IEDA 3230": ["IEDA 3230"],
-          "IEDA 3250": ["IEDA 3250"],
-          "IEDA 3300": ["IEDA 3300"],
-          "IEDA 3560": ["IEDA 3560"],
-          "Final Year Project": ["IEDA 4901", "IEDA 4920"],
-          "Engineering Seminar Series": ["ENGG 2010"],
-          "Microeconomics": ["ECON 2103", "ECON 2113"],
-          "Technical Communication II": ["LANG 4032"]
-        }
-      },
+    "2021": {
       "AE": {
         "Engineering Fundamental Courses": {
           "Introductory COMP course": ["COMP 1021", "COMP 1022P", "COMP 2011"],
@@ -184,7 +50,12 @@
       },
       "BE": {
         "Engineering Fundamental Courses": {
-          "Introductory COMP course": ["COMP 1021", "COMP 1022P", "COMP 2011"],
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 1029P"
+          ],
           "ENGG 1010": ["ENGG 1010"],
           "CHEM 1010 / CHEM 1020": ["CHEM 1010", "CHEM 1020"],
           "CHEM 1050": ["CHEM 1050"],
@@ -267,7 +138,6 @@
             "CENG 1700",
             "BIEN 1010"
           ],
-          "CENG 1980": ["CENG 1980"],
           "CENG 1010, CENG 1980, CENG 4020, ENGG 2010": [
             "CENG 1010",
             "CENG 1980",
@@ -453,6 +323,1730 @@
             "CPEG 4911",
             "CPEG 4912",
             "CPEG 4910"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "COMP 3511",
+            "ELEC 1100",
+            "ELEC 3300"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CPEG 2930",
+            "CPEG 3930",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "CO": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "ENGG 1010": ["ENGG 1010"],
+          "Science Course": [
+            "CHEM 1004",
+            "CHEM 1010",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1001",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2111": ["MATH 2111"],
+          "Engineering Introduction Course": [
+            "COMP 1021",
+            "BIEN 1010",
+            "CENG 1000",
+            "CIVL 1100",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "IEDA 2010",
+            "IEDA 2200",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "COMP Required Courses": {
+          "Industrial Experience and FYP": [
+            "COMP 1991",
+            "COMP 4981",
+            "COMP 4981H",
+            "COMP 4910"
+          ],
+          "Programming in C++": ["COMP 2011", "COMP 2012", "COMP 2012H"],
+          "COMP 2711, COMP 3111, COMP 3711": [
+            "COMP 2711",
+            "COMP 2711H",
+            "COMP 3111",
+            "COMP 3111H",
+            "COMP 3711",
+            "COMP 3711H"
+          ],
+          "ELEC / IELM / MATH Course - Statistics": [
+            "ELEC 2600",
+            "IEDA 2520",
+            "IEDA 2540",
+            "MATH 2411",
+            "MATH 2421",
+            "MATH 2431"
+          ],
+          "LANG 4030": ["LANG 4030", "LANG 4030H"],
+          "Other COMP Required Courses": [
+            "COMP 2611",
+            "COMP 3511",
+            "COMP 4900",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "DA": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P", "COMP 2011"],
+          "ENGG 1010": ["ENGG 1010"],
+          "CHEM 1010 / CHEM 1020 / PHYS 1112 / PHYS 1312": [
+            "CHEM 1010",
+            "CHEM 1020",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2111": ["MATH 2011", "MATH 2111"],
+          "Engineering Introduction Course": [
+            "IEDA 2010",
+            "IEDA 2200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CIVL 1100",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "DA Required Courses": {
+          "IEDA 4901 / IEDA 4920": ["IEDA 4901", "IEDA 4920"],
+          "ECON 2103 / ECON 2113": ["ECON 2103", "ECON 2113"],
+          "IEDA 1990 / IEDA 1991": ["IEDA 1990", "IEDA 1991"],
+          "Other Credit-bearing Required Courses": [
+            "IEDA 2520",
+            "IEDA 2540",
+            "IEDA 3010",
+            "IEDA 3230",
+            "IEDA 3250",
+            "IEDA 3300",
+            "IEDA 3560",
+            "LANG 4032"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "IEDA 1010",
+            "IEDA 1020",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "EE": {
+        "Engineering Fundamental Courses": {
+          "ELEC / MATH Courses": [
+            "ELEC 2600",
+            "ELEC 2600H",
+            "MATH 2011",
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "COMP 2011": ["COMP 2011"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "ENGG 1010": ["ENGG 1010"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "PHYS 1114 / PHYS 1314": ["PHYS 1114", "PHYS 1314"],
+          "Engineering Introduction Course": [
+            "ELEC 1100",
+            "ELEC 1200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CIVL 1100",
+            "COMP 1021",
+            "ENGG 1100",
+            "IEDA 2010",
+            "IEDA 2200",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "ELEC Required Courses": {
+          "ELEC 2100 / ELEC 2100H": ["ELEC 2100", "ELEC 2100H"],
+          "Industrial Experience and FYP": [
+            "ELEC 2991",
+            "ELEC 4900",
+            "ELEC 4901",
+            "ELEC 4910"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "ELEC 1100",
+            "ELEC 1200",
+            "ELEC 2350",
+            "ELEC 2400",
+            "LANG 4031"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "ELEC 2910",
+            "ELEC 3910",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "IE": {
+        "Engineering Fundamental Courses": {
+          "COMP Course": ["COMP 1021", "COMP 1022P", "COMP 2011"],
+          "ENGG 1010": ["ENGG 1010"],
+          "CHEM 1010 / CHEM 1020 / PHYS 1112 / PHYS 1312": [
+            "CHEM 1010",
+            "CHEM 1020",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH Courses": ["MATH 2011", "MATH 2111"],
+          "Engineering Introduction Course": [
+            "IEDA 2010",
+            "IEDA 2200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CIVL 1100",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "IEEM Required Courses": {
+          "IEDA 4901 / IEDA 4960": ["IEDA 4901", "IEDA 4960"],
+          "ECON 2103 / ECON 2113": ["ECON 2103", "ECON 2113"],
+          "IEDA 1990 / IEDA 1991": ["IEDA 1990", "IEDA 1991"],
+          "Other Credit-bearing Required Courses": [
+            "IEDA 2520",
+            "IEDA 2540",
+            "IEDA 3010",
+            "IEDA 3230",
+            "IEDA 3250",
+            "IEDA 3300",
+            "IEDA 4100",
+            "IEDA 4130",
+            "LANG 4032"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "IEDA 1010",
+            "IEDA 1020",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "ID": {
+        "ISDN Required Courses": {
+          "ENGG 1010": ["ENGG 1010"],
+          "Other Credit-bearing Required Courses": [
+            "ISDN 1002",
+            "ISDN 1004",
+            "ISDN 1006",
+            "ISDN 2001",
+            "ISDN 2002",
+            "ISDN 2200",
+            "ISDN 2300",
+            "ISDN 2400",
+            "ISDN 3001",
+            "ISDN 3002",
+            "ISDN 4001",
+            "ISDN 4002"
+          ],
+          "COMP Course": ["COMP 1021", "COMP 1022P"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "LANG 4032": ["LANG 4032"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS Course": ["PHYS 1101", "PHYS 1111", "PHYS 1112", "PHYS 1312"]
+        }
+      },
+      "ME": {
+        "Engineering Fundamental Courses": {
+          "COMP Course": ["COMP 1021", "COMP 1022P", "COMP 2011"],
+          "ENGG 1010": ["ENGG 1010"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "MATH 2111 / MATH 2350 / MATH 2351": [
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "Science 1000-level course": ["CHEM 1?", "LIFS 1?", "PHYS 1?"]
+        },
+        "MECH Required Courses": {
+          "MECH 3300 / MECH 3420 / MECH 3520 / MECH 3710": [
+            "MECH 3300",
+            "MECH 3420",
+            "MECH 3520",
+            "MECH 3710"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "MECH 2020",
+            "MECH 2040",
+            "MECH 2210",
+            "MECH 2310",
+            "MECH 2410",
+            "MECH 2520",
+            "MECH 2907",
+            "MECH 3030",
+            "MECH 3310",
+            "MECH 3610",
+            "MECH 3630",
+            "MECH 3830",
+            "MECH 4900",
+            "ELEC 2420",
+            "LANG 4034"
+          ],
+          "Non-credit-bearing Required Courses": ["MECH 1990", "ENGG 2010"]
+        }
+      },
+      "BT": {
+        "School of Science requirement for non-IRE students": {
+          "SCIE 1000": ["SCIE 1000"],
+          "COMP Requirement": ["COMP 1021", "COMP 1022P", "COMP 2011"],
+          "LANG Requirement": ["LANG 2010", "LANG 2010H"],
+          "Science Foundation Courses": [
+            "CHEM 1004",
+            "CHEM 1010",
+            "CHEM 1020",
+            "CHEM 1030",
+            "LIFS 1030",
+            "LIFS 1901",
+            "LIFS 1902",
+            "LIFS 1930",
+            "LIFS 2210",
+            "OCES 1030",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1014",
+            "MATH 1020",
+            "MATH 1023",
+            "MATH 1024",
+            "MATH 2023",
+            "MATH 2121",
+            "MATH 2131",
+            "PHYS 1001",
+            "PHYS 1111",
+            "PHYS 1112",
+            "PHYS 1114",
+            "PHYS 1312",
+            "PHYS 1314",
+            "CHEM 1050",
+            "CHEM 1055",
+            "LIFS 1903",
+            "LIFS 1904",
+            "PHYS 1113",
+            "PHYS 1115"
+          ]
+        },
+        "Major Pre-requisite course(s)": {
+          "LIFS 1901 (Students with level 3 or above in HKDSE 1x Biology are exempted)": [
+            "LIFS 1901"
+          ],
+          "LIFS 1902": ["LIFS 1902"]
+        },
+        "BIOT Required Courses": {
+          "LIFS 1903 (Students with level 3 or above in HKDSE 1x Biology are exempted)": [
+            "LIFS 1903"
+          ],
+          "BIOT Research Project": [
+            "LIFS 4963",
+            "LIFS 4973",
+            "LIFS 4983",
+            "SCIE 4500"
+          ],
+          "CHEM 1010 / CHEM 1020": ["CHEM 1010", "CHEM 1020"],
+          "CHEM 2110 / CHEM 2311": ["CHEM 2110", "CHEM 2311"],
+          "CHEM 2155 / CHEM 2355": ["CHEM 2155", "CHEM 2355"],
+          "LANG 3024 / LANG 3027": ["LANG 3024", "LANG 3027"],
+          "Other Required Courses": [
+            "LIFS 1904",
+            "LIFS 2040",
+            "LIFS 2070",
+            "LIFS 2080",
+            "LIFS 2210",
+            "LIFS 3060",
+            "LIFS 3110",
+            "LIFS 3140",
+            "LIFS 4150",
+            "LIFS 4200",
+            "CHEM 1030",
+            "CHEM 1050",
+            "CHEM 1055",
+            "CENG 1600"
+          ]
+        }
+      }
+    },
+    "2122": {
+      "AE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "ENGG 1010": ["ENGG 1010"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "MATH 2111 / MATH 2350 / MATH 2351": [
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "Science 1000-level course": ["CHEM 1?", "LIFS 1?", "PHYS 1?"]
+        },
+        "AE Required Courses": {
+          "Credit-bearing Required Courses": [
+            "MECH 1907",
+            "MECH 2020",
+            "MECH 2040",
+            "MECH 2210",
+            "MECH 2310",
+            "MECH 2410",
+            "MECH 3400",
+            "MECH 3610",
+            "MECH 3620",
+            "MECH 3640",
+            "MECH 3650",
+            "MECH 3660",
+            "MECH 3670",
+            "MECH 3680",
+            "MECH 3690",
+            "MECH 4980",
+            "ELEC 2420",
+            "LANG 4034"
+          ],
+          "Non-credit-bearing Required Courses": ["MECH 1990", "ENGG 2010"]
+        }
+      },
+      "BE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H",
+            "COMP 1029P"
+          ],
+          "ENGG 1010": ["ENGG 1010"],
+          "CHEM 1010 / CHEM 1020": ["CHEM 1010", "CHEM 1020"],
+          "CHEM 1050": ["CHEM 1050"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "LIFS 1901": ["LIFS 1901"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "SENG Introduction Course": [
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "IEDA 2010",
+            "IEDA 2200",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "BIEN Required Courses": {
+          "BIEN 1010 / CENG 1000": ["BIEN 1010", "CENG 1000"],
+          "BIEN 4920 / BIEN 4930 / BIEN 4940": [
+            "BIEN 4920",
+            "BIEN 4930",
+            "BIEN 4940"
+          ],
+          "BIEN 3300 / LIFS 3150 / MATH 2411": [
+            "BIEN 3300",
+            "LIFS 3150",
+            "MATH 2411"
+          ],
+          "BIEN 3310 / BIEN 3320": ["BIEN 3310", "BIEN 3320"],
+          "ENGG 2010": ["ENGG 2010"],
+          "Other BIEN Required Courses": [
+            "BIEN 2310",
+            "BIEN 2410",
+            "BIEN 2610",
+            "BIEN 2990",
+            "BIEN 3410",
+            "BIEN 3910",
+            "BIEN 4990",
+            "CENG 2210",
+            "CENG 2220",
+            "CENG 3230",
+            "LANG 4035"
+          ]
+        }
+      },
+      "CE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "ENGG 1010": ["ENGG 1010"],
+          "CHEM 1010 / CHEM 1020": ["CHEM 1010", "CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CENG Required Courses": {
+          "CENG 1000 / CENG 1500": ["CENG 1000", "CENG 1500"],
+          "CENG 1600 / CENG 1700 / BIEN 1010": [
+            "CENG 1600",
+            "CENG 1700",
+            "BIEN 1010"
+          ],
+          "CENG 1010, CENG 1980, CENG 4020, ENGG 2010": [
+            "CENG 1010",
+            "CENG 1980",
+            "CENG 4020",
+            "ENGG 2010"
+          ],
+          "CENG 4920 / CENG 4930 / CENG 4940": [
+            "CENG 4920",
+            "CENG 4930",
+            "CENG 4940"
+          ],
+          "BIEN 2410 / BIEN 2610 / LIFS 1901": [
+            "BIEN 2410",
+            "BIEN 2610",
+            "LIFS 1901"
+          ],
+          "Other Required Courses": [
+            "CENG 2110",
+            "CENG 2210",
+            "CENG 2220",
+            "CENG 2310",
+            "CENG 3110",
+            "CENG 3150",
+            "CENG 3210",
+            "CENG 3220",
+            "CENG 3230",
+            "CENG 3950",
+            "CHEM 2111",
+            "CHEM 2155",
+            "LANG 4035"
+          ]
+        }
+      },
+      "CI": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "ENGG 1010": ["ENGG 1010"],
+          "CHEM 1010 / CHEM 1020": ["CHEM 1010", "CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2350": ["MATH 2011", "MATH 2350"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CIVL Required Courses": {
+          "Credit-bearing Required Courses": [
+            "CIVL 1100",
+            "CIVL 2110",
+            "CIVL 2120",
+            "CIVL 2160",
+            "CIVL 2170",
+            "CIVL 2410",
+            "CIVL 2510",
+            "CIVL 2810",
+            "CIVL 3210",
+            "CIVL 3310",
+            "CIVL 3320",
+            "CIVL 3510",
+            "CIVL 3610",
+            "CIVL 3730",
+            "CIVL 3740",
+            "CIVL 4950",
+            "LANG 4033"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CIVL 1010",
+            "CIVL 2010",
+            "CIVL 2020",
+            "CIVL 3010",
+            "CIVL 3020",
+            "ENGG 2010"
+          ],
+          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+        }
+      },
+      "CV": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "ENGG 1010": ["ENGG 1010"],
+          "CHEM 1010 / CHEM 1020": ["CHEM 1010", "CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2350": ["MATH 2011", "MATH 2350"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CIVL Required Courses": {
+          "CIVL 3210 / CIVL 3610": ["CIVL 3210", "CIVL 3610"],
+          "Other Credit-bearing Required Courses": [
+            "CIVL 1100",
+            "CIVL 2110",
+            "CIVL 2120",
+            "CIVL 2160",
+            "CIVL 2170",
+            "CIVL 2410",
+            "CIVL 2510",
+            "CIVL 2810",
+            "CIVL 3310",
+            "CIVL 3320",
+            "CIVL 3420",
+            "CIVL 3510",
+            "CIVL 3730",
+            "CIVL 3740",
+            "CIVL 4950",
+            "LANG 4033"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CIVL 1010",
+            "CIVL 2010",
+            "CIVL 2020",
+            "CIVL 3010",
+            "CIVL 3020",
+            "ENGG 2010"
+          ],
+          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+        }
+      },
+      "CP": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "ENGG 1010": ["ENGG 1010"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2111": ["MATH 2011", "MATH 2111"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "PHYS 1114 / PHYS 1314": ["PHYS 1114", "PHYS 1314"],
+          "Engineering Introduction Course": [
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "ENGG 1100",
+            "IEDA 2010",
+            "IEDA 2200",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "CPEG Required Courses": {
+          "Programming in C++": ["COMP 2011", "COMP 2012", "COMP 2012H"],
+          "COMP 2611 / ELEC 2350": ["COMP 2611", "ELEC 2350"],
+          "COMP 2711 / COMP 2711H / ELEC 2600": [
+            "COMP 2711",
+            "COMP 2711H",
+            "ELEC 2600"
+          ],
+          "ELEC 1200 / ELEC 2100 / ELEC 2400 (2 out of 3)": [
+            "ELEC 1200",
+            "ELEC 2100",
+            "ELEC 2400"
+          ],
+          "LANG 4030 / LANG 4031": ["LANG 4030", "LANG 4030H", "LANG 4031"],
+          "Industrial Experience and FYP": [
+            "CPEG 1971",
+            "CPEG 4901",
+            "CPEG 4902",
+            "CPEG 4911",
+            "CPEG 4912",
+            "CPEG 4910"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "COMP 3511",
+            "ELEC 1100",
+            "ELEC 3300"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CPEG 2930",
+            "CPEG 3930",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "CO": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "ENGG 1010": ["ENGG 1010"],
+          "Science Course": [
+            "CHEM 1004",
+            "CHEM 1010",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1001",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2111": ["MATH 2111"],
+          "Engineering Introduction Course": [
+            "COMP 1021",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "IEDA 2010",
+            "IEDA 2200",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "COMP Required Courses": {
+          "Industrial Experience and FYP": [
+            "COMP 1991",
+            "COMP 4981",
+            "COMP 4981H",
+            "COMP 4910"
+          ],
+          "Programming in C++": ["COMP 2011", "COMP 2012", "COMP 2012H"],
+          "COMP 2711, COMP 3111, COMP 3711": [
+            "COMP 2711",
+            "COMP 2711H",
+            "COMP 3111",
+            "COMP 3111H",
+            "COMP 3711",
+            "COMP 3711H"
+          ],
+          "ELEC / IELM / MATH Course - Statistics": [
+            "ELEC 2600",
+            "ELEC 2600H",
+            "IEDA 2520",
+            "IEDA 2540",
+            "MATH 2411",
+            "MATH 2421",
+            "MATH 2431"
+          ],
+          "LANG 4030": ["LANG 4030", "LANG 4030H"],
+          "Other COMP Required Courses": [
+            "COMP 2611",
+            "COMP 3511",
+            "COMP 4900",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "DA": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "ENGG 1010": ["ENGG 1010"],
+          "CHEM 1010 / CHEM 1020 / PHYS 1112 / PHYS 1312": [
+            "CHEM 1010",
+            "CHEM 1020",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2111": ["MATH 2011", "MATH 2111"],
+          "Engineering Introduction Course": [
+            "IEDA 2010",
+            "IEDA 2200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "DA Required Courses": {
+          "IEDA 4901 / IEDA 4920": ["IEDA 4901", "IEDA 4920"],
+          "ECON 2103 / ECON 2113": ["ECON 2103", "ECON 2113"],
+          "Other Credit-bearing Required Courses": [
+            "IEDA 2520",
+            "IEDA 2540",
+            "IEDA 3010",
+            "IEDA 3230",
+            "IEDA 3250",
+            "IEDA 3300",
+            "IEDA 3560",
+            "LANG 4032"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "IEDA 1010",
+            "IEDA 1020",
+            "IEDA 1901",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "EE": {
+        "Engineering Fundamental Courses": {
+          "ELEC / MATH Courses": [
+            "ELEC 2600",
+            "ELEC 2600H",
+            "MATH 2011",
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "COMP 2011 / COMP 2012H": ["COMP 2011", "COMP 2012H"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "ENGG 1010": ["ENGG 1010"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "PHYS 1114 / PHYS 1314": ["PHYS 1114", "PHYS 1314"],
+          "Engineering Introduction Course": [
+            "ELEC 1100",
+            "ELEC 1200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "COMP 1021",
+            "ENGG 1100",
+            "IEDA 2010",
+            "IEDA 2200",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "ELEC Required Courses": {
+          "ELEC 2100 / ELEC 2100H": ["ELEC 2100", "ELEC 2100H"],
+          "Industrial Experience and FYP": [
+            "ELEC 2991",
+            "ELEC 4900",
+            "ELEC 4901",
+            "ELEC 4910"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "ELEC 1100",
+            "ELEC 1200",
+            "ELEC 2350",
+            "ELEC 2400",
+            "LANG 4031"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "ELEC 2910",
+            "ELEC 3910",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "IE": {
+        "Engineering Fundamental Courses": {
+          "COMP Course": ["COMP 1021", "COMP 1022P", "COMP 2011", "COMP 2012H"],
+          "ENGG 1010": ["ENGG 1010"],
+          "CHEM 1010 / CHEM 1020 / PHYS 1112 / PHYS 1312": [
+            "CHEM 1010",
+            "CHEM 1020",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH Courses": ["MATH 2011", "MATH 2111"],
+          "Engineering Introduction Course": [
+            "IEDA 2010",
+            "IEDA 2200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1901",
+            "MECH 1902",
+            "MECH 1905",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "IEEM Required Courses": {
+          "IEDA 4901 / IEDA 4960": ["IEDA 4901", "IEDA 4960"],
+          "ECON 2103 / ECON 2113": ["ECON 2103", "ECON 2113"],
+          "Other Credit-bearing Required Courses": [
+            "IEDA 2520",
+            "IEDA 2540",
+            "IEDA 3010",
+            "IEDA 3230",
+            "IEDA 3250",
+            "IEDA 3300",
+            "IEDA 4100",
+            "IEDA 4130",
+            "LANG 4032"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "IEDA 1010",
+            "IEDA 1020",
+            "IEDA 1901",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "ID": {
+        "ISDN Required Courses": {
+          "ENGG 1010": ["ENGG 1010"],
+          "Other Credit-bearing Required Courses": [
+            "ISDN 1002",
+            "ISDN 1004",
+            "ISDN 1006",
+            "ISDN 2001",
+            "ISDN 2002",
+            "ISDN 2200",
+            "ISDN 2300",
+            "ISDN 2400",
+            "ISDN 3001",
+            "ISDN 3002",
+            "ISDN 4001",
+            "ISDN 4002"
+          ],
+          "COMP Course": ["COMP 1021", "COMP 1022P", "COMP 2011", "COMP 2012H"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "LANG 4032": ["LANG 4032"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS Course": ["PHYS 1101", "PHYS 1111", "PHYS 1112", "PHYS 1312"]
+        }
+      },
+      "ME": {
+        "Engineering Fundamental Courses": {
+          "COMP Course": ["COMP 1021", "COMP 1022P", "COMP 2011", "COMP 2012H"],
+          "ENGG 1010": ["ENGG 1010"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "MATH 2111 / MATH 2350 / MATH 2351": [
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "Science 1000-level course": ["CHEM 1?", "LIFS 1?", "PHYS 1?"]
+        },
+        "MECH Required Courses": {
+          "MECH 3300 / MECH 3420 / MECH 3520 / MECH 3710": [
+            "MECH 3300",
+            "MECH 3420",
+            "MECH 3520",
+            "MECH 3710"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "MECH 2020",
+            "MECH 2040",
+            "MECH 2210",
+            "MECH 2310",
+            "MECH 2410",
+            "MECH 2520",
+            "MECH 3030",
+            "MECH 3310",
+            "MECH 3610",
+            "MECH 3630",
+            "MECH 3830",
+            "MECH 3907",
+            "MECH 4900",
+            "ELEC 2420",
+            "LANG 4034"
+          ],
+          "Non-credit-bearing Required Courses": ["MECH 1990", "ENGG 2010"]
+        }
+      },
+      "BT": {
+        "School of Science requirement for non-IRE students": {
+          "SCIE 1000": ["SCIE 1000"],
+          "COMP Requirement": ["COMP 1021", "COMP 1022P", "COMP 2011"],
+          "LANG Requirement": ["LANG 2010", "LANG 2010H"],
+          "Science Foundation Courses": [
+            "CHEM 1004",
+            "CHEM 1010",
+            "CHEM 1020",
+            "CHEM 1030",
+            "LIFS 1901",
+            "LIFS 1902",
+            "LIFS 1930",
+            "LIFS 2210",
+            "OCES 1030",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1014",
+            "MATH 1020",
+            "MATH 1023",
+            "MATH 1024",
+            "MATH 2023",
+            "MATH 2121",
+            "MATH 2131",
+            "PHYS 1001",
+            "PHYS 1111",
+            "PHYS 1112",
+            "PHYS 1114",
+            "PHYS 1312",
+            "PHYS 1314",
+            "CHEM 1050",
+            "CHEM 1055",
+            "LIFS 1903",
+            "LIFS 1904",
+            "PHYS 1113",
+            "PHYS 1115"
+          ]
+        },
+        "Major Pre-requisite course(s)": {
+          "LIFS 1901 (Students with level 3 or above in HKDSE 1x Biology are exempted)": [
+            "LIFS 1901"
+          ],
+          "LIFS 1902": ["LIFS 1902"]
+        },
+        "BIOT Required Courses": {
+          "LIFS 1903 (Students with level 3 or above in HKDSE 1x Biology are exempted)": [
+            "LIFS 1903"
+          ],
+          "BIOT Research Project": [
+            "LIFS 4963",
+            "LIFS 4973",
+            "LIFS 4983",
+            "SCIE 4500"
+          ],
+          "CHEM 1010 / CHEM 1020": ["CHEM 1010", "CHEM 1020"],
+          "CHEM 2110 / CHEM 2311": ["CHEM 2110", "CHEM 2311"],
+          "CHEM 2155 / CHEM 2355": ["CHEM 2155", "CHEM 2355"],
+          "LANG 3024 / LANG 3027": ["LANG 3024", "LANG 3027"],
+          "Other Required Courses": [
+            "LIFS 1904",
+            "LIFS 2040",
+            "LIFS 2070",
+            "LIFS 2080",
+            "LIFS 2210",
+            "LIFS 3060",
+            "LIFS 3110",
+            "LIFS 3140",
+            "LIFS 4150",
+            "LIFS 4200",
+            "CHEM 1030",
+            "CHEM 1050",
+            "CHEM 1055",
+            "CENG 1600"
+          ]
+        }
+      }
+    },
+    "2223": {
+      "AE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "MATH 2111 / MATH 2350 / MATH 2351": [
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "Science 1000-level course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101"
+          ]
+        },
+        "AE Required Courses": {
+          "Credit-bearing Required Courses": [
+            "MECH 1907",
+            "MECH 2020",
+            "MECH 2040",
+            "MECH 2210",
+            "MECH 2310",
+            "MECH 2410",
+            "MECH 3400",
+            "MECH 3610",
+            "MECH 3620",
+            "MECH 3640",
+            "MECH 3650",
+            "MECH 3660",
+            "MECH 3670",
+            "MECH 3680",
+            "MECH 3690",
+            "MECH 4980",
+            "ELEC 2420",
+            "LANG 4034"
+          ],
+          "Non-credit-bearing Required Courses": ["MECH 1990", "ENGG 2010"]
+        }
+      },
+      "BE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H",
+            "COMP 1029P"
+          ],
+          "CHEM 1020": ["CHEM 1020"],
+          "CHEM 1050": ["CHEM 1050"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "LIFS 1901": ["LIFS 1901"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "SENG Introduction Course": [
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "IEDA 2010",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "BIEN Required Courses": {
+          "BIEN 1010 / CENG 1000": ["BIEN 1010", "CENG 1000"],
+          "BIEN 4920 / BIEN 4930 / BIEN 4940": [
+            "BIEN 4920",
+            "BIEN 4930",
+            "BIEN 4940"
+          ],
+          "BIEN 3300 / LIFS 3150 / MATH 2411": [
+            "BIEN 3300",
+            "LIFS 3150",
+            "MATH 2411"
+          ],
+          "BIEN 3310 / BIEN 3320": ["BIEN 3310", "BIEN 3320"],
+          "ENGG 2010": ["ENGG 2010"],
+          "Other BIEN Required Courses": [
+            "BIEN 2310",
+            "BIEN 2410",
+            "BIEN 2610",
+            "BIEN 2990",
+            "BIEN 3410",
+            "BIEN 3910",
+            "BIEN 4990",
+            "CENG 2210",
+            "CENG 2220",
+            "CENG 3230",
+            "LANG 4035"
+          ]
+        }
+      },
+      "CE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "CHEM 1020": ["CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CENG Required Courses": {
+          "CENG 1000 / CENG 1500": ["CENG 1000", "CENG 1500"],
+          "CENG 1600 / CENG 1700 / BIEN 1010": [
+            "CENG 1600",
+            "CENG 1700",
+            "BIEN 1010"
+          ],
+          "CENG 1010, CENG 1980, CENG 4020, ENGG 2010": [
+            "CENG 1010",
+            "CENG 1980",
+            "CENG 4020",
+            "ENGG 2010"
+          ],
+          "CENG 4920 / CENG 4930 / CENG 4940": [
+            "CENG 4920",
+            "CENG 4930",
+            "CENG 4940"
+          ],
+          "BIEN 2410 / BIEN 2610 / LIFS 1901": [
+            "BIEN 2410",
+            "BIEN 2610",
+            "LIFS 1901"
+          ],
+          "Other Required Courses": [
+            "CENG 2110",
+            "CENG 2210",
+            "CENG 2220",
+            "CENG 2310",
+            "CENG 3110",
+            "CENG 3150",
+            "CENG 3210",
+            "CENG 3220",
+            "CENG 3230",
+            "CENG 3950",
+            "CHEM 2111",
+            "CHEM 2155",
+            "LANG 4035"
+          ]
+        }
+      },
+      "CI": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "CHEM 1020": ["CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2350": ["MATH 2011", "MATH 2350"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CIVL Required Courses": {
+          "Credit-bearing Required Courses": [
+            "CIVL 1100",
+            "CIVL 2110",
+            "CIVL 2120",
+            "CIVL 2160",
+            "CIVL 2170",
+            "CIVL 2410",
+            "CIVL 2510",
+            "CIVL 2810",
+            "CIVL 3210",
+            "CIVL 3310",
+            "CIVL 3320",
+            "CIVL 3510",
+            "CIVL 3610",
+            "CIVL 3730",
+            "CIVL 3740",
+            "CIVL 4950",
+            "LANG 4033"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CIVL 1010",
+            "CIVL 2010",
+            "CIVL 2020",
+            "CIVL 3010",
+            "CIVL 3020",
+            "ENGG 2010"
+          ],
+          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+        }
+      },
+      "CV": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "CHEM 1020": ["CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2350": ["MATH 2011", "MATH 2350"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CIVL Required Courses": {
+          "CIVL 3210 / CIVL 3610": ["CIVL 3210", "CIVL 3610"],
+          "Other Credit-bearing Required Courses": [
+            "CIVL 1100",
+            "CIVL 2110",
+            "CIVL 2120",
+            "CIVL 2160",
+            "CIVL 2170",
+            "CIVL 2410",
+            "CIVL 2510",
+            "CIVL 2810",
+            "CIVL 3310",
+            "CIVL 3320",
+            "CIVL 3420",
+            "CIVL 3510",
+            "CIVL 3730",
+            "CIVL 3740",
+            "CIVL 4950",
+            "LANG 4033"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CIVL 1010",
+            "CIVL 2010",
+            "CIVL 2020",
+            "CIVL 3010",
+            "CIVL 3020",
+            "ENGG 2010"
+          ],
+          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+        }
+      },
+      "CP": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2111": ["MATH 2011", "MATH 2111"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "PHYS 1114 / PHYS 1314": ["PHYS 1114", "PHYS 1314"],
+          "Engineering Introduction Course": [
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "ENGG 1100",
+            "IEDA 2010",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "CPEG Required Courses": {
+          "Programming in C++": ["COMP 2011", "COMP 2012", "COMP 2012H"],
+          "COMP 2611 / ELEC 2350": ["COMP 2611", "ELEC 2350"],
+          "COMP 2711 / COMP 2711H / ELEC 2600": [
+            "COMP 2711",
+            "COMP 2711H",
+            "ELEC 2600"
+          ],
+          "ELEC 1200 / ELEC 2100 / ELEC 2400 (2 out of 3)": [
+            "ELEC 1200",
+            "ELEC 2100",
+            "ELEC 2400"
+          ],
+          "LANG 4030 / LANG 4031": ["LANG 4030", "LANG 4030H", "LANG 4031"],
+          "Industrial Experience and FYP": [
+            "CPEG 1971",
+            "CPEG 4901",
+            "CPEG 4902",
+            "CPEG 4911",
+            "CPEG 4912",
+            "CPEG 4910"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "COMP 3511",
+            "ELEC 1100",
+            "ELEC 3300"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CPEG 2930",
+            "CPEG 3930",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "CO": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "Science Course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2111 / MATH 2121 / MATH 2131": [
+            "MATH 2111",
+            "MATH 2121",
+            "MATH 2131"
+          ],
+          "Engineering Introduction Course": [
+            "COMP 1021",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "IEDA 2010",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "COMP Required Courses": {
+          "Industrial Experience and FYP": [
+            "COMP 1991",
+            "COMP 4981",
+            "COMP 4981H",
+            "COMP 4910"
+          ],
+          "Programming in C++": ["COMP 2011", "COMP 2012", "COMP 2012H"],
+          "COMP 2711, COMP 3111, COMP 3711": [
+            "COMP 2711",
+            "COMP 2711H",
+            "COMP 3111",
+            "COMP 3111H",
+            "COMP 3711",
+            "COMP 3711H"
+          ],
+          "ELEC / IELM / MATH Course - Statistics": [
+            "ELEC 2600",
+            "ELEC 2600H",
+            "IEDA 2520",
+            "IEDA 2540",
+            "MATH 2411",
+            "MATH 2421",
+            "MATH 2431"
+          ],
+          "LANG 4030": ["LANG 4030", "LANG 4030H"],
+          "Other COMP Required Courses": [
+            "COMP 2611",
+            "COMP 3511",
+            "COMP 4900",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "DA": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "CHEM 1020 / PHYS 1112 / PHYS 1312": [
+            "CHEM 1020",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2111": ["MATH 2011", "MATH 2111"],
+          "Engineering Introduction Course": [
+            "IEDA 2010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "DA Required Courses": {
+          "IEDA 4901 / IEDA 4920": ["IEDA 4901", "IEDA 4920"],
+          "ECON 2103 / ECON 2113": ["ECON 2103", "ECON 2113"],
+          "Other Credit-bearing Required Courses": [
+            "IEDA 2520",
+            "IEDA 2540",
+            "IEDA 3010",
+            "IEDA 3230",
+            "IEDA 3250",
+            "IEDA 3300",
+            "IEDA 3560",
+            "LANG 4032"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "IEDA 1010",
+            "IEDA 1020",
+            "IEDA 1901",
+            "ENGG 2010"
           ]
         }
       },
@@ -499,7 +2093,7 @@
           ]
         },
         "ELEC Required Courses": {
-          "ELEC 2110 / ELEC 2110H": ["ELEC 2110", "ELEC 2110H"],
+          "ELEC 2100 / ELEC 2100H": ["ELEC 2100", "ELEC 2100H"],
           "Industrial Experience and FYP": [
             "ELEC 2991",
             "ELEC 4900",
@@ -638,7 +2232,7 @@
             "MATH 1024",
             "MATH 1020"
           ],
-          "MATH 2010": ["MATH 2010"],
+          "MATH 2011": ["MATH 2011"],
           "MATH 2111 / MATH 2350 / MATH 2351": [
             "MATH 2111",
             "MATH 2350",
@@ -681,7 +2275,7 @@
         }
       },
       "BT": {
-        "School Requirements": {
+        "School of Science requirement for non-IRE students": {
           "COMP Requirement": ["COMP 1021", "COMP 1022P", "COMP 2011"],
           "LANG Requirement": ["LANG 2010", "LANG 2010H"],
           "Science Foundation Courses": [
@@ -736,7 +2330,804 @@
           "CHEM 2155 / CHEM 2355": ["CHEM 2155", "CHEM 2355"],
           "LANG 3024 / LANG 3027": ["LANG 3024", "LANG 3027"],
           "Other Required Courses": [
+            "LIFS 1904",
+            "LIFS 2040",
+            "LIFS 2070",
+            "LIFS 2080",
+            "LIFS 2210",
+            "LIFS 3060",
+            "LIFS 3110",
+            "LIFS 3140",
+            "LIFS 4150",
+            "LIFS 4200",
+            "CHEM 1020",
+            "CHEM 1030",
+            "CHEM 1050",
+            "CHEM 1055",
+            "CENG 1600"
+          ]
+        }
+      }
+    },
+    "2324": {
+      "AE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "MATH 2111 / MATH 2350 / MATH 2351": [
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "Science 1000-level course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101"
+          ]
+        },
+        "AE Required Courses": {
+          "Credit-bearing Required Courses": [
+            "MECH 1907",
+            "MECH 2020",
+            "MECH 2040",
+            "MECH 2210",
+            "MECH 2310",
+            "MECH 2410",
+            "MECH 3400",
+            "MECH 3610",
+            "MECH 3620",
+            "MECH 3640",
+            "MECH 3650",
+            "MECH 3660",
+            "MECH 3670",
+            "MECH 3680",
+            "MECH 3690",
+            "MECH 4980",
+            "ELEC 2420",
+            "LANG 4034"
+          ],
+          "Non-credit-bearing Required Courses": ["MECH 1990", "ENGG 2010"]
+        }
+      },
+      "BE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H",
+            "COMP 1029P"
+          ],
+          "CHEM 1020": ["CHEM 1020"],
+          "CHEM 1050": ["CHEM 1050"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "LIFS 1901": ["LIFS 1901"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "SENG Introduction Course": [
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "IEDA 2010",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "BIEN Required Courses": {
+          "BIEN 1010 / CENG 1000": ["BIEN 1010", "CENG 1000"],
+          "BIEN 4920 / BIEN 4930 / BIEN 4940": [
+            "BIEN 4920",
+            "BIEN 4930",
+            "BIEN 4940"
+          ],
+          "BIEN 3300 / LIFS 3150 / MATH 2411": [
+            "BIEN 3300",
+            "LIFS 3150",
+            "MATH 2411"
+          ],
+          "BIEN 3310 / BIEN 3320": ["BIEN 3310", "BIEN 3320"],
+          "ENGG 2010": ["ENGG 2010"],
+          "Other BIEN Required Courses": [
+            "BIEN 2310",
+            "BIEN 2410",
+            "BIEN 2610",
+            "BIEN 2990",
+            "BIEN 3410",
+            "BIEN 3910",
+            "BIEN 4990",
+            "CENG 2210",
+            "CENG 2220",
+            "CENG 3230",
+            "LANG 4035"
+          ]
+        }
+      },
+      "CE": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "CHEM 1020": ["CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CENG Required Courses": {
+          "CENG 1000 / CENG 1500": ["CENG 1000", "CENG 1500"],
+          "CENG 1600 / CENG 1700 / BIEN 1010": [
+            "CENG 1600",
+            "CENG 1700",
+            "BIEN 1010"
+          ],
+          "CENG 1010, CENG 1980, CENG 4020, ENGG 2010": [
+            "CENG 1010",
+            "CENG 1980",
+            "CENG 4020",
+            "ENGG 2010"
+          ],
+          "CENG 4920 / CENG 4930 / CENG 4940": [
+            "CENG 4920",
+            "CENG 4930",
+            "CENG 4940"
+          ],
+          "BIEN 2410 / BIEN 2610 / LIFS 1901": [
+            "BIEN 2410",
+            "BIEN 2610",
+            "LIFS 1901"
+          ],
+          "Other Required Courses": [
+            "CENG 2110",
+            "CENG 2210",
+            "CENG 2220",
+            "CENG 2310",
+            "CENG 3110",
+            "CENG 3150",
+            "CENG 3210",
+            "CENG 3220",
+            "CENG 3230",
+            "CENG 3300",
+            "CENG 3950",
+            "CHEM 2111",
+            "CHEM 2155",
+            "LANG 4035"
+          ]
+        }
+      },
+      "CI": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "CHEM 1020": ["CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2350": ["MATH 2011", "MATH 2350"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CIVL Required Courses": {
+          "Credit-bearing Required Courses": [
+            "CIVL 1100",
+            "CIVL 2110",
+            "CIVL 2120",
+            "CIVL 2160",
+            "CIVL 2170",
+            "CIVL 2410",
+            "CIVL 2510",
+            "CIVL 2810",
+            "CIVL 3210",
+            "CIVL 3310",
+            "CIVL 3320",
+            "CIVL 3510",
+            "CIVL 3610",
+            "CIVL 3730",
+            "CIVL 3740",
+            "CIVL 4950",
+            "LANG 4033"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CIVL 1010",
+            "CIVL 2010",
+            "CIVL 2020",
+            "CIVL 3010",
+            "CIVL 3020",
+            "ENGG 2010"
+          ],
+          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+        }
+      },
+      "CV": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "CHEM 1020": ["CHEM 1020"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2350": ["MATH 2011", "MATH 2350"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"]
+        },
+        "CIVL Required Courses": {
+          "CIVL 3210 / CIVL 3610": ["CIVL 3210", "CIVL 3610"],
+          "Other Credit-bearing Required Courses": [
+            "CIVL 1100",
+            "CIVL 2110",
+            "CIVL 2120",
+            "CIVL 2160",
+            "CIVL 2170",
+            "CIVL 2410",
+            "CIVL 2510",
+            "CIVL 2810",
+            "CIVL 3310",
+            "CIVL 3320",
+            "CIVL 3420",
+            "CIVL 3510",
+            "CIVL 3730",
+            "CIVL 3740",
+            "CIVL 4950",
+            "LANG 4033"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CIVL 1010",
+            "CIVL 2010",
+            "CIVL 2020",
+            "CIVL 3010",
+            "CIVL 3020",
+            "ENGG 2010"
+          ],
+          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+        }
+      },
+      "CP": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2111": ["MATH 2011", "MATH 2111"],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "PHYS 1114 / PHYS 1314": ["PHYS 1114", "PHYS 1314"],
+          "Engineering Introduction Course": [
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "CIVL 1210",
+            "ENGG 1100",
+            "IEDA 2010",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "CPEG Required Courses": {
+          "Programming in C++": ["COMP 2011", "COMP 2012", "COMP 2012H"],
+          "COMP 2611 / ELEC 2350": ["COMP 2611", "ELEC 2350"],
+          "COMP 2711 / COMP 2711H": ["COMP 2711", "COMP 2711H"],
+          "LANG 4030 / LANG 4031": ["LANG 4030", "LANG 4030H", "LANG 4031"],
+          "Industrial Experience and FYP": [
+            "CPEG 1971",
+            "CPEG 4901",
+            "CPEG 4902",
+            "CPEG 4911",
+            "CPEG 4912",
+            "CPEG 4910"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "COMP 3511",
+            "ELEC 1100",
+            "ELEC 2100",
+            "ELEC 2400",
+            "ELEC 2600",
+            "ELEDC 3300"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "CPEG 2930",
+            "CPEG 3930",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "CO": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "Science Course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2111 / MATH 2121 / MATH 2131": [
+            "MATH 2111",
+            "MATH 2121",
+            "MATH 2131"
+          ],
+          "Engineering Introduction Course": [
+            "COMP 1021",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "IEDA 2010",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "COMP Required Courses": {
+          "Industrial Experience and FYP": [
+            "COMP 1991",
+            "COMP 4981",
+            "COMP 4981H",
+            "COMP 4910"
+          ],
+          "Programming in C++": ["COMP 2011", "COMP 2012", "COMP 2012H"],
+          "COMP 2711, COMP 3111, COMP 3711": [
+            "COMP 2711",
+            "COMP 2711H",
+            "COMP 3111",
+            "COMP 3111H",
+            "COMP 3711",
+            "COMP 3711H"
+          ],
+          "ELEC / IELM / MATH Course - Statistics": [
+            "ELEC 2600",
+            "ELEC 2600H",
+            "IEDA 2520",
+            "IEDA 2540",
+            "MATH 2411",
+            "MATH 2421",
+            "MATH 2431"
+          ],
+          "LANG 4030": ["LANG 4030", "LANG 4030H"],
+          "Other COMP Required Courses": [
+            "COMP 2611",
+            "COMP 3511",
+            "COMP 4900",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "DA": {
+        "Engineering Fundamental Courses": {
+          "Introductory COMP course": [
+            "COMP 1021",
+            "COMP 1022P",
+            "COMP 2011",
+            "COMP 2012H"
+          ],
+          "CHEM 1020 / PHYS 1112 / PHYS 1312": [
+            "CHEM 1020",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011, MATH 2111": ["MATH 2011", "MATH 2111"],
+          "Engineering Introduction Course": [
+            "IEDA 2010",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "CIVL 1210",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "DA Required Courses": {
+          "IEDA 4901 / IEDA 4920": ["IEDA 4901", "IEDA 4920"],
+          "ECON 2103 / ECON 2113": ["ECON 2103", "ECON 2113"],
+          "Other Credit-bearing Required Courses": [
+            "IEDA 2520",
+            "IEDA 2540",
+            "IEDA 3010",
+            "IEDA 3230",
+            "IEDA 3250",
+            "IEDA 3300",
+            "IEDA 3560",
+            "LANG 4032"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "IEDA 1010",
+            "IEDA 1020",
+            "IEDA 1901",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "EE": {
+        "Engineering Fundamental Courses": {
+          "ELEC / MATH Courses": [
+            "ELEC 2600",
+            "ELEC 2600H",
+            "MATH 2011",
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "Introductory COMP course": ["COMP 1021", "COMP 1022P"],
+          "COMP 2011 / COMP 2012H": ["COMP 2011", "COMP 2012H"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "PHYS 1114 / PHYS 1314": ["PHYS 1114", "PHYS 1314"],
+          "Engineering Introduction Course": [
+            "ELEC 1100",
+            "ELEC 1200",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "CIVL 1210",
+            "COMP 1021",
+            "ENGG 1100",
+            "IEDA 2010",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "ELEC Required Courses": {
+          "ELEC 2100 / ELEC 2100H": ["ELEC 2100", "ELEC 2100H"],
+          "Industrial Experience and FYP": [
+            "ELEC 2991",
+            "ELEC 4900",
+            "ELEC 4901",
+            "ELEC 4910"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "ELEC 1100",
+            "ELEC 1200",
+            "ELEC 2350",
+            "ELEC 2400",
+            "LANG 4031"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "ELEC 2910",
+            "ELEC 3910",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "IE": {
+        "Engineering Fundamental Courses": {
+          "COMP Course": ["COMP 1021", "COMP 1022P", "COMP 2011", "COMP 2012H"],
+          "CHEM 1020 / PHYS 1112 / PHYS 1312": [
+            "CHEM 1020",
+            "PHYS 1112",
+            "PHYS 1312"
+          ],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH Courses": ["MATH 2011", "MATH 2111"],
+          "Engineering Introduction Course": [
+            "IEDA 2010",
+            "BIEN 1010",
+            "CENG 1000",
+            "CENG 1500",
+            "CENG 1700",
+            "CIVL 1100",
+            "CIVL 1210",
+            "COMP 1021",
+            "ELEC 1100",
+            "ELEC 1200",
+            "ENGG 1100",
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1006",
+            "MECH 1902",
+            "MECH 1906",
+            "MECH 1907"
+          ]
+        },
+        "IEEM Required Courses": {
+          "IEDA 4901 / IEDA 4960": ["IEDA 4901", "IEDA 4960"],
+          "ECON 2103 / ECON 2113": ["ECON 2103", "ECON 2113"],
+          "Other Credit-bearing Required Courses": [
+            "IEDA 2520",
+            "IEDA 2540",
+            "IEDA 3010",
+            "IEDA 3230",
+            "IEDA 3250",
+            "IEDA 3300",
+            "IEDA 4100",
+            "IEDA 4130",
+            "LANG 4032"
+          ],
+          "Non-credit-bearing Required Courses": [
+            "IEDA 1010",
+            "IEDA 1020",
+            "IEDA 1901",
+            "ENGG 2010"
+          ]
+        }
+      },
+      "ID": {
+        "ISDN Required Courses": {
+          "Non-credit-bearing Required Courses": [
+            "ISDN 1011",
+            "ISDN 1010",
+            "ISDN 2010",
+            "ISDN 3010",
+            "ISDN 4010"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "ISDN 1001",
+            "ISDN 1002",
+            "ISDN 1004",
+            "ISDN 1006",
+            "ISDN 2001",
+            "ISDN 2002",
+            "ISDN 2200",
+            "ISDN 2300",
+            "ISDN 2400",
+            "ISDN 2601",
+            "ISDN 2602",
+            "ISDN 2603",
+            "ISDN 3001",
+            "ISDN 3002",
+            "ISDN 3200",
+            "ISDN 4001",
+            "ISDN 4002"
+          ],
+          "COMP Course": ["COMP 1021", "COMP 1022P", "COMP 2011", "COMP 2012H"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "LANG 4030 / LANG 4031 / LANG 4032 / LANG 4034": [
+            "LANG 4030",
+            "LANG 4031",
+            "LANG 4032",
+            "LANG 4034"
+          ],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "PHYS Course": ["PHYS 1101", "PHYS 1111", "PHYS 1112", "PHYS 1312"]
+        }
+      },
+      "ME": {
+        "Engineering Fundamental Courses": {
+          "COMP Course": ["COMP 1021", "COMP 1022P", "COMP 2011", "COMP 2012H"],
+          "LANG 2030": ["LANG 2030", "LANG 2030H"],
+          "Fundamental MATH Courses": [
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1023",
+            "MATH 1014",
+            "MATH 1024",
+            "MATH 1020"
+          ],
+          "MATH 2011": ["MATH 2011"],
+          "MATH 2111 / MATH 2350 / MATH 2351": [
+            "MATH 2111",
+            "MATH 2350",
+            "MATH 2351"
+          ],
+          "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
+          "Science 1000-level course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101"
+          ]
+        },
+        "MECH Required Courses": {
+          "MECH 3300 / MECH 3420 / MECH 3520 / MECH 3710": [
+            "MECH 3300",
+            "MECH 3420",
+            "MECH 3520",
+            "MECH 3710"
+          ],
+          "Other Credit-bearing Required Courses": [
+            "MECH 1906",
+            "MECH 2020",
+            "MECH 2040",
+            "MECH 2210",
+            "MECH 2310",
+            "MECH 2410",
+            "MECH 2520",
+            "MECH 3030",
+            "MECH 3310",
+            "MECH 3610",
+            "MECH 3630",
+            "MECH 3830",
+            "MECH 3907",
+            "MECH 4900",
+            "ELEC 2420",
+            "LANG 4034"
+          ],
+          "Non-credit-bearing Required Courses": ["MECH 1990", "ENGG 2010"]
+        }
+      },
+      "BT": {
+        "School of Science requirement for non-IRE students": {
+          "COMP Requirement": ["COMP 1021", "COMP 1022P", "COMP 2011"],
+          "LANG Requirement": ["LANG 2010", "LANG 2010H"],
+          "Science Foundation Courses": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "CHEM 1030",
+            "LIFS 1030",
+            "LIFS 1901",
+            "LIFS 1902",
+            "LIFS 1930",
+            "LIFS 2210",
+            "OCES 1010",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1014",
+            "MATH 1020",
+            "MATH 1023",
+            "MATH 1024",
+            "MATH 2023",
+            "MATH 2121",
+            "MATH 2131",
+            "PHYS 1111",
+            "PHYS 1112",
+            "PHYS 1114",
+            "PHYS 1312",
+            "PHYS 1314",
+            "CHEM 1050",
+            "CHEM 1055",
             "LIFS 1903",
+            "LIFS 1904",
+            "PHYS 1113",
+            "PHYS 1115"
+          ]
+        },
+        "Major Pre-requisite course(s)": {
+          "LIFS 1901 (Students with level 3 or above in HKDSE 1x Biology are exempted)": [
+            "LIFS 1901"
+          ],
+          "LIFS 1902": ["LIFS 1902"]
+        },
+        "BIOT Required Courses": {
+          "LIFS 1903 (Students with level 3 or above in HKDSE 1x Biology are exempted)": [
+            "LIFS 1903"
+          ],
+          "BIOT Research Project": [
+            "LIFS 4963",
+            "LIFS 4973",
+            "LIFS 4983",
+            "SCIE 4500"
+          ],
+          "CHEM 2110 / CHEM 2311": ["CHEM 2110", "CHEM 2311"],
+          "CHEM 2155 / CHEM 2355": ["CHEM 2155", "CHEM 2355"],
+          "LANG 3024 / LANG 3027": ["LANG 3024", "LANG 3027"],
+          "Other Required Courses": [
             "LIFS 1904",
             "LIFS 2040",
             "LIFS 2070",
@@ -758,63 +3149,11 @@
     }
   },
   "businessMajors": {
-    "2022": {
-      "GBM": {
-        "School Requirements": {
-          "Microeconomics": [
-            "ECON 2103",
-            "ECON 2113"
-          ],
-          "Macroeconomics": [
-            "ECON 2123",
-            "ECON 3123"
-          ],
-          "Calculus": [
-            "MATH 1003",
-            "MATH 1012",
-            "MATH 1013",
-            "MATH 1020",
-            "MATH 1023"
-          ],
-          "ISOM 2020": [
-            "ISOM 2020"
-          ],
-          "ECON 3700": [
-            "ECON 3700"
-          ],
-          "SBMT 1111": [
-            "SBMT 1111"
-          ],
-          "Other Required Courses": [
-            "ACCT 2010",
-            "FINA 2303",
-            "ISOM 2010",
-            "ISOM 2500",
-            "ISOM 2600",
-            "MGMT 2010",
-            "MGMT 2130",
-            "LABU 2040"
-          ]
-        },
-        "BBA Requirements": {
-          "BBA Requirements": [
-            "ACCT 2200",
-            "ISOM 2700",
-            "MARK 2120",
-            "MGMT 2110"
-          ]
-        }
-      },
+    "2021": {
       "ECON": {
         "School Requirements": {
-          "Microeconomics": [
-            "ECON 2103",
-            "ECON 2113"
-          ],
-          "Macroeconomics": [
-            "ECON 2123",
-            "ECON 3123"
-          ],
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
           "Calculus": [
             "MATH 1003",
             "MATH 1012",
@@ -822,15 +3161,9 @@
             "MATH 1020",
             "MATH 1023"
           ],
-          "ISOM 2020": [
-            "ISOM 2020"
-          ],
-          "ECON 3700": [
-            "ECON 3700"
-          ],
-          "SBMT 1111": [
-            "SBMT 1111"
-          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
           "Other Required Courses": [
             "ACCT 2010",
             "FINA 2303",
@@ -854,20 +3187,15 @@
           "ECON Required Courses": [
             "ECON 3014",
             "ECON 3024",
-            "ECON 3334"
+            "ECON 3334",
+            "ECON 4670"
           ]
         }
       },
       "FINA": {
         "School Requirements": {
-          "Microeconomics": [
-            "ECON 2103",
-            "ECON 2113"
-          ],
-          "Macroeconomics": [
-            "ECON 2123",
-            "ECON 3123"
-          ],
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
           "Calculus": [
             "MATH 1003",
             "MATH 1012",
@@ -875,15 +3203,9 @@
             "MATH 1020",
             "MATH 1023"
           ],
-          "ISOM 2020": [
-            "ISOM 2020"
-          ],
-          "ECON 3700": [
-            "ECON 3700"
-          ],
-          "SBMT 1111": [
-            "SBMT 1111"
-          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
           "Other Required Courses": [
             "ACCT 2010",
             "FINA 2303",
@@ -904,19 +3226,9 @@
           ]
         },
         "FINA Required Courses": {
-          "ACCT Requirements": [
-            "ACCT 3010",
-            "ACCT 3020",
-            "ACCT 3030"
-          ],
-          "Programming Course": [
-            "ISOM 3230",
-            "ISOM 3400",
-            "COMP 1022P"
-          ],
-          "FINA 3810": [
-            "FINA 3810"
-          ],
+          "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+          "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+          "FINA 3810": ["FINA 3810"],
           "Other Required Courses": [
             "FINA 3001",
             "FINA 3103",
@@ -925,16 +3237,10 @@
           ]
         }
       },
-      "GBUS": {
+      "GBM": {
         "School Requirements": {
-          "Microeconomics": [
-            "ECON 2103",
-            "ECON 2113"
-          ],
-          "Macroeconomics": [
-            "ECON 2123",
-            "ECON 3123"
-          ],
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
           "Calculus": [
             "MATH 1003",
             "MATH 1012",
@@ -942,15 +3248,9 @@
             "MATH 1020",
             "MATH 1023"
           ],
-          "ISOM 2020": [
-            "ISOM 2020"
-          ],
-          "ECON 3700": [
-            "ECON 3700"
-          ],
-          "SBMT 1111": [
-            "SBMT 1111"
-          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
           "Other Required Courses": [
             "ACCT 2010",
             "FINA 2303",
@@ -969,32 +3269,12 @@
             "MARK 2120",
             "MGMT 2110"
           ]
-        },
-        "GBUS Required Courses": {
-          "GBUS 1000": [
-            "GBUS 1000"
-          ],
-          "GBUS 3030 / ISOM 2040": [
-            "GBUS 3030",
-            "ISOM 2040"
-          ],
-          "Other Required Courses": [
-            "GBUS 2010",
-            "GBUS 2020",
-            "GBUS 4910"
-          ]
         }
       },
       "MGMT": {
         "School Requirements": {
-          "Microeconomics": [
-            "ECON 2103",
-            "ECON 2113"
-          ],
-          "Macroeconomics": [
-            "ECON 2123",
-            "ECON 3123"
-          ],
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
           "Calculus": [
             "MATH 1003",
             "MATH 1012",
@@ -1002,15 +3282,9 @@
             "MATH 1020",
             "MATH 1023"
           ],
-          "ISOM 2020": [
-            "ISOM 2020"
-          ],
-          "ECON 3700": [
-            "ECON 3700"
-          ],
-          "SBMT 1111": [
-            "SBMT 1111"
-          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
           "Other Required Courses": [
             "ACCT 2010",
             "FINA 2303",
@@ -1031,30 +3305,15 @@
           ]
         },
         "MGMT Required Courses": {
-          "MGMT 3110 / MGMT 3120": [
-            "MGMT 3110",
-            "MGMT 3120"
-          ],
-          "MGMT 3130 / MGMT 3140": [
-            "MGMT 3130",
-            "MGMT 3140"
-          ],
-          "MGMT 4210 / MGMT 4220": [
-            "MGMT 4210",
-            "MGMT 4220"
-          ]
+          "MGMT 3110 / MGMT 3120": ["MGMT 3110", "MGMT 3120"],
+          "MGMT 3130 / MGMT 3140": ["MGMT 3130", "MGMT 3140"],
+          "MGMT 4210 / MGMT 4220": ["MGMT 4210", "MGMT 4220"]
         }
       },
       "MARK": {
         "School Requirements": {
-          "Microeconomics": [
-            "ECON 2103",
-            "ECON 2113"
-          ],
-          "Macroeconomics": [
-            "ECON 2123",
-            "ECON 3123"
-          ],
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
           "Calculus": [
             "MATH 1003",
             "MATH 1012",
@@ -1062,15 +3321,9 @@
             "MATH 1020",
             "MATH 1023"
           ],
-          "ISOM 2020": [
-            "ISOM 2020"
-          ],
-          "ECON 3700": [
-            "ECON 3700"
-          ],
-          "SBMT 1111": [
-            "SBMT 1111"
-          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
           "Other Required Courses": [
             "ACCT 2010",
             "FINA 2303",
@@ -1091,11 +3344,713 @@
           ]
         },
         "MARK Required Courses": {
-          "MARK Required Courses": [
-            "MARK 3220",
-            "MARK 3420",
-            "MARK 4210"
+          "MARK Required Courses": ["MARK 3220", "MARK 3420", "MARK 4210"]
+        }
+      }
+    },
+    "2122": {
+      "ECON": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
           ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "ECON Required Courses": {
+          "ECON Required Courses": [
+            "ECON 3014",
+            "ECON 3024",
+            "ECON 3334",
+            "ECON 4670"
+          ]
+        }
+      },
+      "FINA": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "FINA Required Courses": {
+          "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+          "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+          "FINA 3810": ["FINA 3810"],
+          "Other Required Courses": [
+            "FINA 3001",
+            "FINA 3103",
+            "FINA 3203",
+            "FINA 3303"
+          ]
+        }
+      },
+      "GBM": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        }
+      },
+      "GBUS": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "GBUS Required Courses": {
+          "GBUS 1000": ["GBUS 1000"],
+          "GBUS 3030 / GBUS 3040 / GBUS 3050": [
+            "GBUS 3030",
+            "GBUS 3040",
+            "GBUS 3050"
+          ],
+          "Other Required Courses": [
+            "GBUS 2010",
+            "GBUS 2020",
+            "GBUS 3010",
+            "GBUS 4910"
+          ]
+        }
+      },
+      "MGMT": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "MGMT Required Courses": {
+          "MGMT 3110 / MGMT 3120": ["MGMT 3110", "MGMT 3120"],
+          "MGMT 3130 / MGMT 3140": ["MGMT 3130", "MGMT 3140"],
+          "MGMT 4210 / MGMT 4220": ["MGMT 4210", "MGMT 4220"]
+        }
+      },
+      "MARK": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "SBMT 1111": ["SBMT 1111"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "MARK Required Courses": {
+          "MARK Required Courses": ["MARK 3220", "MARK 3420", "MARK 4210"]
+        }
+      }
+    },
+    "2223": {
+      "ECON": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "ECON 3700": ["ECON 3700"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "ECON Required Courses": {
+          "ECON Required Courses": ["ECON 3014", "ECON 3024", "ECON 3334"]
+        }
+      },
+      "FINA": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "FINA Required Courses": {
+          "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+          "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+          "FINA 3810": ["FINA 3810"],
+          "Other Required Courses": [
+            "FINA 3001",
+            "FINA 3103",
+            "FINA 3203",
+            "FINA 3303"
+          ]
+        }
+      },
+      "GBM": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        }
+      },
+      "GBUS": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "GBUS Required Courses": {
+          "GBUS 1000": ["GBUS 1000"],
+          "GBUS 3030 / ISOM 2040": ["GBUS 3030", "ISOM 2040"],
+          "Other Required Courses": ["GBUS 2010", "GBUS 2020", "GBUS 4910"]
+        }
+      },
+      "MGMT": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "MGMT Required Courses": {
+          "MGMT 3110 / MGMT 3120": ["MGMT 3110", "MGMT 3120"],
+          "MGMT 3130 / MGMT 3140": ["MGMT 3130", "MGMT 3140"],
+          "MGMT 4210 / MGMT 4220": ["MGMT 4210", "MGMT 4220"]
+        }
+      },
+      "MARK": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LABU 2060": ["LABU 2060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LABU 2040"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "MARK Required Courses": {
+          "MARK Required Courses": ["MARK 3220", "MARK 3420", "MARK 4210"]
+        }
+      }
+    },
+    "2324": {
+      "ECON": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "ECON 3700": ["ECON 3700"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "ECON Required Courses": {
+          "ECON Required Courses": ["ECON 3014", "ECON 3024", "ECON 3334"]
+        }
+      },
+      "FINA": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "FINA Required Courses": {
+          "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+          "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+          "FINA 3810": ["FINA 3810"],
+          "Other Required Courses": [
+            "FINA 3001",
+            "FINA 3103",
+            "FINA 3203",
+            "FINA 3303"
+          ]
+        }
+      },
+      "GBM": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        }
+      },
+      "GBUS)": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "GBUS Required Courses": {
+          "GBUS 1000": ["GBUS 1000"],
+          "GBUS 2020 / GBUS 2040 / SBMT 2100-2110": [
+            "GBUS 2020",
+            "GBUS 2040",
+            "SBMT 21?"
+          ],
+          "GBUS 3030 / ISOM 4780": ["GBUS 3030", "ISOM 4780"],
+          "Other Required Courses": ["GBUS 2010", "GBUS 4910"]
+        }
+      },
+      "MGMT": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "MGMT Required Courses": {
+          "MGMT 3110 / MGMT 3120": ["MGMT 3110", "MGMT 3120"],
+          "MGMT 3130 / MGMT 3140": ["MGMT 3130", "MGMT 3140"],
+          "MGMT 4210 / MGMT 4220": ["MGMT 4210", "MGMT 4220"]
+        }
+      },
+      "MARK": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "MARK Required Courses": {
+          "MARK Required Courses": ["MARK 3220", "MARK 3420", "MARK 4210"]
         }
       }
     }
