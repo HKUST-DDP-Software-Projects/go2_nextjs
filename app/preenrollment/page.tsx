@@ -435,8 +435,8 @@ export default function PreEnrollment() {
   }, [selectedCourse, isSelectedCourseInCart, courseHistory]);
 
   return (
-    <div className="flex h-full">
-      <div className="flex-1 p-4 h-full flex flex-col">
+    <div className="flex h-full lg:flex-row flex-col">
+      <div className="flex-1 p-4 flex flex-col overflow-y-auto">
         <div className="mb-4">
           <h4 className="text-lg font-semibold">Legend</h4>
           <div className="flex flex-wrap">
@@ -482,7 +482,10 @@ export default function PreEnrollment() {
           />
         </div>
       </div>
-      <div className="w-1/4 border-l border-gray-300 bg-white overflow-y-auto">
+      <div
+        className="sticky flex-shrink-0 w-full lg:w-1/4 p-4 overflow-y-auto transition-transform bg-white h-64 border-t border-gray-200 lg:h-full -mt-4"
+        aria-labelledby="drawer-bottom-label"
+      >
         <Accordion
           items={[
             {
