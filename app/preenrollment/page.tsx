@@ -363,9 +363,9 @@ export default function PreEnrollment() {
             <p>No exclusions</p>
           )}
         </div>
-        <div className="flex justify-between pt-4">
+        <div className="flex justify-between pt-4 flex-wrap">
           <button
-            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+            className={`m-1 px-4 py-2 bg-gray-200 border border-gray-200 w-full ${
               isSelectedCourseInCart || !canAddToCart
                 ? "opacity-50 cursor-not-allowed"
                 : "text-black"
@@ -385,7 +385,7 @@ export default function PreEnrollment() {
             Add to Cart
           </button>
           <button
-            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+            className={`m-1 px-4 py-2 bg-gray-200 border border-gray-200 w-full ${
               !isSelectedCourseInCart
                 ? "opacity-50 cursor-not-allowed"
                 : "text-black"
@@ -406,7 +406,7 @@ export default function PreEnrollment() {
             Remove from Cart
           </button>
           <button
-            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+            className={`m-1 px-4 py-2 bg-gray-200 border border-gray-200 w-full ${
               !isSelectedCourseInCart
                 ? "opacity-50 cursor-not-allowed"
                 : "text-black"
@@ -550,7 +550,7 @@ export default function PreEnrollment() {
                   <p className={creditCnt > maxCredits ? "text-red-500" : ""}>
                     Total Credits: {creditCnt} / {maxCredits}
                   </p>
-                  <div className="flex flex-wrap">
+                  <div className="flex flex-wrap m-2">
                     {shoppingCart.map((course) => {
                       return (
                         <CourseChip key={course.code} course={course.code} />
@@ -558,35 +558,37 @@ export default function PreEnrollment() {
                     })}
                   </div>
 
-                  {/* Submit button */}
-                  <button
-                    className={`px-4 py-2 bg-gray-200 border border-gray-200`}
-                    onClick={submitForm}
-                  >
-                    Submit
-                  </button>
+                  <div className="flex flex-wrap">
+                    {/* Submit button */}
+                    <button
+                      className="px-4 py-2 m-1 bg-gray-200 border border-gray-200 w-full"
+                      onClick={submitForm}
+                    >
+                      Submit
+                    </button>
 
-                  {/* Download submission */}
-                  <button
-                    className="px-4 py-2 bg-gray-200 border border-gray-200 ml-2"
-                    onClick={() => {
-                      const submission = prepareSubmission();
-                      const blob = new Blob(
-                        [JSON.stringify(submission, null, 2)],
-                        {
-                          type: "text/plain",
-                        },
-                      );
+                    {/* Download submission */}
+                    <button
+                      className="px-4 py-2 m-1 bg-gray-200 border border-gray-200 w-full"
+                      onClick={() => {
+                        const submission = prepareSubmission();
+                        const blob = new Blob(
+                          [JSON.stringify(submission, null, 2)],
+                          {
+                            type: "text/plain",
+                          },
+                        );
 
-                      const url = URL.createObjectURL(blob);
-                      const a = document.createElement("a");
-                      a.href = url;
-                      a.download = `pre-enrollment-${personalDetails.studentId}.json`;
-                      a.click();
-                    }}
-                  >
-                    Download
-                  </button>
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement("a");
+                        a.href = url;
+                        a.download = `pre-enrollment-${personalDetails.studentId}.json`;
+                        a.click();
+                      }}
+                    >
+                      Download
+                    </button>
+                  </div>
                 </div>
               ),
             },
