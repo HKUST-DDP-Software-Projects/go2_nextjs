@@ -21,7 +21,7 @@ export default function RootLayout({
         <Providers>
           {/* modal */}
           <div
-            className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 ${
+            className={`z-10 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 ${
               isOpen ? "visible" : "hidden"
             }`}
             onClick={() => setIsOpen(false)}
@@ -70,7 +70,7 @@ export default function RootLayout({
                 }`}
                 aria-label="Sidebar"
               >
-                <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 z-50">
+                <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
                   <ul className="space-y-2 font-medium">
                     <li>
                       <Link
