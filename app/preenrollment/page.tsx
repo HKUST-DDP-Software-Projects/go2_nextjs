@@ -16,7 +16,12 @@ import {
   isCourseGradeRelevant,
 } from "@/helpers/course";
 import { Degree } from "@/redux/features/plannerSlice";
-import { useAppSelector } from "@/redux/hooks";
+import {
+  addCourse,
+  moveCourseToFront,
+  removeCourse,
+} from "@/redux/features/preenrollmentSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useMemo, useState } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -71,6 +76,13 @@ export default function PreEnrollment() {
     (state) => state.personalDetailsReducer,
   );
 
+  const shoppingCart = useAppSelector(
+    (state) => state.preenrollmentReducer.shoppingCart || [],
+  );
+  console.log(shoppingCart);
+
+  const dispatch = useAppDispatch();
+
   const preenrollableCourses = {
     ...CONFIG.engineeringMajors?.[personalDetails.admissionYear]?.[
       personalDetails.engineeringMajor
@@ -109,7 +121,6 @@ export default function PreEnrollment() {
   const [selectedCourse, setSelectedCourse] = useState<CourseDetail | null>(
     null,
   );
-  const [shoppingCart, setShoppingCart] = useState<CourseDetail[]>([]);
   const [creditCnt, setCreditCnt] = useState<number>(0);
 
   const isSelectedCourseInCart =
@@ -372,11 +383,7 @@ export default function PreEnrollment() {
             }`}
             onClick={() => {
               if (selectedCourse) {
-                setShoppingCart((shoppingCart) => [
-                  ...shoppingCart,
-                  selectedCourse,
-                ]);
-
+                dispatch(addCourse(selectedCourse));
                 setCreditCnt((creditCnt) => creditCnt + selectedCourse.units);
               }
             }}
@@ -392,13 +399,7 @@ export default function PreEnrollment() {
             }`}
             onClick={() => {
               if (selectedCourse) {
-                setShoppingCart((shoppingCart) =>
-                  shoppingCart.filter(
-                    (course) => course.code !== selectedCourse.code,
-                  ),
-                );
-
-                setCreditCnt((creditCnt) => creditCnt - selectedCourse.units);
+                dispatch(removeCourse(selectedCourse));
               }
             }}
             disabled={!isSelectedCourseInCart}
@@ -414,16 +415,7 @@ export default function PreEnrollment() {
             disabled={!isSelectedCourseInCart}
             onClick={() => {
               if (selectedCourse) {
-                setShoppingCart((shoppingCart) =>
-                  shoppingCart.filter(
-                    (course) => course.code !== selectedCourse.code,
-                  ),
-                );
-
-                setShoppingCart((shoppingCart) => [
-                  selectedCourse,
-                  ...shoppingCart,
-                ]);
+                dispatch(moveCourseToFront(selectedCourse));
               }
             }}
           >
@@ -432,7 +424,7 @@ export default function PreEnrollment() {
         </div>
       </div>
     );
-  }, [selectedCourse, isSelectedCourseInCart, courseHistory]);
+  }, [selectedCourse, courseHistory, isSelectedCourseInCart, dispatch]);
 
   return (
     <div className="flex h-full lg:flex-row flex-col">
