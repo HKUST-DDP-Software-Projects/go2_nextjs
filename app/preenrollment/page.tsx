@@ -22,6 +22,7 @@ import {
   removeCourse,
 } from "@/redux/features/preenrollmentSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -68,8 +69,10 @@ export default function PreEnrollment() {
   // const preenrollableCourses = parseDegrees(degrees);
   // console.log(preenrollableCourses);
 
-  const courseHistory = useAppSelector((state) =>
-    state.courseReducer.courseHistory.map((course) => course.code),
+  const router = useRouter();
+
+  const courseHistory = useAppSelector(
+    (state) => state.courseReducer.courseHistoryString,
   );
 
   const personalDetails = useAppSelector(
@@ -307,6 +310,7 @@ export default function PreEnrollment() {
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
       );
       console.log(result);
+      router.push("/end");
     } catch (error) {
       console.error(error);
       alert(`Failed to submit form: ${error}`);
@@ -557,28 +561,6 @@ export default function PreEnrollment() {
                       onClick={submitForm}
                     >
                       Submit
-                    </button>
-
-                    {/* Download submission */}
-                    <button
-                      className="px-4 py-2 m-1 bg-gray-200 border border-gray-200 w-full"
-                      onClick={() => {
-                        const submission = prepareSubmission();
-                        const blob = new Blob(
-                          [JSON.stringify(submission, null, 2)],
-                          {
-                            type: "text/plain",
-                          },
-                        );
-
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement("a");
-                        a.href = url;
-                        a.download = `pre-enrollment-${personalDetails.studentId}.json`;
-                        a.click();
-                      }}
-                    >
-                      Download
                     </button>
                   </div>
                 </div>
