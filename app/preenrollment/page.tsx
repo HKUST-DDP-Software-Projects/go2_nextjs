@@ -16,7 +16,13 @@ import {
   isCourseGradeRelevant,
 } from "@/helpers/course";
 import { Degree } from "@/redux/features/plannerSlice";
-import { useAppSelector } from "@/redux/hooks";
+import {
+  addCourse,
+  moveCourseToFront,
+  removeCourse,
+} from "@/redux/features/preenrollmentSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -63,13 +69,22 @@ export default function PreEnrollment() {
   // const preenrollableCourses = parseDegrees(degrees);
   // console.log(preenrollableCourses);
 
-  const courseHistory = useAppSelector((state) =>
-    state.courseReducer.courseHistory.map((course) => course.code),
+  const router = useRouter();
+
+  const courseHistory = useAppSelector(
+    (state) => state.courseReducer.courseHistoryString,
   );
 
   const personalDetails = useAppSelector(
     (state) => state.personalDetailsReducer,
   );
+
+  const shoppingCart = useAppSelector(
+    (state) => state.preenrollmentReducer.shoppingCart || [],
+  );
+  console.log(shoppingCart);
+
+  const dispatch = useAppDispatch();
 
   const preenrollableCourses = {
     ...CONFIG.engineeringMajors?.[personalDetails.admissionYear]?.[
@@ -109,7 +124,6 @@ export default function PreEnrollment() {
   const [selectedCourse, setSelectedCourse] = useState<CourseDetail | null>(
     null,
   );
-  const [shoppingCart, setShoppingCart] = useState<CourseDetail[]>([]);
   const [creditCnt, setCreditCnt] = useState<number>(0);
 
   const isSelectedCourseInCart =
@@ -296,6 +310,7 @@ export default function PreEnrollment() {
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
       );
       console.log(result);
+      router.push("/end");
     } catch (error) {
       console.error(error);
       alert(`Failed to submit form: ${error}`);
@@ -363,20 +378,16 @@ export default function PreEnrollment() {
             <p>No exclusions</p>
           )}
         </div>
-        <div className="flex justify-between pt-4">
+        <div className="flex justify-between pt-4 flex-wrap">
           <button
-            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+            className={`m-1 px-4 py-2 bg-gray-200 border border-gray-200 w-full ${
               isSelectedCourseInCart || !canAddToCart
                 ? "opacity-50 cursor-not-allowed"
                 : "text-black"
             }`}
             onClick={() => {
               if (selectedCourse) {
-                setShoppingCart((shoppingCart) => [
-                  ...shoppingCart,
-                  selectedCourse,
-                ]);
-
+                dispatch(addCourse(selectedCourse));
                 setCreditCnt((creditCnt) => creditCnt + selectedCourse.units);
               }
             }}
@@ -385,20 +396,14 @@ export default function PreEnrollment() {
             Add to Cart
           </button>
           <button
-            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+            className={`m-1 px-4 py-2 bg-gray-200 border border-gray-200 w-full ${
               !isSelectedCourseInCart
                 ? "opacity-50 cursor-not-allowed"
                 : "text-black"
             }`}
             onClick={() => {
               if (selectedCourse) {
-                setShoppingCart((shoppingCart) =>
-                  shoppingCart.filter(
-                    (course) => course.code !== selectedCourse.code,
-                  ),
-                );
-
-                setCreditCnt((creditCnt) => creditCnt - selectedCourse.units);
+                dispatch(removeCourse(selectedCourse));
               }
             }}
             disabled={!isSelectedCourseInCart}
@@ -406,7 +411,7 @@ export default function PreEnrollment() {
             Remove from Cart
           </button>
           <button
-            className={`px-4 py-2 bg-gray-200 border border-gray-200 ${
+            className={`m-1 px-4 py-2 bg-gray-200 border border-gray-200 w-full ${
               !isSelectedCourseInCart
                 ? "opacity-50 cursor-not-allowed"
                 : "text-black"
@@ -414,16 +419,7 @@ export default function PreEnrollment() {
             disabled={!isSelectedCourseInCart}
             onClick={() => {
               if (selectedCourse) {
-                setShoppingCart((shoppingCart) =>
-                  shoppingCart.filter(
-                    (course) => course.code !== selectedCourse.code,
-                  ),
-                );
-
-                setShoppingCart((shoppingCart) => [
-                  selectedCourse,
-                  ...shoppingCart,
-                ]);
+                dispatch(moveCourseToFront(selectedCourse));
               }
             }}
           >
@@ -432,11 +428,11 @@ export default function PreEnrollment() {
         </div>
       </div>
     );
-  }, [selectedCourse, isSelectedCourseInCart, courseHistory]);
+  }, [selectedCourse, courseHistory, isSelectedCourseInCart, dispatch]);
 
   return (
-    <div className="flex h-full">
-      <div className="flex-1 p-4 h-full flex flex-col">
+    <div className="flex h-full lg:flex-row flex-col">
+      <div className="flex-1 p-4 flex flex-col overflow-y-auto">
         <div className="mb-4">
           <h4 className="text-lg font-semibold">Legend</h4>
           <div className="flex flex-wrap">
@@ -482,7 +478,10 @@ export default function PreEnrollment() {
           />
         </div>
       </div>
-      <div className="w-1/4 border-l border-gray-300 bg-white overflow-y-auto">
+      <div
+        className="sticky flex-shrink-0 w-full lg:w-1/4 p-4 overflow-y-auto transition-transform bg-white h-64 border-t border-gray-200 lg:h-full -mt-4"
+        aria-labelledby="drawer-bottom-label"
+      >
         <Accordion
           items={[
             {
@@ -547,7 +546,7 @@ export default function PreEnrollment() {
                   <p className={creditCnt > maxCredits ? "text-red-500" : ""}>
                     Total Credits: {creditCnt} / {maxCredits}
                   </p>
-                  <div className="flex flex-wrap">
+                  <div className="flex flex-wrap m-2">
                     {shoppingCart.map((course) => {
                       return (
                         <CourseChip key={course.code} course={course.code} />
@@ -555,35 +554,15 @@ export default function PreEnrollment() {
                     })}
                   </div>
 
-                  {/* Submit button */}
-                  <button
-                    className={`px-4 py-2 bg-gray-200 border border-gray-200`}
-                    onClick={submitForm}
-                  >
-                    Submit
-                  </button>
-
-                  {/* Download submission */}
-                  <button
-                    className="px-4 py-2 bg-gray-200 border border-gray-200 ml-2"
-                    onClick={() => {
-                      const submission = prepareSubmission();
-                      const blob = new Blob(
-                        [JSON.stringify(submission, null, 2)],
-                        {
-                          type: "text/plain",
-                        },
-                      );
-
-                      const url = URL.createObjectURL(blob);
-                      const a = document.createElement("a");
-                      a.href = url;
-                      a.download = `pre-enrollment-${personalDetails.studentId}.json`;
-                      a.click();
-                    }}
-                  >
-                    Download
-                  </button>
+                  <div className="flex flex-wrap">
+                    {/* Submit button */}
+                    <button
+                      className="px-4 py-2 m-1 bg-gray-200 border border-gray-200 w-full"
+                      onClick={submitForm}
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               ),
             },

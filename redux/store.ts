@@ -3,6 +3,7 @@ import counterReducer from "./features/counterSlice";
 import courseReducer from "./features/courseSlice";
 import plannerReducer from "./features/plannerSlice";
 import personalDetailsReducer from "./features/personalDetailsSlice";
+import preenrollmentReducer from "./features/preenrollmentSlice";
 
 import { persistReducer } from "redux-persist";
 import persistStore from "redux-persist/es/persistStore";
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   courseReducer,
   plannerReducer,
   personalDetailsReducer,
+  preenrollmentReducer,
 });
 
 const persistConfig = {

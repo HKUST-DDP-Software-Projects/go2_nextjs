@@ -216,7 +216,7 @@
             "CIVL 3020",
             "ENGG 2010"
           ],
-          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+          "Final Year Project": ["CIVL 4910", "CIVL 4920"]
         }
       },
       "CV": {
@@ -264,7 +264,7 @@
             "CIVL 3020",
             "ENGG 2010"
           ],
-          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+          "Final Year Project": ["CIVL 4910", "CIVL 4920"]
         }
       },
       "CP": {
@@ -992,7 +992,7 @@
             "CIVL 3020",
             "ENGG 2010"
           ],
-          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+          "Final Year Project": ["CIVL 4910", "CIVL 4920"]
         }
       },
       "CV": {
@@ -1045,7 +1045,7 @@
             "CIVL 3020",
             "ENGG 2010"
           ],
-          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+          "Final Year Project": ["CIVL 4910", "CIVL 4920"]
         }
       },
       "CP": {
@@ -1787,7 +1787,7 @@
             "CIVL 3020",
             "ENGG 2010"
           ],
-          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+          "Final Year Project": ["CIVL 4910", "CIVL 4920"]
         }
       },
       "CV": {
@@ -1839,7 +1839,7 @@
             "CIVL 3020",
             "ENGG 2010"
           ],
-          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+          "Final Year Project": ["CIVL 4910", "CIVL 4920"]
         }
       },
       "CP": {
@@ -2586,7 +2586,7 @@
             "CIVL 3020",
             "ENGG 2010"
           ],
-          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+          "Final Year Project": ["CIVL 4910", "CIVL 4920"]
         }
       },
       "CV": {
@@ -2638,7 +2638,7 @@
             "CIVL 3020",
             "ENGG 2010"
           ],
-          "Final Year Project": ["CIVL 4910, CIVL 4920"]
+          "Final Year Project": ["CIVL 4910", "CIVL 4920"]
         }
       },
       "CP": {
@@ -2695,7 +2695,7 @@
             "ELEC 2100",
             "ELEC 2400",
             "ELEC 2600",
-            "ELEDC 3300"
+            "ELEC 3300"
           ],
           "Non-credit-bearing Required Courses": [
             "CPEG 2930",

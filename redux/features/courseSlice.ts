@@ -8,6 +8,7 @@ import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 
 export type CourseState = {
   courseHistory: CourseEnrollment[];
+  courseHistoryString: string[];
   courseCatalog: Record<string, CourseDetail>;
 };
 
@@ -18,6 +19,7 @@ export const selectCourseCodes = createSelector(
 
 const initialState = {
   courseHistory: [],
+  courseHistoryString: [],
   courseCatalog: Object.fromEntries(
     COURSE_CATALOG.map((course) => [course.code, course]),
   ),
@@ -45,10 +47,7 @@ export const course = createSlice({
     },
     addCourseEnrollment: (state, action: PayloadAction<CourseEnrollment>) => {
       state.courseHistory.push(action.payload);
-      // window.localStorage.setItem(
-      //   "courseHistory",
-      //   JSON.stringify(state.courseHistory),
-      // );
+      state.courseHistoryString.push(action.payload.code);
     },
     editCourseEnrollment: (
       state,
@@ -61,10 +60,7 @@ export const course = createSlice({
           courseEnrollment.term === oldCourseEnrollment.term,
       );
       state.courseHistory[index] = newCourseEnrollment;
-      // window.localStorage.setItem(
-      //   "courseHistory",
-      //   JSON.stringify(state.courseHistory),
-      // );
+      state.courseHistoryString[index] = newCourseEnrollment.code;
     },
     removeCourseEnrollment: (
       state,
@@ -76,10 +72,7 @@ export const course = createSlice({
           courseEnrollment.term === action.payload.term,
       );
       state.courseHistory.splice(index, 1);
-      // window.localStorage.setItem(
-      //   "courseHistory",
-      //   JSON.stringify(state.courseHistory),
-      // );
+      state.courseHistoryString.splice(index, 1);
     },
     handleImport: (state, action: PayloadAction<string>) => {
       const rawData = action.payload;
@@ -99,6 +92,10 @@ export const course = createSlice({
               status: CourseStatus.PLANNED,
             } as CourseEnrollment;
           });
+
+          state.courseHistoryString = state.courseHistory.map(
+            (course) => course.code,
+          );
           return;
         }
       } catch (e) {
@@ -133,10 +130,7 @@ export const course = createSlice({
       });
 
       state.courseHistory = courses;
-      // window.localStorage.setItem(
-      //   "courseHistory",
-      //   JSON.stringify(state.courseHistory),
-      // );
+      state.courseHistoryString = courses.map((course) => course.code);
     },
   },
 });
