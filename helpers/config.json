@@ -1,4 +1,8 @@
 {
+  "qualtricsSurveyID": "SV_8kxqeg4pPu4wcXY",
+  "qualtricsBaseURL": "https://ust.az1.qualtrics.com",
+  "qualtricsAPIToken": "BLOCKED",
+
   "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfpY23hpjpk9GtgF07OKT0kP-JmaRax6UvLj8KFwRzmzyIFlg",
   "engineeringMajors": {
     "2021": {

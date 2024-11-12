@@ -81,25 +81,31 @@ export default function PreEnrollment() {
 
   const shoppingCart = useAppSelector(
     (state) => state.preenrollmentReducer.shoppingCart || [],
+  )
+
+  const shoppingCartCredits = useAppSelector(
+    (state) => state.preenrollmentReducer.shoppingCartCredits || 0,
   );
-  console.log(shoppingCart);
+
+  const state = useAppSelector((state) => state);
+  console.log(state)
 
   const dispatch = useAppDispatch();
 
   const preenrollableCourses = {
     ...CONFIG.engineeringMajors?.[personalDetails.admissionYear]?.[
       personalDetails.engineeringMajor
-    ],
+      ],
     ...CONFIG.businessMajors?.[personalDetails.admissionYear]?.[
       personalDetails.businessMajor
-    ],
+      ],
   };
 
   const cga = useAppSelector((state) => {
     const courseHistory = state.courseReducer.courseHistory;
     const relevantCourses = courseHistory.filter(
       (course) =>
-        course.status === CourseStatus.TAKEN &&
+        course.status.includes(CourseStatus.TAKEN) &&
         isCourseGradeRelevant(course.grade),
     );
 
@@ -124,7 +130,9 @@ export default function PreEnrollment() {
   const [selectedCourse, setSelectedCourse] = useState<CourseDetail | null>(
     null,
   );
-  const [creditCnt, setCreditCnt] = useState<number>(0);
+
+
+  const [creditCnt, setCreditCnt] = useState<number>(shoppingCartCredits);
 
   const isSelectedCourseInCart =
     shoppingCart.find((c) => c.code === selectedCourse?.code) !== undefined;
@@ -288,28 +296,70 @@ export default function PreEnrollment() {
         remarks,
       } = prepareSubmission();
 
-      const result = await Promise.any([
-        new Promise((resolve, reject) =>
-          setTimeout(() => reject("timeout"), 5000),
-        ),
+      let session_options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'X-API-TOKEN': CONFIG.qualtricsAPIToken
+        },
+        body: '{"language":"EN"}'
+      }
 
-        fetch(`${CONFIG.googleFormUrl}/formResponse`, {
+      const response = await fetch(
+        `${CONFIG.qualtricsBaseURL}/API/v3/surveys/${CONFIG.qualtricsSurveyID}/sessions`,
+        session_options);
+      const data = await response.json();
+
+      if(data.meta.httpStatus != "201 - Created")
+      {
+        throw new Error("Failed to create new survey session");
+      }
+      const response_id = data.result.sessionId;
+
+      let survey_responses =
+        { "advance": true,
+          "responses": {
+            "QID1": studentName,
+            "QID2": studentId,
+            "QID3": program,
+            "QID4": email,
+            "QID5": admissionYear,
+            "QID6": courses[0],
+            "QID7": courses[1],
+            "QID8": courses[2],
+            "QID9": courses[3],
+            "QID10": courses[4],
+            "QID11": courses[5],
+            "QID12": courses[6],
+            "QID13": remarks
+          }
+        };
+
+      let submission_options =
+        {
+          method: 'POST',
           headers: {
-            "content-type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'X-API-TOKEN': CONFIG.qualtricsAPIToken,
           },
-          referrer: `${CONFIG.googleFormUrl}/viewform?fbzx=-934056360836122432`,
-          referrerPolicy: "strict-origin-when-cross-origin",
-          body: `entry.696151386=${studentName}&entry.122551777=${studentId}&entry.572298050=${program}&entry.1971011953=${email}&entry.1571921008=${admissionYear}&entry.1850458106=${courses[0] || ""}&entry.1789812207=${courses[1] || ""}&entry.766029104=${courses[2] || ""}&entry.664656825=${courses[3] || ""}&entry.1292771712=${courses[4] || ""}&entry.979448149=${courses[5] || ""}&entry.1458523618=${courses[6] || ""}&fvv=1&partialResponse=%5Bnull%2Cnull%2C%22-934056360836122432%22%5D&pageHistory=0&fbzx=-934056360836122432&submissionTimestamp=1713846650179&entry.899084275=${remarks}`,
-          method: "POST",
-          mode: "no-cors",
-          credentials: "include",
-        }),
-      ]);
+          body: JSON.stringify(survey_responses)
+        };
 
+      const submission_response = await fetch(
+        `${CONFIG.qualtricsBaseURL}/API/v3/surveys/${CONFIG.qualtricsSurveyID}/sessions/${response_id}`,
+        submission_options);
+      const submission_data = await submission_response.json();
+      console.log(submission_data);
+
+      if(submission_data.meta.httpStatus != "200 - OK")
+      {
+        throw new Error("Failed to submit survey responses");
+      }
       alert(
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
       );
-      console.log(result);
       router.push("/end");
     } catch (error) {
       console.error(error);
@@ -347,7 +397,7 @@ export default function PreEnrollment() {
                 {prerequisite.needManualCheck ? (
                   <Chip label="Manual check required" color="yellow" />
                 ) : checkPrerequisiteSet(prerequisite, courseHistory) ===
-                  CourseValidationResult.SATISFIED ? (
+                CourseValidationResult.SATISFIED ? (
                   <Chip label="Fulfilled" color="green" />
                 ) : (
                   <Chip label="Unfulfilled" color="red" />
@@ -367,7 +417,7 @@ export default function PreEnrollment() {
                 {exclusion.needManualCheck ? (
                   <Chip label="Manual check required" />
                 ) : checkExclusionSet(exclusion, courseHistory) ===
-                  CourseValidationResult.UNSATISFIED ? (
+                CourseValidationResult.UNSATISFIED ? (
                   <Chip label="Excluded" color="red" />
                 ) : (
                   <Chip label="Not excluded" color="green" />
@@ -403,6 +453,8 @@ export default function PreEnrollment() {
             }`}
             onClick={() => {
               if (selectedCourse) {
+                setCreditCnt((creditCnt) => creditCnt - selectedCourse.units);
+
                 dispatch(removeCourse(selectedCourse));
               }
             }}
@@ -494,40 +546,40 @@ export default function PreEnrollment() {
                   </p>
                   <table className="border-collapse w-full">
                     <thead>
-                      <tr>
-                        <th className="border border-gray-300 px-4 py-2">
-                          CGA
-                        </th>
-                        <th className="border border-gray-300 px-4 py-2">
-                          Max credits
-                        </th>
-                      </tr>
+                    <tr>
+                      <th className="border border-gray-300 px-4 py-2">
+                        CGA
+                      </th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Max credits
+                      </th>
+                    </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">
-                          {"< 3"}
-                        </td>
-                        <td className="border border-gray-300 px-4 py-2">
-                          20 {cga < 3 ? "✅" : ""}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">
-                          3 - 3.29
-                        </td>
-                        <td className="border border-gray-300 px-4 py-2">
-                          21 {cga >= 3 && cga <= 3.29 ? "✅" : ""}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">
-                          {"> 3.3"}
-                        </td>
-                        <td className="border border-gray-300 px-4 py-2">
-                          24 {cga >= 3.3 ? "✅" : ""}
-                        </td>
-                      </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        {"< 3"}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        20 {cga < 3 ? "✅" : ""}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        3 - 3.29
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        21 {cga >= 3 && cga <= 3.29 ? "✅" : ""}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2">
+                        {"> 3.3"}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        24 {cga >= 3.3 ? "✅" : ""}
+                      </td>
+                    </tr>
                     </tbody>
                   </table>
                 </div>

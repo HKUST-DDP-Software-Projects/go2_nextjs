@@ -6,6 +6,9 @@ type EngineeringMajor = string;
 type BusinessMajor = string;
 
 export const CONFIG = rawConfig as {
+  qualtricsSurveyID: string;
+  qualtricsBaseURL: string;
+  qualtricsAPIToken: string;
   googleFormUrl: string;
   engineeringMajors: Record<
     AdmissionYear,
