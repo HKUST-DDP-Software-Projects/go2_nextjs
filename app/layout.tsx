@@ -17,6 +17,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>DDP Course Pre-Enrollment Portal</title>
+      </head>
       <body className={`${inter.className} bg-gray-100`}>
         <Providers>
           {/* modal */}
@@ -50,7 +53,7 @@ export default function RootLayout({
                     </button>
                     <div className="flex ms-2 md:me-24">
                       <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                        DDP Study Planner
+                        DDP Course Pre-Enrollment Portal
                       </span>
                     </div>
                   </div>
