@@ -81,24 +81,24 @@ export default function PreEnrollment() {
 
   const shoppingCart = useAppSelector(
     (state) => state.preenrollmentReducer.shoppingCart || [],
-  )
+  );
 
   const shoppingCartCredits = useAppSelector(
     (state) => state.preenrollmentReducer.shoppingCartCredits || 0,
   );
 
   const state = useAppSelector((state) => state);
-  console.log(state)
+  console.log(state);
 
   const dispatch = useAppDispatch();
 
   const preenrollableCourses = {
     ...CONFIG.engineeringMajors?.[personalDetails.admissionYear]?.[
       personalDetails.engineeringMajor
-      ],
+    ],
     ...CONFIG.businessMajors?.[personalDetails.admissionYear]?.[
       personalDetails.businessMajor
-      ],
+    ],
   };
 
   const cga = useAppSelector((state) => {
