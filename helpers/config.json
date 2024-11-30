@@ -3,7 +3,6 @@
   "qualtricsBaseURL": "https://ust.az1.qualtrics.com",
   "qualtricsAPIToken": "BLOCKED",
   
-  "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfpY23hpjpk9GtgF07OKT0kP-JmaRax6UvLj8KFwRzmzyIFlg",
   "engineeringMajors": {
     "2021": {
       "AE": {
@@ -26,7 +25,12 @@
             "MATH 2351"
           ],
           "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
-          "Science 1000-level course": ["CHEM 1?", "LIFS 1?", "PHYS 1?"]
+          "Science 1000-level course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101"
+          ]
         },
         "AE Required Courses": {
           "Credit-bearing Required Courses": [
@@ -653,7 +657,12 @@
             "MATH 2351"
           ],
           "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
-          "Science 1000-level course": ["CHEM 1?", "LIFS 1?", "PHYS 1?"]
+          "Science 1000-level course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101"
+          ]
         },
         "MECH Required Courses": {
           "MECH 3300 / MECH 3420 / MECH 3520 / MECH 3710": [
@@ -786,7 +795,12 @@
             "MATH 2351"
           ],
           "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
-          "Science 1000-level course": ["CHEM 1?", "LIFS 1?", "PHYS 1?"]
+          "Science 1000-level course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101"
+          ]
         },
         "AE Required Courses": {
           "Credit-bearing Required Courses": [
@@ -1451,7 +1465,12 @@
             "MATH 2351"
           ],
           "PHYS 1112 / PHYS 1312": ["PHYS 1112", "PHYS 1312"],
-          "Science 1000-level course": ["CHEM 1?", "LIFS 1?", "PHYS 1?"]
+          "Science 1000-level course": [
+            "CHEM 1008",
+            "CHEM 1020",
+            "LIFS 1901",
+            "PHYS 1101"
+          ]
         },
         "MECH Required Courses": {
           "MECH 3300 / MECH 3420 / MECH 3520 / MECH 3710": [
