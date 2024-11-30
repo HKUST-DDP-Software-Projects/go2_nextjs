@@ -563,12 +563,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND LIFS 1901",
+        "description": "(CHEM 1010 OR CHEM 1012) AND LIFS 1901",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1
           },
@@ -582,12 +582,12 @@
         "needManualCheck": false
       },
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND Level 3 or above in HKDSE 1x Biology",
+        "description": "(CHEM 1010 OR CHEM 1012) AND Level 3 or above in HKDSE 1x Biology",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1
           }
@@ -1212,12 +1212,12 @@
     "exclusions": [],
     "corequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -1424,12 +1424,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -1539,12 +1539,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -1717,12 +1717,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND (LIFS 1901 OR BIEN 2410 OR BIEN 2610)",
+        "description": "(CHEM 1010 OR CHEM 1012) AND (LIFS 1901 OR BIEN 2410 OR BIEN 2610)",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -1748,12 +1748,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -1770,12 +1770,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2007,13 +2007,13 @@
         "needManualCheck": true
       },
       {
-        "description": "CHEM 1008, CHEM 1010, CHEM 1020, CHEM 1030, any CHEM courses at or above 2000-level",
+        "description": "CHEM 1008, CHEM 1010, CHEM 1012, CHEM 1030, any CHEM courses at or above 2000-level",
         "rules": [
           {
             "courses": [
               "CHEM 1008",
               "CHEM 1010",
-              "CHEM 1020",
+              "CHEM 1012",
               "CHEM 1030",
               "CHEM 2?",
               "CHEM 3?",
@@ -2093,17 +2093,84 @@
         "needManualCheck": true
       },
       {
-        "description": "CHEM 1008, CHEM 1020",
+        "description": "CHEM 1008, CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1008",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1
           }
         ],
         "needManualCheck": false
+      }
+    ],
+    "corequisites": []
+  },
+  {
+    "code": "CHEM 1011",
+    "title": "General Chemistry A: Reactions, Thermodynamics, and Reaction Kinetics",
+    "credits": "3",
+    "prerequisites": [
+      {
+        "description": "CHEM 1004 OR CHEM 1008",
+        "rules": [
+          {
+            "courses": [
+              "CHEM 1004",
+              "CHEM 1008"
+            ],
+            "minCourseCnt": 1
+          }
+        ],
+        "needManualCheck": false
+      },
+      {
+        "description": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry",
+        "rules": [],
+        "needManualCheck": true
+      }
+    ],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
+    "code": "CHEM 1012",
+    "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding Theories",
+    "credits": "3",
+    "prerequisites": [
+      {
+        "description": "CHEM 1004 OR CHEM 1008",
+        "rules": [
+          {
+            "courses": [
+              "CHEM 1004",
+              "CHEM 1008"
+            ],
+            "minCourseCnt": 1
+          }
+        ],
+        "needManualCheck": false
+      },
+      {
+        "description": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry",
+        "rules": [],
+        "needManualCheck": true
+      }
+    ],
+    "exclusions": [
+      {
+        "description": "CHEM 1010",
+        "rules": [
+          {
+            "courses": [
+              "CHEM 1010"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
       }
     ],
     "corequisites": []
@@ -2171,12 +2238,12 @@
         "needManualCheck": true
       },
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1
           }
@@ -2195,12 +2262,54 @@
     "exclusions": [],
     "corequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CHEM 1051",
+    "title": "Laboratory for General Chemistry A",
+    "credits": "1",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": [
+      {
+        "description": "CHEM 1011",
+        "rules": [
+          {
+            "courses": [
+              "CHEM 1011"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CHEM 1052",
+    "title": "Laboratory for General Chemistry B",
+    "credits": "1",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": [
+      {
+        "description": "CHEM 1012",
+        "rules": [
+          {
+            "courses": [
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2215,12 +2324,12 @@
     "credits": "1",
     "prerequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2250,11 +2359,11 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "CHEM 1030",
+        "description": "CHEM 1011",
         "rules": [
           {
             "courses": [
-              "CHEM 1030"
+              "CHEM 1011"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2284,12 +2393,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2319,12 +2428,12 @@
     "credits": "1",
     "prerequisites": [
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND CHEM 1050",
+        "description": "(CHEM 1010 OR CHEM 1012) AND CHEM 1050",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2362,12 +2471,12 @@
     "credits": "1",
     "prerequisites": [
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND CHEM 1050",
+        "description": "(CHEM 1010 OR CHEM 1012) AND CHEM 1050",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2508,12 +2617,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "CHEM 1010 OR CHEM 1020",
+        "description": "CHEM 1010 OR CHEM 1012",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2543,12 +2652,12 @@
     "credits": "1",
     "prerequisites": [
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND CHEM 1050",
+        "description": "(CHEM 1010 OR CHEM 1012) AND CHEM 1050",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2586,19 +2695,19 @@
     "credits": "1",
     "prerequisites": [
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND CHEM 1050",
+        "description": "(CHEM 1010 OR CHEM 1012) AND CHEM 1052",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
           },
           {
             "courses": [
-              "CHEM 1050"
+              "CHEM 1052"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -2867,12 +2976,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND CHEM 1050",
+        "description": "(CHEM 1010 OR CHEM 1012) AND CHEM 1050",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -4238,12 +4347,12 @@
     "credits": "3",
     "prerequisites": [
       {
-        "description": "(CHEM 1010 OR CHEM 1020) AND CIVL 1100",
+        "description": "(CHEM 1010 OR CHEM 1012) AND CIVL 1100",
         "rules": [
           {
             "courses": [
               "CHEM 1010",
-              "CHEM 1020"
+              "CHEM 1012"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
