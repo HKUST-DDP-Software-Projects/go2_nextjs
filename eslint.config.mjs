@@ -17,6 +17,9 @@ const compat = new FlatCompat({
 });
 
 const settings = [
+  {
+    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  },
   ...compat.extends(
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -58,9 +61,6 @@ const settings = [
       "jsx-a11y/anchor-is-valid": "off",
       "prettier/prettier": "error",
     },
-  },
-  {
-    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   },
 ];
 
