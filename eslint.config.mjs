@@ -26,6 +26,7 @@ const settings = [
   ),
   {
     ignores: [".pnp.loader.mjs"],
+    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
 
     plugins: {
       "@typescript-eslint": typescriptEslint,
