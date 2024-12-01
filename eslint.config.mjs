@@ -26,7 +26,6 @@ const settings = [
   ),
   {
     ignores: [".pnp.loader.mjs"],
-    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
 
     plugins: {
       "@typescript-eslint": typescriptEslint,
@@ -59,6 +58,9 @@ const settings = [
       "jsx-a11y/anchor-is-valid": "off",
       "prettier/prettier": "error",
     },
+  },
+  {
+    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   },
 ];
 
