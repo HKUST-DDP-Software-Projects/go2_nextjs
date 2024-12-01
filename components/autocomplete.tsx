@@ -1,10 +1,12 @@
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 type AutocompleteProps<T> = {
   options: T[];
+  // eslint-disable-next-line no-unused-vars
   onSelect: (option: T) => void;
   label: string;
   placeholder: string;
+  // eslint-disable-next-line no-unused-vars
   displayOption: (option: T) => string;
   clearOnSelect?: boolean;
 };

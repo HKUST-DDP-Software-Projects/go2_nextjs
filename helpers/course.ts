@@ -1,9 +1,13 @@
 import courses from "@/helpers/all_courses_w_prereq.json";
 
 export enum CourseStatus {
+  // eslint-disable-next-line no-unused-vars
   TAKEN = "Taken",
+  // eslint-disable-next-line no-unused-vars
   TRANSFERRED = "Transferred",
+  // eslint-disable-next-line no-unused-vars
   IN_PROGRESS = "In Progress",
+  // eslint-disable-next-line no-unused-vars
   PLANNED = "Planned",
 }
 
@@ -113,8 +117,11 @@ export interface CourseRequisiteRule {
 }
 
 export enum CourseValidationResult {
+  // eslint-disable-next-line no-unused-vars
   SATISFIED = "Satisfied",
+  // eslint-disable-next-line no-unused-vars
   UNSATISFIED = "Unsatisfied",
+  // eslint-disable-next-line no-unused-vars
   NEED_MANUAL_CHECK = "Need Manual Check",
 }
 

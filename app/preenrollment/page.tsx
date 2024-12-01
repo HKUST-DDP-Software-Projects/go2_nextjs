@@ -15,7 +15,6 @@ import {
   gradeToNumber,
   isCourseGradeRelevant,
 } from "@/helpers/course";
-import { Degree } from "@/redux/features/plannerSlice";
 import {
   addCourse,
   moveCourseToFront,
@@ -24,40 +23,6 @@ import {
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-
-const parseDegrees = (degrees: Degree[]) => {
-  const requirementGroups = degrees.flatMap((degree) =>
-    degree.requirements
-      .filter((requirement) =>
-        ["major", "school"].includes(requirement.rules.type),
-      )
-      .flatMap((requirement) =>
-        requirement.requirementGroups.filter(
-          (requirement) =>
-            !requirement.name.includes("Elective") &&
-            !requirement.name.includes("Common Core"),
-        ),
-      ),
-  );
-
-  return Object.fromEntries(
-    requirementGroups.map((requirementGroup) => [
-      requirementGroup.name,
-      Object.fromEntries(
-        requirementGroup.requirements.map((requirement) => [
-          requirement.name,
-          [
-            ...new Set(
-              Object.values(requirement.lists)
-                .filter((list): list is string[] => list !== undefined)
-                .flat(),
-            ),
-          ],
-        ]),
-      ),
-    ]),
-  ) as Record<string, Record<string, string[]>>;
-};
 
 export default function PreEnrollment() {
   // TODO: Validate if all the requirements are required, not electives

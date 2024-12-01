@@ -3,7 +3,7 @@
 import { setPersonalDetails } from "@/redux/features/personalDetailsSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import React, { useState } from "react";
 import { CONFIG } from "@/helpers/config";
 
 const ADMISSION_YEARS = Object.keys(CONFIG.engineeringMajors).map((year) => ({

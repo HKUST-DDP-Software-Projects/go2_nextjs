@@ -12,11 +12,12 @@ import {
 import { CourseDetail, CourseEnrollment, CourseStatus } from "@/helpers/course";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/outline";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const CourseAutocomplete = ({
   handleSelectCourse,
 }: {
+  // eslint-disable-next-line no-unused-vars
   handleSelectCourse: (course: CourseDetail) => void;
 }) => {
   const courseCatalog = useAppSelector(

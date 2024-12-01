@@ -3,10 +3,12 @@ import { ReactNode, useState } from "react";
 type KeyColumn<T> = keyof T | "custom" | "";
 type TableProps<T> = {
   data: T[];
+  // eslint-disable-next-line no-unused-vars
   keyFunc: (row: T) => string;
   columns: {
     key: KeyColumn<T>;
     header: string;
+    // eslint-disable-next-line no-unused-vars
     format?: (value: T) => ReactNode;
   }[];
 };

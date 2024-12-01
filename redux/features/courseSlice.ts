@@ -106,6 +106,7 @@ export const course = createSlice({
       console.log("Parsing course history", data);
 
       const regex =
+        // eslint-disable-next-line no-control-regex
         /Course	Description	Term	Grade	Units	Status\n((([^\t\n]*\t){5}[^\t\n]*\n)*)/g;
       const courseTable = regex.exec(data);
       if (courseTable == null) {

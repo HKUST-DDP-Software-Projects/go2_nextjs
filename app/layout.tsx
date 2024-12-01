@@ -4,7 +4,7 @@ import { Providers } from "@/redux/provider";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
