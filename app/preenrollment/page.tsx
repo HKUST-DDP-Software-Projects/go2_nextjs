@@ -25,7 +25,6 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const parseDegrees = (degrees: Degree[]) => {
   const requirementGroups = degrees.flatMap((degree) =>
     degree.requirements

@@ -10,26 +10,15 @@ import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
 
 const settings = [
   {
+    ignores: ["../pnp.cjs", "../.pnp.loader.mjs"],
+  },
+  {
     files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   },
-  ...compat.extends(
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "next",
-    "prettier",
-  ),
   {
-    ignores: [".pnp.loader.mjs"],
-
     plugins: {
       "@typescript-eslint": typescriptEslint,
       react,
