@@ -579,7 +579,7 @@ export default function PreEnrollment() {
                       <td className="border border-gray-300 px-4 py-2">
                         24 {cga >= 3.3 ? "✅" : ""}
                       </td>
-                    </tr>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
