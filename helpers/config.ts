@@ -5,7 +5,7 @@ type AdmissionYear = string;
 type EngineeringMajor = string;
 type BusinessMajor = string;
 
-export const CONFIG = rawConfig as {
+export const CONFIG = rawConfig as unknown as {
   qualtricsSurveyID: string;
   qualtricsBaseURL: string;
   qualtricsAPIToken: string;
