@@ -98,8 +98,8 @@ export const course = createSlice({
           );
           return;
         }
-      } catch (e) {
-        console.log("not raw json");
+      } catch (e: any) {
+        console.log("not raw json", e);
       }
 
       const data = rawData.replaceAll("\r\n", "\n").replaceAll("\r", "\n");

@@ -131,7 +131,6 @@ export default function PreEnrollment() {
     null,
   );
 
-
   const [creditCnt, setCreditCnt] = useState<number>(shoppingCartCredits);
 
   const isSelectedCourseInCart =
@@ -296,65 +295,64 @@ export default function PreEnrollment() {
         remarks,
       } = prepareSubmission();
 
-      let session_options = {
-        method: 'POST',
+      const session_options = {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          'X-API-TOKEN': CONFIG.qualtricsAPIToken
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "X-API-TOKEN": CONFIG.qualtricsAPIToken,
         },
-        body: '{"language":"EN"}'
-      }
+        body: '{"language":"EN"}',
+      };
 
       const response = await fetch(
         `${CONFIG.qualtricsBaseURL}/API/v3/surveys/${CONFIG.qualtricsSurveyID}/sessions`,
-        session_options);
+        session_options,
+      );
       const data = await response.json();
 
-      if(data.meta.httpStatus != "201 - Created")
-      {
+      if (data.meta.httpStatus != "201 - Created") {
         throw new Error("Failed to create new survey session");
       }
       const response_id = data.result.sessionId;
 
-      let survey_responses =
-        { "advance": true,
-          "responses": {
-            "QID1": studentName,
-            "QID2": studentId,
-            "QID3": program,
-            "QID4": email,
-            "QID5": admissionYear,
-            "QID6": courses[0],
-            "QID7": courses[1],
-            "QID8": courses[2],
-            "QID9": courses[3],
-            "QID10": courses[4],
-            "QID11": courses[5],
-            "QID12": courses[6],
-            "QID13": remarks
-          }
-        };
+      const survey_responses = {
+        advance: true,
+        responses: {
+          QID1: studentName,
+          QID2: studentId,
+          QID3: program,
+          QID4: email,
+          QID5: admissionYear,
+          QID6: courses[0],
+          QID7: courses[1],
+          QID8: courses[2],
+          QID9: courses[3],
+          QID10: courses[4],
+          QID11: courses[5],
+          QID12: courses[6],
+          QID13: remarks,
+        },
+      };
 
-      let submission_options =
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-            'X-API-TOKEN': CONFIG.qualtricsAPIToken,
-          },
-          body: JSON.stringify(survey_responses)
-        };
+      const submission_options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "X-API-TOKEN": CONFIG.qualtricsAPIToken,
+        },
+        body: JSON.stringify(survey_responses),
+      };
 
       const submission_response = await fetch(
         `${CONFIG.qualtricsBaseURL}/API/v3/surveys/${CONFIG.qualtricsSurveyID}/sessions/${response_id}`,
-        submission_options);
+        submission_options,
+      );
       const submission_data = await submission_response.json();
       console.log(submission_data);
 
-      if(submission_data.meta.httpStatus != "200 - OK")
-      {
+      if (submission_data.meta.httpStatus != "200 - OK") {
         throw new Error("Failed to submit survey responses");
       }
       alert(
@@ -397,7 +395,7 @@ export default function PreEnrollment() {
                 {prerequisite.needManualCheck ? (
                   <Chip label="Manual check required" color="yellow" />
                 ) : checkPrerequisiteSet(prerequisite, courseHistory) ===
-                CourseValidationResult.SATISFIED ? (
+                  CourseValidationResult.SATISFIED ? (
                   <Chip label="Fulfilled" color="green" />
                 ) : (
                   <Chip label="Unfulfilled" color="red" />
@@ -417,7 +415,7 @@ export default function PreEnrollment() {
                 {exclusion.needManualCheck ? (
                   <Chip label="Manual check required" />
                 ) : checkExclusionSet(exclusion, courseHistory) ===
-                CourseValidationResult.UNSATISFIED ? (
+                  CourseValidationResult.UNSATISFIED ? (
                   <Chip label="Excluded" color="red" />
                 ) : (
                   <Chip label="Not excluded" color="green" />
@@ -546,40 +544,40 @@ export default function PreEnrollment() {
                   </p>
                   <table className="border-collapse w-full">
                     <thead>
-                    <tr>
-                      <th className="border border-gray-300 px-4 py-2">
-                        CGA
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2">
-                        Max credits
-                      </th>
-                    </tr>
+                      <tr>
+                        <th className="border border-gray-300 px-4 py-2">
+                          CGA
+                        </th>
+                        <th className="border border-gray-300 px-4 py-2">
+                          Max credits
+                        </th>
+                      </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        {"< 3"}
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        20 {cga < 3 ? "✅" : ""}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        3 - 3.29
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        21 {cga >= 3 && cga <= 3.29 ? "✅" : ""}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        {"> 3.3"}
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        24 {cga >= 3.3 ? "✅" : ""}
-                      </td>
-                    </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {"< 3"}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          20 {cga < 3 ? "✅" : ""}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-4 py-2">
+                          3 - 3.29
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          21 {cga >= 3 && cga <= 3.29 ? "✅" : ""}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-4 py-2">
+                          {"> 3.3"}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2">
+                          24 {cga >= 3.3 ? "✅" : ""}
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
