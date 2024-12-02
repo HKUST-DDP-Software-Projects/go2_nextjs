@@ -571,7 +571,7 @@ export default function PreEnrollment() {
                   <div className="flex flex-wrap">
                     {/* Submit button */}
                     <button
-                      className="px-4 py-2 m-1 bg-gray-200 border border-gray-200 w-full"
+                      className="px-4 py-2 m-1 bg-blue-500 border border-gray-200 w-full"
                       onClick={submitForm}
                     >
                       Submit
