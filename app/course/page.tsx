@@ -178,6 +178,9 @@ const CoursePage = () => {
           keyFunc={(course) => `${course.code}-${course.term}`}
         />
       </div>
+      <div >
+      <button className="bg-blue-500 text-white px-4 py-2 rounded-md justify-center items-center" onClick={handleButtonClick}>Next</button>
+      </div>
       <Modal
         isModalOpen={isEditCourseEnrollmentModalOpen}
         title={
@@ -305,9 +308,6 @@ const CoursePage = () => {
             <option value={CourseStatus.IN_PROGRESS}>In Progress</option>
             <option value={CourseStatus.TAKEN}>Taken</option>
           </select>
-        </div>
-        <div >
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-md justify-center items-center" onClick={handleButtonClick}>Next</button>
         </div>
       </Modal>
       <Modal
