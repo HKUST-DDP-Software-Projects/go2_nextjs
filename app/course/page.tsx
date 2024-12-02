@@ -3,6 +3,7 @@
 import Autocomplete from "@/components/autocomplete";
 import Modal from "@/components/modal";
 import Table from "@/components/table";
+import { useRouter } from "next/navigation";
 import {
   addCourseEnrollment,
   editCourseEnrollment,
@@ -36,11 +37,16 @@ const CourseAutocomplete = ({
 };
 
 const CoursePage = () => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const courseEnrollments = useAppSelector(
     (state) => state.courseReducer.courseHistory,
   );
 
+  const handleButtonClick = () => {
+    router.push("/preenrollment");
+  };
+  
   const [isEditCourseEnrollmentModalOpen, setIsEditCourseEnrollmentModalOpen] =
     useState(false);
   const [isImportCourseModalOpen, setIsImportCourseModalOpen] = useState(false);
@@ -88,6 +94,7 @@ const CoursePage = () => {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold">Course Enrollment</h1>
+      <p style={{color:"red"}}>*Please ensure all the information you provide is accurate, as you will not have another opportunity to revisit this page.</p>
       <div className="flex justify-end mb-4">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mr-2"
@@ -117,60 +124,66 @@ const CoursePage = () => {
           Add Course Enrollment
         </button>
       </div>
-      <Table
-        columns={[
-          {
-            key: "code",
-            header: "Course Code",
-          },
-          {
-            key: "title",
-            header: "Course Name",
-          },
-          {
-            key: "units",
-            header: "Units",
-          },
-          {
-            key: "term",
-            header: "Term",
-          },
-          {
-            key: "grade",
-            header: "Grade",
-          },
-          {
-            key: "status",
-            header: "Status",
-          },
-          {
-            key: "custom",
-            header: "Actions",
-            format: (courseEnrollment: CourseEnrollment) => (
-              <>
-                <button
-                  className="text-blue-500 hover:text-blue-700 mr-2"
-                  onClick={() => {
-                    setSelectedCourseEnrollment(courseEnrollment);
-                    setFormData(courseEnrollment);
-                    setIsEditCourseEnrollmentModalOpen(true);
-                  }}
-                >
-                  <PencilIcon className="h-5 w-5 inline-block" />
-                </button>
-                <button
-                  className="text-red-500 hover:text-red-700"
-                  onClick={() => handleRemoveCourseEnrollment(courseEnrollment)}
-                >
-                  <TrashIcon className="h-5 w-5 inline-block" />
-                </button>
-              </>
-            ),
-          },
-        ]}
-        data={courseEnrollments}
-        keyFunc={(course) => `${course.code}-${course.term}`}
-      />
+      <div className="w-full overflow-x-auto" style={{maxHeight:"57vh", border: "1px solid #ccc"}}>
+        <Table
+          columns={[
+            {
+              key: "code",
+              header: "Course Code",
+            },
+            {
+              key: "title",
+              header: "Course Name",
+            },
+            {
+              key: "units",
+              header: "Units",
+            },
+            {
+              key: "term",
+              header: "Term",
+            },
+            {
+              key: "grade",
+              header: "Grade",
+            },
+            {
+              key: "status",
+              header: "Status",
+            },
+            {
+              key: "custom",
+              header: "Actions",
+              format: (courseEnrollment: CourseEnrollment) => (
+                <>
+                  <button
+                    className="text-blue-500 hover:text-blue-700 mr-2"
+                    onClick={() => {
+                      setSelectedCourseEnrollment(courseEnrollment);
+                      setFormData(courseEnrollment);
+                      setIsEditCourseEnrollmentModalOpen(true);
+                    }}
+                  >
+                    <PencilIcon className="h-5 w-5 inline-block" />
+                  </button>
+                  <button
+                    className="text-red-500 hover:text-red-700"
+                    onClick={() => handleRemoveCourseEnrollment(courseEnrollment)}
+                  >
+                    <TrashIcon className="h-5 w-5 inline-block" />
+                  </button>
+                </>
+              ),
+            },
+          ]}
+          data={courseEnrollments}
+          keyFunc={(course) => `${course.code}-${course.term}`}
+        />
+      </div>
+      <div >
+      <button className="bg-blue-500 text-white px-4 py-2 rounded-md justify-center items-center" onClick={handleButtonClick}>Next</button>
+      </div>
+      <Modal
       <Modal
         isModalOpen={isEditCourseEnrollmentModalOpen}
         title={
