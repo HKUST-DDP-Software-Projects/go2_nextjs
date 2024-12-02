@@ -486,6 +486,7 @@ export default function PreEnrollment() {
     <div className="flex h-full lg:flex-row flex-col">
       <div className="flex-1 p-4 flex flex-col overflow-y-auto">
         <div className="mb-4">
+          <p style={{color:"red"}}>*Please ensure all the information you provide is accurate, as you will not have another opportunity to revisit this page.</p>
           <h4 className="text-lg font-semibold">Legend</h4>
           <div className="flex flex-wrap">
             <Chip label="Taken" color="gray" className="line-through" />
@@ -609,7 +610,7 @@ export default function PreEnrollment() {
                   <div className="flex flex-wrap">
                     {/* Submit button */}
                     <button
-                      className="px-4 py-2 m-1 bg-gray-200 border border-gray-200 w-full"
+                      className="px-4 py-2 m-1 bg-blue-500 border border-gray-200 w-full"
                       onClick={submitForm}
                     >
                       Submit
