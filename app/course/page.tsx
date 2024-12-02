@@ -92,6 +92,7 @@ const CoursePage = () => {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold">Course Enrollment</h1>
+      <p style={{color:"red"}}>*Please ensure all the information you provide is accurate, as you will not have another opportunity to revisit this page.</p>
       <div className="flex justify-end mb-4">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mr-2"
