@@ -46,7 +46,7 @@ const CoursePage = () => {
   const handleButtonClick = () => {
     router.push("/preenrollment");
   };
-  
+
   const [isEditCourseEnrollmentModalOpen, setIsEditCourseEnrollmentModalOpen] =
     useState(false);
   const [isImportCourseModalOpen, setIsImportCourseModalOpen] = useState(false);
@@ -94,7 +94,10 @@ const CoursePage = () => {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold">Course Enrollment</h1>
-      <p style={{color:"red"}}>*Please ensure all the information you provide is accurate, as you will not have another opportunity to revisit this page.</p>
+      <p style={{ color: "red", marginBottom: "20px", marginTop: "5px" }}>
+        Please ensure all the information you provide is accurate, as this form
+        is a one-way form.
+      </p>
       <div className="flex justify-end mb-4">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mr-2"
@@ -124,7 +127,10 @@ const CoursePage = () => {
           Add Course Enrollment
         </button>
       </div>
-      <div className="w-full overflow-x-auto" style={{maxHeight:"57vh", border: "1px solid #ccc"}}>
+      <div
+        className="w-full overflow-x-auto"
+        style={{ maxHeight: "57vh", border: "1px solid #ccc" }}
+      >
         <Table
           columns={[
             {
@@ -168,7 +174,9 @@ const CoursePage = () => {
                   </button>
                   <button
                     className="text-red-500 hover:text-red-700"
-                    onClick={() => handleRemoveCourseEnrollment(courseEnrollment)}
+                    onClick={() =>
+                      handleRemoveCourseEnrollment(courseEnrollment)
+                    }
                   >
                     <TrashIcon className="h-5 w-5 inline-block" />
                   </button>
@@ -180,10 +188,13 @@ const CoursePage = () => {
           keyFunc={(course) => `${course.code}-${course.term}`}
         />
       </div>
-      <div >
-      <button className="bg-blue-500 text-white px-4 py-2 rounded-md justify-center items-center" onClick={handleButtonClick}>Next</button>
-      </div>
-      <Modal
+      <button
+        className="bg-blue-500 text-white px-4 py-2 rounded-md"
+        style={{ width: "100%", marginTop: "5%" }}
+        onClick={handleButtonClick}
+      >
+        Next
+      </button>
       <Modal
         isModalOpen={isEditCourseEnrollmentModalOpen}
         title={

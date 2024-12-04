@@ -344,7 +344,10 @@ export default function PreEnrollment() {
       exclusionResult !== CourseValidationResult.UNSATISFIED;
 
     return (
-      <div className="flex-grow">
+      <div
+        className="flex-grow"
+        style={{ width: "fit-content", height: "fit-content" }}
+      >
         <h4 className="text-lg font-semibold">
           {selectedCourse.code} ({selectedCourse.units} credits)
         </h4>

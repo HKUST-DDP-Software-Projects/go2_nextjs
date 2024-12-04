@@ -161,8 +161,10 @@ export default function PersonalDetails() {
   return (
     <div className="flex flex-col space-y-4 m-4">
       <h1 className="text-2xl font-bold">Personal Details</h1>
-      <p style={{color:"red"}}>*Please ensure all the information you provide is accurate, as you will not have another opportunity to revisit this page.</p>
-
+      <p style={{ color: "red", marginBottom: "20px", marginTop: "5px" }}>
+        Please ensure all the information you provide is accurate, as this form
+        is a one-way form.
+      </p>
       <label className="block text-gray-700 font-medium">Name</label>
       <input
         type="text"

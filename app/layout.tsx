@@ -2,7 +2,7 @@
 
 import { Providers } from "@/redux/provider";
 import { Inter } from "next/font/google";
-import Link from "next/link";
+// import Link from "next/link";
 import "./globals.css";
 import React, { useState } from "react";
 
@@ -62,18 +62,19 @@ export default function RootLayout({
             </nav>
 
             <div className="flex flex-1 overflow-hidden">
-              <aside
-                id="logo-sidebar"
-                className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 ${
-                  isOpen ? "translate-x-0" : ""
-                }`}
-                aria-label="Sidebar"
-              >
-              </aside>
+              {/*<aside*/}
+              {/*  id="logo-sidebar"*/}
+              {/*  className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 ${*/}
+              {/*    isOpen ? "translate-x-0" : ""*/}
+              {/*  }`}*/}
+              {/*  aria-label="Sidebar"*/}
+              {/*>*/}
+              {/*</aside>*/}
 
               <div className="flex flex-1 overflow-y-auto">
-                <div className="flex-shrink-0 sm:w-64"></div>
+                <div className="flex-shrink-0 sm:w-16"></div>
                 <div className="w-full h-full">{children}</div>
+                <div className="flex-shrink-1 sm:w-16"></div>
               </div>
             </div>
           </div>
