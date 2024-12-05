@@ -51,8 +51,8 @@ export default function PreEnrollment() {
     (state) => state.preenrollmentReducer.shoppingCartCredits || 0,
   );
 
-  const state = useAppSelector((state) => state);
-  console.log(state);
+  // const state = useAppSelector((state) => state);
+  // console.log(state);
 
   const dispatch = useAppDispatch();
 
@@ -259,27 +259,23 @@ export default function PreEnrollment() {
         remarks,
       } = prepareSubmission();
 
-      const session_options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          "X-API-TOKEN": CONFIG.qualtricsAPIToken,
+      const response2 = await fetch(
+        "/qualtrics_backend.php/api/get_survey_id",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
-        body: '{"language":"EN"}',
-      };
-
-      const response = await fetch(
-        `${CONFIG.qualtricsBaseURL}/API/v3/surveys/${CONFIG.qualtricsSurveyID}/sessions`,
-        session_options,
       );
-      const data = await response.json();
-
-      if (data.meta.httpStatus != "201 - Created") {
+      const sur_id_req_result = await response2.json();
+      if (sur_id_req_result.status == 400) {
         throw new Error("Failed to create new survey session");
       }
-      const response_id = data.result.sessionId;
 
+      const response_id = sur_id_req_result.sessionId;
+
+      // console.log({ response_id: response_id });
       const survey_responses = {
         advance: true,
         responses: {
@@ -298,33 +294,37 @@ export default function PreEnrollment() {
           QID13: remarks,
         },
       };
-
+      const req_body = {
+        qual_body: survey_responses,
+        survey_id: response_id,
+      };
       const submission_options = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          "X-API-TOKEN": CONFIG.qualtricsAPIToken,
         },
-        body: JSON.stringify(survey_responses),
+        body: JSON.stringify(req_body),
       };
-
+      // console.log("SUBMISSIONS OPTIONS");
+      // console.log(submission_options);
       const submission_response = await fetch(
-        `${CONFIG.qualtricsBaseURL}/API/v3/surveys/${CONFIG.qualtricsSurveyID}/sessions/${response_id}`,
+        `/qualtrics_backend.php/api/submit_survey`,
         submission_options,
       );
       const submission_data = await submission_response.json();
-      console.log(submission_data);
+      // console.log(submission_response);
 
-      if (submission_data.meta.httpStatus != "200 - OK") {
+      if (submission_data.status != 200) {
         throw new Error("Failed to submit survey responses");
       }
+
       alert(
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
       );
       router.push("/end");
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       alert(`Failed to submit form: ${error}`);
     }
   };
