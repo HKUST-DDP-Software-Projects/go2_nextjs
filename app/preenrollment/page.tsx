@@ -22,7 +22,8 @@ import {
 } from "@/redux/features/preenrollmentSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { set } from "zod";
 
 export default function PreEnrollment() {
   // TODO: Validate if all the requirements are required, not electives
@@ -96,6 +97,8 @@ export default function PreEnrollment() {
   );
 
   const [creditCnt, setCreditCnt] = useState<number>(shoppingCartCredits);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const isSelectedCourseInCart =
     shoppingCart.find((c) => c.code === selectedCourse?.code) !== undefined;
@@ -181,7 +184,15 @@ export default function PreEnrollment() {
       />
     );
   };
-
+  useEffect(() => {
+    if (!personalDetails.studentId) {
+      router.push("/");
+    }
+    // if there's no courses in the list, redirect to the course page.
+    if (Object.keys(courseHistory).length === 0) {
+      router.push("/course");
+    }
+  }, []);
   const prepareSubmission = () => {
     let remarks = "";
 
@@ -258,6 +269,7 @@ export default function PreEnrollment() {
         courses,
         remarks,
       } = prepareSubmission();
+      setIsLoading(true);
 
       const response2 = await fetch(
         "/qualtrics_backend.php/api/get_survey_id",
@@ -270,6 +282,7 @@ export default function PreEnrollment() {
       );
       const sur_id_req_result = await response2.json();
       if (sur_id_req_result.status == 400) {
+        setIsLoading(false);
         throw new Error("Failed to create new survey session");
       }
 
@@ -316,15 +329,18 @@ export default function PreEnrollment() {
       // console.log(submission_response);
 
       if (submission_data.status != 200) {
+        setIsLoading(false);
         throw new Error("Failed to submit survey responses");
       }
 
       alert(
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
       );
+      setIsLoading(false);
       router.push("/end");
     } catch (error) {
       // console.error(error);
+      setIsLoading(false);
       alert(`Failed to submit form: ${error}`);
     }
   };
@@ -574,10 +590,14 @@ export default function PreEnrollment() {
                   <div className="flex flex-wrap">
                     {/* Submit button */}
                     <button
-                      className="px-4 py-2 m-1 bg-blue-500 border border-gray-200 w-full"
+                      className="px-4 py-2 m-1 border text-white border-gray-200 w-full"
                       onClick={submitForm}
+                      disabled={isLoading}
+                      style={{
+                        backgroundColor: !isLoading ? "#3b82f6" : "#6b7280",
+                      }}
                     >
-                      Submit
+                      {isLoading ? "Loading..." : "Submit"}
                     </button>
                   </div>
                 </div>
