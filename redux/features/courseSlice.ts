@@ -45,6 +45,10 @@ export const course = createSlice({
         }
       });
     },
+    removeAllCourses: (state) => {
+      state.courseHistory = [];
+    },
+
     addCourseEnrollment: (state, action: PayloadAction<CourseEnrollment>) => {
       state.courseHistory.push(action.payload);
       state.courseHistoryString.push(action.payload.code);
@@ -102,16 +106,23 @@ export const course = createSlice({
         console.log("not raw json", e);
       }
 
-      const data = rawData.replaceAll("\r\n", "\n").replaceAll("\r", "\n");
-      console.log("Parsing course history", data);
+      const data = rawData
+        .replaceAll("\r\n", "\n")
+        .replaceAll("\r", "\n")
+        .replaceAll("\n\t", "\t");
 
       const regex =
         // eslint-disable-next-line no-control-regex
         /Course	Description	Term	Grade	Units	Status\n((([^\t\n]*\t){5}[^\t\n]*\n)*)/g;
-      const courseTable = regex.exec(data);
+      let courseTable = regex.exec(data);
       if (courseTable == null) {
-        window.alert("Unable to locate the course history table");
-        return;
+        const secondregex =
+          /Course \tDescription \tTerm \tGrade \tUnits \tStatus\n((([^\t\n]*\t){5}[^\t\n]*\n)*)/g;
+        courseTable = secondregex.exec(data);
+        if (courseTable == null) {
+          window.alert("Unable to locate the course history table");
+          return;
+        }
       }
 
       // .trim() remove ending \n
@@ -140,6 +151,7 @@ export const {
   addCourseEnrollment,
   editCourseEnrollment,
   removeCourseEnrollment,
+  removeAllCourses,
   handleImport,
 } = course.actions;
 export default course.reducer;

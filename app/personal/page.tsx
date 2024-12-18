@@ -92,6 +92,10 @@ const BUSINESS_MAJORS = [
     display: "Marketing",
     value: "MARK",
   },
+  {
+    display: "Undeclared",
+    value: "SBM",
+  },
 ];
 
 export default function PersonalDetails() {
@@ -114,6 +118,7 @@ export default function PersonalDetails() {
   const [businessMajor, setBusinessMajor] = useState(
     personalDetails.businessMajor,
   );
+  const [errors, setErrors] = useState<{ [key: string]: string }>({}); // Add this line
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -123,6 +128,16 @@ export default function PersonalDetails() {
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     setStudentId(event.target.value);
+
+    const newErrors = { ...errors };
+
+    if (!validateStudentId(event.target.value)) {
+      newErrors.studentid = "Please input a valid Student ID";
+    } else {
+      delete newErrors.studentid;
+    }
+
+    setErrors(newErrors);
   };
 
   const handleAdmissionYearChange = (
@@ -143,6 +158,28 @@ export default function PersonalDetails() {
     setBusinessMajor(event.target.value);
   };
 
+  const validateEmail = (email: string) => {
+    const domain = "connect.ust.hk";
+    const emailRegex = new RegExp(`^[a-zA-Z0-9._%+-]+@${domain}$`);
+    return emailRegex.test(email);
+  };
+  const validateStudentId = (studentId: string) => {
+    const studentIdRegex = /^2\d{7}$/;
+    return studentIdRegex.test(studentId);
+  };
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+    const newErrors = { ...errors };
+
+    if (!validateEmail(event.target.value)) {
+      newErrors.email = "Please input a valid HKUST email.";
+    } else {
+      delete newErrors.email;
+    }
+
+    setErrors(newErrors);
+  };
+
   const handleSubmit = () => {
     dispatch(
       setPersonalDetails({
@@ -158,11 +195,25 @@ export default function PersonalDetails() {
     router.push("/course");
   };
 
+  const isFormValid = () => {
+    return (
+      name &&
+      studentId &&
+      email &&
+      admissionYear &&
+      engineeringMajor &&
+      businessMajor &&
+      Object.keys(errors).length === 0
+    );
+  };
+
   return (
     <div className="flex flex-col space-y-4 m-4">
       <h1 className="text-2xl font-bold">Personal Details</h1>
-      <p style={{color:"red"}}>*Please ensure all the information you provide is accurate, as you will not have another opportunity to revisit this page.</p>
-
+      <p style={{ color: "red", marginBottom: "20px", marginTop: "5px" }}>
+        Please ensure all the information you provide is accurate, as this form
+        is a one-way form.
+      </p>
       <label className="block text-gray-700 font-medium">Name</label>
       <input
         type="text"
@@ -180,15 +231,17 @@ export default function PersonalDetails() {
         placeholder="Student ID"
         className="border border-gray-300 rounded-md p-2"
       />
+      {errors.studentid && <p className="text-red-500">{errors.studentid}</p>}
 
       <label className="block text-gray-700 font-medium">Email</label>
       <input
         type="email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleEmailChange}
         placeholder="Email"
         className="border border-gray-300 rounded-md p-2"
       />
+      {errors.email && <p className="text-red-500">{errors.email}</p>}
 
       <label className="block text-gray-700 font-medium">Admission Year</label>
       <select
@@ -243,7 +296,11 @@ export default function PersonalDetails() {
       </select>
       <button
         onClick={handleSubmit}
-        className="bg-blue-500 text-white px-4 py-2 rounded-md"
+        className=" text-white px-4 py-2 rounded-md"
+        style={{
+          backgroundColor: isFormValid() ? "#3b82f6" : "#6b7280",
+        }}
+        disabled={!isFormValid()}
       >
         Next
       </button>

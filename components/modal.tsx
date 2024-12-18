@@ -7,6 +7,7 @@ type ModalProps = {
   actionText: string;
   onAction: () => void;
   onCancel: () => void;
+  actionDisabled?: boolean;
 };
 
 const Modal = ({
@@ -16,6 +17,7 @@ const Modal = ({
   actionText,
   onAction,
   onCancel,
+  actionDisabled,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +51,11 @@ const Modal = ({
           {children}
           <div className="flex justify-end">
             <button
-              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mr-2"
+              className=" text-white px-4 py-2 rounded-md  mr-2"
+              style={{
+                backgroundColor: actionDisabled ? "#3b82f6" : "#6b7280",
+              }}
+              disabled={!actionDisabled}
               onClick={onAction}
             >
               {actionText}

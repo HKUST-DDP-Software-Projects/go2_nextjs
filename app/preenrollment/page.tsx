@@ -22,7 +22,8 @@ import {
 } from "@/redux/features/preenrollmentSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { set } from "zod";
 
 export default function PreEnrollment() {
   // TODO: Validate if all the requirements are required, not electives
@@ -51,8 +52,8 @@ export default function PreEnrollment() {
     (state) => state.preenrollmentReducer.shoppingCartCredits || 0,
   );
 
-  const state = useAppSelector((state) => state);
-  console.log(state);
+  // const state = useAppSelector((state) => state);
+  // console.log(state);
 
   const dispatch = useAppDispatch();
 
@@ -96,6 +97,8 @@ export default function PreEnrollment() {
   );
 
   const [creditCnt, setCreditCnt] = useState<number>(shoppingCartCredits);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const isSelectedCourseInCart =
     shoppingCart.find((c) => c.code === selectedCourse?.code) !== undefined;
@@ -181,7 +184,15 @@ export default function PreEnrollment() {
       />
     );
   };
-
+  useEffect(() => {
+    if (!personalDetails.studentId) {
+      router.push("/");
+    }
+    // if there's no courses in the list, redirect to the course page.
+    if (Object.keys(courseHistory).length === 0) {
+      router.push("/course");
+    }
+  }, []);
   const prepareSubmission = () => {
     let remarks = "";
 
@@ -258,28 +269,26 @@ export default function PreEnrollment() {
         courses,
         remarks,
       } = prepareSubmission();
+      setIsLoading(true);
 
-      const session_options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          "X-API-TOKEN": CONFIG.qualtricsAPIToken,
+      const response2 = await fetch(
+        "/qualtrics_backend.php/api/get_survey_id",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
-        body: '{"language":"EN"}',
-      };
-
-      const response = await fetch(
-        `${CONFIG.qualtricsBaseURL}/API/v3/surveys/${CONFIG.qualtricsSurveyID}/sessions`,
-        session_options,
       );
-      const data = await response.json();
-
-      if (data.meta.httpStatus != "201 - Created") {
+      const sur_id_req_result = await response2.json();
+      if (sur_id_req_result.status == 400) {
+        setIsLoading(false);
         throw new Error("Failed to create new survey session");
       }
-      const response_id = data.result.sessionId;
 
+      const response_id = sur_id_req_result.sessionId;
+
+      // console.log({ response_id: response_id });
       const survey_responses = {
         advance: true,
         responses: {
@@ -298,33 +307,40 @@ export default function PreEnrollment() {
           QID13: remarks,
         },
       };
-
+      const req_body = {
+        qual_body: survey_responses,
+        survey_id: response_id,
+      };
       const submission_options = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          "X-API-TOKEN": CONFIG.qualtricsAPIToken,
         },
-        body: JSON.stringify(survey_responses),
+        body: JSON.stringify(req_body),
       };
-
+      // console.log("SUBMISSIONS OPTIONS");
+      // console.log(submission_options);
       const submission_response = await fetch(
-        `${CONFIG.qualtricsBaseURL}/API/v3/surveys/${CONFIG.qualtricsSurveyID}/sessions/${response_id}`,
+        `/qualtrics_backend.php/api/submit_survey`,
         submission_options,
       );
       const submission_data = await submission_response.json();
-      console.log(submission_data);
+      // console.log(submission_response);
 
-      if (submission_data.meta.httpStatus != "200 - OK") {
+      if (submission_data.status != 200) {
+        setIsLoading(false);
         throw new Error("Failed to submit survey responses");
       }
+
       alert(
         `Submitted ${shoppingCart.map((course) => course.code).join(", ")}`,
       );
+      setIsLoading(false);
       router.push("/end");
     } catch (error) {
-      console.error(error);
+      // console.error(error);
+      setIsLoading(false);
       alert(`Failed to submit form: ${error}`);
     }
   };
@@ -344,7 +360,10 @@ export default function PreEnrollment() {
       exclusionResult !== CourseValidationResult.UNSATISFIED;
 
     return (
-      <div className="flex-grow">
+      <div
+        className="flex-grow"
+        style={{ width: "fit-content", height: "fit-content" }}
+      >
         <h4 className="text-lg font-semibold">
           {selectedCourse.code} ({selectedCourse.units} credits)
         </h4>
@@ -571,10 +590,14 @@ export default function PreEnrollment() {
                   <div className="flex flex-wrap">
                     {/* Submit button */}
                     <button
-                      className="px-4 py-2 m-1 bg-blue-500 border border-gray-200 w-full"
+                      className="px-4 py-2 m-1 border text-white border-gray-200 w-full"
                       onClick={submitForm}
+                      disabled={isLoading}
+                      style={{
+                        backgroundColor: !isLoading ? "#3b82f6" : "#6b7280",
+                      }}
                     >
-                      Submit
+                      {isLoading ? "Loading..." : "Submit"}
                     </button>
                   </div>
                 </div>

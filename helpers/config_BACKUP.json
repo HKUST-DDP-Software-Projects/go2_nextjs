@@ -2,7 +2,7 @@
   "qualtricsSurveyID": "SV_8kxqeg4pPu4wcXY",
   "qualtricsBaseURL": "https://ust.az1.qualtrics.com",
   "qualtricsAPIToken": "BLOCKED",
-
+  
   "engineeringMajors": {
     "2021": {
       "AE": {
@@ -4004,6 +4004,17 @@
             "MARK 2120",
             "MGMT 2110"
           ]
+        },
+        "FINA Required Courses": {
+          "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+          "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+          "FINA 3810": ["FINA 3810"],
+          "Other Required Courses": [
+            "FINA 3001",
+            "FINA 3103",
+            "FINA 3203",
+            "FINA 3303"
+          ]
         }
       },
       "GBM": {
@@ -4037,14 +4048,7 @@
             "ISOM 2700",
             "MARK 2120",
             "MGMT 2110"
-          ],
-          "Other Elective Courses - ACCT": ["ACCT 3010", "ACCT 3210", "ACCT 4610", "ACCT 1610", "ACCT 3030", "ACCT 3020", "ACCT 3880", "ACCT 3610", "ACCT 4010", "ACCT 4720", "ACCT 4710", "ACCT 1010", "ACCT 2200", "ACCT 4980", "ACCT 4410", "ACCT 2010", "ACCT 4020", "ACCT 4510", "ACCT 3630"],
-          "Other Elective Courses - ECON":["ECON 4274", "ECON 2174", "ECON 3143", "ECON 1222", "ECON 2113", "ECON 4959", "ECON 4800", "ECON 4374", "ECON 2123", "ECON 3123", "ECON 3014", "ECON 3133", "ECON 4244", "ECON 3334", "ECON 4264", "ECON 4474", "ECON 4364", "ECON 4464", "ECON 4124", "ECON 4234", "ECON 4254", "ECON 4305", "ECON 3113", "ECON 4114", "ECON 4334", "ECON 1221", "ECON 3700", "ECON 2103", "ECON 3024", "ECON 4144", "ECON 4670", "ECON 4304", "ECON 3800", "ECON 4434", "ECON 4134", "ECON 1220", "ECON 4284", "ECON 1234", "ECON 4999"],
-          "Other Elective Courses - FINA":["FINA 4303", "FINA 3203", "FINA 3103", "FINA 3830", "FINA 4413", "FINA 4513", "FINA 4723", "FINA 4203", "FINA 4103", "FINA 3303", "FINA 3820", "FINA 2101", "FINA 4919", "FINA 4929", "FINA 3810", "FINA 4403", "FINA 1303", "FINA 4013", "FINA 4003", "FINA 4713", "FINA 2203", "FINA 4703", "FINA 2303", "FINA 3001", "FINA 4803", "FINA 4603", "FINA 4423", "FINA 4503"],
-          "Other Elective Courses - MARK":["MARK 3470", "MARK 2120", "MARK 3430", "MARK 3460", "MARK 3520", "MARK 4980", "MARK 3420", "MARK 1230", "MARK 3220", "MARK 4210", "MARK 3510", "MARK 1220", "MARK 4290", "MARK 3610", "MARK 3620", "MARK 3480", "MARK 3410", "MARK 4450"],
-          "Other Elective Courses - MGMT": ["MGMT 4270", "MGMT 3160", "MGMT 4240", "MGMT 4000", "MGMT 4290", "MGMT 4300", "MGMT 1120", "MGMT 4280", "MGMT 2010", "MGMT 3130", "MGMT 1110", "MGMT 2130", "MGMT 3140", "MGMT 1130", "MGMT 4220", "MGMT 4250", "MGMT 3120", "MGMT 4210", "MGMT 4230", "MGMT 3170", "MGMT 2110", "MGMT 3110", "MGMT 4010"],
-          "Other Elective Courses - ISOM":["ISOM 3180", "ISOM 3320", "ISOM 3400", "ISOM 1380", "ISOM 4830", "ISOM 2020", "ISOM 4590", "ISOM 4540", "ISOM 4010", "ISOM 4400", "ISOM 3540", "ISOM 4020", "ISOM 3780", "ISOM 2040", "ISOM 3330", "ISOM 3770", "ISOM 4520", "ISOM 4530", "ISOM 4840", "ISOM 3760", "ISOM 2030", "ISOM 3380", "ISOM 4740", "ISOM 3010", "ISOM 3710", "ISOM 3210", "ISOM 4490", "ISOM 4690", "ISOM 4720", "ISOM 4100", "ISOM 2010", "ISOM 3370", "ISOM 3390", "ISOM 4000", "ISOM 4880", "ISOM 2310", "ISOM 4030", "ISOM 3340", "ISOM 3260", "ISOM 1700", "ISOM 1090", "ISOM 3530", "ISOM 2500", "ISOM 3310", "ISOM 4750", "ISOM 3900", "ISOM 4780", "ISOM 3000", "ISOM 2700", "ISOM 3230", "ISOM 3360", "ISOM 3730", "ISOM 4810", "ISOM 2400", "ISOM 3350", "ISOM 4200", "ISOM 4300", "ISOM 4890", "ISOM 1500", "ISOM 2600", "ISOM 4790"]
-
+          ]
         }
       },
       "MGMT": {
@@ -4199,6 +4203,17 @@
             "MARK 2120",
             "MGMT 2110"
           ]
+        },
+        "FINA Required Courses": {
+          "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+          "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+          "FINA 3810": ["FINA 3810"],
+          "Other Required Courses": [
+            "FINA 3001",
+            "FINA 3103",
+            "FINA 3203",
+            "FINA 3303"
+          ]
         }
       },
       "GBM": {
@@ -4232,14 +4247,7 @@
             "ISOM 2700",
             "MARK 2120",
             "MGMT 2110"
-          ],
-          "Other Elective Courses - ACCT": ["ACCT 3010", "ACCT 3210", "ACCT 4610", "ACCT 1610", "ACCT 3030", "ACCT 3020", "ACCT 3880", "ACCT 3610", "ACCT 4010", "ACCT 4720", "ACCT 4710", "ACCT 1010", "ACCT 2200", "ACCT 4980", "ACCT 4410", "ACCT 2010", "ACCT 4020", "ACCT 4510", "ACCT 3630"],
-          "Other Elective Courses - ECON":["ECON 4274", "ECON 2174", "ECON 3143", "ECON 1222", "ECON 2113", "ECON 4959", "ECON 4800", "ECON 4374", "ECON 2123", "ECON 3123", "ECON 3014", "ECON 3133", "ECON 4244", "ECON 3334", "ECON 4264", "ECON 4474", "ECON 4364", "ECON 4464", "ECON 4124", "ECON 4234", "ECON 4254", "ECON 4305", "ECON 3113", "ECON 4114", "ECON 4334", "ECON 1221", "ECON 3700", "ECON 2103", "ECON 3024", "ECON 4144", "ECON 4670", "ECON 4304", "ECON 3800", "ECON 4434", "ECON 4134", "ECON 1220", "ECON 4284", "ECON 1234", "ECON 4999"],
-          "Other Elective Courses - FINA":["FINA 4303", "FINA 3203", "FINA 3103", "FINA 3830", "FINA 4413", "FINA 4513", "FINA 4723", "FINA 4203", "FINA 4103", "FINA 3303", "FINA 3820", "FINA 2101", "FINA 4919", "FINA 4929", "FINA 3810", "FINA 4403", "FINA 1303", "FINA 4013", "FINA 4003", "FINA 4713", "FINA 2203", "FINA 4703", "FINA 2303", "FINA 3001", "FINA 4803", "FINA 4603", "FINA 4423", "FINA 4503"],
-          "Other Elective Courses - MARK":["MARK 3470", "MARK 2120", "MARK 3430", "MARK 3460", "MARK 3520", "MARK 4980", "MARK 3420", "MARK 1230", "MARK 3220", "MARK 4210", "MARK 3510", "MARK 1220", "MARK 4290", "MARK 3610", "MARK 3620", "MARK 3480", "MARK 3410", "MARK 4450"],
-          "Other Elective Courses - MGMT": ["MGMT 4270", "MGMT 3160", "MGMT 4240", "MGMT 4000", "MGMT 4290", "MGMT 4300", "MGMT 1120", "MGMT 4280", "MGMT 2010", "MGMT 3130", "MGMT 1110", "MGMT 2130", "MGMT 3140", "MGMT 1130", "MGMT 4220", "MGMT 4250", "MGMT 3120", "MGMT 4210", "MGMT 4230", "MGMT 3170", "MGMT 2110", "MGMT 3110", "MGMT 4010"],
-          "Other Elective Courses - ISOM":["ISOM 3180", "ISOM 3320", "ISOM 3400", "ISOM 1380", "ISOM 4830", "ISOM 2020", "ISOM 4590", "ISOM 4540", "ISOM 4010", "ISOM 4400", "ISOM 3540", "ISOM 4020", "ISOM 3780", "ISOM 2040", "ISOM 3330", "ISOM 3770", "ISOM 4520", "ISOM 4530", "ISOM 4840", "ISOM 3760", "ISOM 2030", "ISOM 3380", "ISOM 4740", "ISOM 3010", "ISOM 3710", "ISOM 3210", "ISOM 4490", "ISOM 4690", "ISOM 4720", "ISOM 4100", "ISOM 2010", "ISOM 3370", "ISOM 3390", "ISOM 4000", "ISOM 4880", "ISOM 2310", "ISOM 4030", "ISOM 3340", "ISOM 3260", "ISOM 1700", "ISOM 1090", "ISOM 3530", "ISOM 2500", "ISOM 3310", "ISOM 4750", "ISOM 3900", "ISOM 4780", "ISOM 3000", "ISOM 2700", "ISOM 3230", "ISOM 3360", "ISOM 3730", "ISOM 4810", "ISOM 2400", "ISOM 3350", "ISOM 4200", "ISOM 4300", "ISOM 4890", "ISOM 1500", "ISOM 2600", "ISOM 4790"]
-
+          ]
         }
       },
       "GBUS": {
@@ -4436,10 +4444,15 @@
             "MGMT 2110"
           ]
         },
-        "FINA Required Courses - You MUST select one from each area!": {
-          "Programming Course": ["ISOM 3230", "ISOM 3400"],
+        "FINA Required Courses": {
+          "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+          "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+          "FINA 3810": ["FINA 3810"],
           "Other Required Courses": [
-            "FINA 3203"
+            "FINA 3001",
+            "FINA 3103",
+            "FINA 3203",
+            "FINA 3303"
           ]
         }
       },
@@ -4473,14 +4486,7 @@
             "ISOM 2700",
             "MARK 2120",
             "MGMT 2110"
-          ],
-          "Other Elective Courses - ACCT": ["ACCT 3010", "ACCT 3210", "ACCT 4610", "ACCT 1610", "ACCT 3030", "ACCT 3020", "ACCT 3880", "ACCT 3610", "ACCT 4010", "ACCT 4720", "ACCT 4710", "ACCT 1010", "ACCT 2200", "ACCT 4980", "ACCT 4410", "ACCT 2010", "ACCT 4020", "ACCT 4510", "ACCT 3630"],
-          "Other Elective Courses - ECON":["ECON 4274", "ECON 2174", "ECON 3143", "ECON 1222", "ECON 2113", "ECON 4959", "ECON 4800", "ECON 4374", "ECON 2123", "ECON 3123", "ECON 3014", "ECON 3133", "ECON 4244", "ECON 3334", "ECON 4264", "ECON 4474", "ECON 4364", "ECON 4464", "ECON 4124", "ECON 4234", "ECON 4254", "ECON 4305", "ECON 3113", "ECON 4114", "ECON 4334", "ECON 1221", "ECON 3700", "ECON 2103", "ECON 3024", "ECON 4144", "ECON 4670", "ECON 4304", "ECON 3800", "ECON 4434", "ECON 4134", "ECON 1220", "ECON 4284", "ECON 1234", "ECON 4999"],
-          "Other Elective Courses - FINA":["FINA 4303", "FINA 3203", "FINA 3103", "FINA 3830", "FINA 4413", "FINA 4513", "FINA 4723", "FINA 4203", "FINA 4103", "FINA 3303", "FINA 3820", "FINA 2101", "FINA 4919", "FINA 4929", "FINA 3810", "FINA 4403", "FINA 1303", "FINA 4013", "FINA 4003", "FINA 4713", "FINA 2203", "FINA 4703", "FINA 2303", "FINA 3001", "FINA 4803", "FINA 4603", "FINA 4423", "FINA 4503"],
-          "Other Elective Courses - MARK":["MARK 3470", "MARK 2120", "MARK 3430", "MARK 3460", "MARK 3520", "MARK 4980", "MARK 3420", "MARK 1230", "MARK 3220", "MARK 4210", "MARK 3510", "MARK 1220", "MARK 4290", "MARK 3610", "MARK 3620", "MARK 3480", "MARK 3410", "MARK 4450"],
-          "Other Elective Courses - MGMT": ["MGMT 4270", "MGMT 3160", "MGMT 4240", "MGMT 4000", "MGMT 4290", "MGMT 4300", "MGMT 1120", "MGMT 4280", "MGMT 2010", "MGMT 3130", "MGMT 1110", "MGMT 2130", "MGMT 3140", "MGMT 1130", "MGMT 4220", "MGMT 4250", "MGMT 3120", "MGMT 4210", "MGMT 4230", "MGMT 3170", "MGMT 2110", "MGMT 3110", "MGMT 4010"],
-          "Other Elective Courses - ISOM":["ISOM 3180", "ISOM 3320", "ISOM 3400", "ISOM 1380", "ISOM 4830", "ISOM 2020", "ISOM 4590", "ISOM 4540", "ISOM 4010", "ISOM 4400", "ISOM 3540", "ISOM 4020", "ISOM 3780", "ISOM 2040", "ISOM 3330", "ISOM 3770", "ISOM 4520", "ISOM 4530", "ISOM 4840", "ISOM 3760", "ISOM 2030", "ISOM 3380", "ISOM 4740", "ISOM 3010", "ISOM 3710", "ISOM 3210", "ISOM 4490", "ISOM 4690", "ISOM 4720", "ISOM 4100", "ISOM 2010", "ISOM 3370", "ISOM 3390", "ISOM 4000", "ISOM 4880", "ISOM 2310", "ISOM 4030", "ISOM 3340", "ISOM 3260", "ISOM 1700", "ISOM 1090", "ISOM 3530", "ISOM 2500", "ISOM 3310", "ISOM 4750", "ISOM 3900", "ISOM 4780", "ISOM 3000", "ISOM 2700", "ISOM 3230", "ISOM 3360", "ISOM 3730", "ISOM 4810", "ISOM 2400", "ISOM 3350", "ISOM 4200", "ISOM 4300", "ISOM 4890", "ISOM 1500", "ISOM 2600", "ISOM 4790"]
-
+          ]
         }
       },
       "GBUS": {
@@ -4597,8 +4603,7 @@
       }
     },
     "2324": {
-      "SBM":
-      {
+      "ECON": {
         "School Requirements": {
           "Microeconomics": ["ECON 2103", "ECON 2113"],
           "Macroeconomics": ["ECON 2123", "ECON 3123"],
@@ -4609,23 +4614,18 @@
             "MATH 1020",
             "MATH 1023"
           ],
-          "Professional Writing Course":[
-            "LANG 2061",
-            "LANG 3060",
-            "ECON 3700"
-          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "ECON 3700": ["ECON 3700"],
           "Other Required Courses": [
             "ACCT 2010",
             "FINA 2303",
             "ISOM 2010",
-            "ISOM 2020",
             "ISOM 2500",
             "ISOM 2600",
             "MGMT 2010",
             "MGMT 2130",
             "LANG 2062"
           ]
-
         },
         "BBA Requirements": {
           "BBA Requirements": [
@@ -4634,13 +4634,12 @@
             "MARK 2120",
             "MGMT 2110"
           ]
+        },
+        "ECON Required Courses": {
+          "ECON Required Courses": ["ECON 3014", "ECON 3024", "ECON 3334"]
         }
-      }
-
-    },
-    "2425": {
-      "SBM":
-      {
+      },
+      "FINA": {
         "School Requirements": {
           "Microeconomics": ["ECON 2103", "ECON 2113"],
           "Macroeconomics": ["ECON 2123", "ECON 3123"],
@@ -4651,15 +4650,61 @@
             "MATH 1020",
             "MATH 1023"
           ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
           "Other Required Courses": [
             "ACCT 2010",
             "FINA 2303",
             "ISOM 2010",
-            "ISOM 2020",
             "ISOM 2500",
             "ISOM 2600",
             "MGMT 2010",
-            "MGMT 2130"
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "FINA Required Courses": {
+          "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+          "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+          "FINA 3810": ["FINA 3810"],
+          "Other Required Courses": [
+            "FINA 3001",
+            "FINA 3103",
+            "FINA 3203",
+            "FINA 3303"
+          ]
+        }
+      },
+      "GBM": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
           ]
         },
         "BBA Requirements": {
@@ -4670,8 +4715,351 @@
             "MGMT 2110"
           ]
         }
+      },
+      "GBUS": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "GBUS Required Courses": {
+          "GBUS 1000 - You MUST add this course!": ["GBUS 1000"],
+          "GBUS 2020 / GBUS 2040 / SBMT 2100-2110": [
+            "GBUS 2020",
+            "GBUS 2040",
+            "SBMT 21?"
+          ],
+          "GBUS 3030 / ISOM 4780": ["GBUS 3030", "ISOM 4780"],
+          "Other Required Courses": ["GBUS 2010", "GBUS 4910"]
+        }
+      },
+      "MGMT": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "MGMT Required Courses": {
+          "MGMT 3110 / MGMT 3120": ["MGMT 3110", "MGMT 3120"],
+          "MGMT 3130 / MGMT 3140": ["MGMT 3130", "MGMT 3140"],
+          "MGMT 4210 / MGMT 4220": ["MGMT 4210", "MGMT 4220"]
+        }
+      },
+      "MARK": {
+        "School Requirements": {
+          "Microeconomics": ["ECON 2103", "ECON 2113"],
+          "Macroeconomics": ["ECON 2123", "ECON 3123"],
+          "Calculus": [
+            "MATH 1003",
+            "MATH 1012",
+            "MATH 1013",
+            "MATH 1020",
+            "MATH 1023"
+          ],
+          "ISOM 2020": ["ISOM 2020"],
+          "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+          "Other Required Courses": [
+            "ACCT 2010",
+            "FINA 2303",
+            "ISOM 2010",
+            "ISOM 2500",
+            "ISOM 2600",
+            "MGMT 2010",
+            "MGMT 2130",
+            "LANG 2062"
+          ]
+        },
+        "BBA Requirements": {
+          "BBA Requirements": [
+            "ACCT 2200",
+            "ISOM 2700",
+            "MARK 2120",
+            "MGMT 2110"
+          ]
+        },
+        "MARK Required Courses": {
+          "MARK Required Courses": ["MARK 3220", "MARK 3420", "MARK 4210"]
+        }
       }
-
+    },
+  "2425": {
+    "ECON": {
+      "School Requirements": {
+        "Microeconomics": ["ECON 2103", "ECON 2113"],
+        "Macroeconomics": ["ECON 2123", "ECON 3123"],
+        "Calculus": [
+          "MATH 1003",
+          "MATH 1012",
+          "MATH 1013",
+          "MATH 1020",
+          "MATH 1023"
+        ],
+        "ISOM 2020": ["ISOM 2020"],
+        "ECON 3700": ["ECON 3700"],
+        "Other Required Courses": [
+          "ACCT 2010",
+          "FINA 2303",
+          "ISOM 2010",
+          "ISOM 2500",
+          "ISOM 2600",
+          "MGMT 2010",
+          "MGMT 2130",
+          "LANG 2062"
+        ]
+      },
+      "BBA Requirements": {
+        "BBA Requirements": [
+          "ACCT 2200",
+          "ISOM 2700",
+          "MARK 2120",
+          "MGMT 2110"
+        ]
+      },
+      "ECON Required Courses": {
+        "ECON Required Courses": ["ECON 3014", "ECON 3024", "ECON 3334"]
+      }
+    },
+    "FINA": {
+      "School Requirements": {
+        "Microeconomics": ["ECON 2103", "ECON 2113"],
+        "Macroeconomics": ["ECON 2123", "ECON 3123"],
+        "Calculus": [
+          "MATH 1003",
+          "MATH 1012",
+          "MATH 1013",
+          "MATH 1020",
+          "MATH 1023"
+        ],
+        "ISOM 2020": ["ISOM 2020"],
+        "Other Required Courses": [
+          "ACCT 2010",
+          "FINA 2303",
+          "ISOM 2010",
+          "ISOM 2500",
+          "ISOM 2600",
+          "MGMT 2010",
+          "MGMT 2130",
+          "LANG 2062"
+        ]
+      },
+      "BBA Requirements": {
+        "BBA Requirements": [
+          "ACCT 2200",
+          "ISOM 2700",
+          "MARK 2120",
+          "MGMT 2110"
+        ]
+      },
+      "FINA Required Courses": {
+        "ACCT Requirements": ["ACCT 3010", "ACCT 3020", "ACCT 3030"],
+        "Programming Course": ["ISOM 3230", "ISOM 3400", "COMP 1022P"],
+        "FINA 3810": ["FINA 3810"],
+        "Other Required Courses": [
+          "FINA 3001",
+          "FINA 3103",
+          "FINA 3203",
+          "FINA 3303"
+        ]
+      }
+    },
+    "GBM": {
+      "School Requirements": {
+        "Microeconomics": ["ECON 2103", "ECON 2113"],
+        "Macroeconomics": ["ECON 2123", "ECON 3123"],
+        "Calculus": [
+          "MATH 1003",
+          "MATH 1012",
+          "MATH 1013",
+          "MATH 1020",
+          "MATH 1023"
+        ],
+        "ISOM 2020": ["ISOM 2020"],
+        "Other Required Courses": [
+          "ACCT 2010",
+          "FINA 2303",
+          "ISOM 2010",
+          "ISOM 2500",
+          "ISOM 2600",
+          "MGMT 2010",
+          "MGMT 2130",
+          "LANG 2062"
+        ]
+      },
+      "BBA Requirements": {
+        "BBA Requirements": [
+          "ACCT 2200",
+          "ISOM 2700",
+          "MARK 2120",
+          "MGMT 2110"
+        ]
+      }
+    },
+    "GBUS": {
+      "School Requirements": {
+        "Microeconomics": ["ECON 2103", "ECON 2113"],
+        "Macroeconomics": ["ECON 2123", "ECON 3123"],
+        "Calculus": [
+          "MATH 1003",
+          "MATH 1012",
+          "MATH 1013",
+          "MATH 1020",
+          "MATH 1023"
+        ],
+        "ISOM 2020": ["ISOM 2020"],
+        "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+        "Other Required Courses": [
+          "ACCT 2010",
+          "FINA 2303",
+          "ISOM 2010",
+          "ISOM 2500",
+          "ISOM 2600",
+          "MGMT 2010",
+          "MGMT 2130"
+        ]
+      },
+      "BBA Requirements": {
+        "BBA Requirements": [
+          "ACCT 2200",
+          "ISOM 2700",
+          "MARK 2120",
+          "MGMT 2110"
+        ]
+      },
+      "GBUS Required Courses": {
+        "GBUS 1000 - You MUST add this course!": ["GBUS 1000"],
+        "GBUS 2020 / GBUS 2040 / SBMT 2100-2110": [
+          "GBUS 2020",
+          "GBUS 2040",
+          "SBMT 21?"
+        ],
+        "GBUS 3030 / ISOM 4780": ["GBUS 3030", "ISOM 4780"],
+        "Other Required Courses": ["GBUS 2010", "GBUS 4910"]
+      }
+    },
+    "MGMT": {
+      "School Requirements": {
+        "Microeconomics": ["ECON 2103", "ECON 2113"],
+        "Macroeconomics": ["ECON 2123", "ECON 3123"],
+        "Calculus": [
+          "MATH 1003",
+          "MATH 1012",
+          "MATH 1013",
+          "MATH 1020",
+          "MATH 1023"
+        ],
+        "ISOM 2020": ["ISOM 2020"],
+        "LANG 2061 / LANG 3060": ["LANG 2061", "LANG 3060"],
+        "Other Required Courses": [
+          "ACCT 2010",
+          "FINA 2303",
+          "ISOM 2010",
+          "ISOM 2500",
+          "ISOM 2600",
+          "MGMT 2010",
+          "MGMT 2130"
+        ]
+      },
+      "BBA Requirements": {
+        "BBA Requirements": [
+          "ACCT 2200",
+          "ISOM 2700",
+          "MARK 2120",
+          "MGMT 2110"
+        ]
+      },
+      "MGMT Required Courses": {
+        "MGMT 3110 / MGMT 3120": ["MGMT 3110", "MGMT 3120"],
+        "MGMT 3130 / MGMT 3140": ["MGMT 3130", "MGMT 3140"],
+        "MGMT 4210 / MGMT 4220": ["MGMT 4210", "MGMT 4220"]
+      }
+    },
+    "MARK": {
+      "School Requirements": {
+        "Microeconomics": ["ECON 2103", "ECON 2113"],
+        "Macroeconomics": ["ECON 2123", "ECON 3123"],
+        "Calculus": [
+          "MATH 1003",
+          "MATH 1012",
+          "MATH 1013",
+          "MATH 1020",
+          "MATH 1023"
+        ],
+        "ISOM 2020": ["ISOM 2020"],
+        "LANG 2061 / LANG 2062 / LANG 3060": ["LANG 2061", "LANG 3060"],
+        "Other Required Courses": [
+          "ACCT 2010",
+          "FINA 2303",
+          "ISOM 2010",
+          "ISOM 2500",
+          "ISOM 2600",
+          "MGMT 2010",
+          "MGMT 2130"
+        ]
+      },
+      "BBA Requirements": {
+        "BBA Requirements": [
+          "ACCT 2200",
+          "ISOM 2700",
+          "MARK 2120",
+          "MGMT 2110"
+        ]
+      },
+      "MARK Required Courses": {
+        "MARK Required Courses": ["MARK 3220", "MARK 3420", "MARK 4210"]
+      }
     }
+  }
   }
 }

@@ -10,10 +10,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -1150,10 +1150,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -1964,10 +1964,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -1989,10 +1989,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -4098,10 +4098,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -4123,10 +4123,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -4170,10 +4170,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -5395,10 +5395,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -5639,10 +5639,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -5679,10 +5679,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -5704,10 +5704,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -7900,10 +7900,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -7940,10 +7940,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -7980,10 +7980,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -8992,10 +8992,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -10821,10 +10821,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -10854,10 +10854,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -10879,10 +10879,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -10904,10 +10904,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -11139,10 +11139,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -11254,10 +11254,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -11295,10 +11295,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -11333,10 +11333,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -11411,10 +11411,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -11471,10 +11471,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -11509,10 +11509,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -11547,10 +11547,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -12089,10 +12089,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13072,10 +13072,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13131,10 +13131,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13169,10 +13169,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13207,10 +13207,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13245,10 +13245,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13291,10 +13291,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13329,10 +13329,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13367,10 +13367,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13405,10 +13405,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13443,10 +13443,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13481,10 +13481,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13519,10 +13519,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13579,10 +13579,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13638,10 +13638,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13685,10 +13685,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13718,10 +13718,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13756,10 +13756,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13781,10 +13781,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13819,10 +13819,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13857,10 +13857,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13909,10 +13909,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13947,10 +13947,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -13972,10 +13972,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14012,10 +14012,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14074,10 +14074,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14113,10 +14113,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14183,10 +14183,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14221,10 +14221,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14275,10 +14275,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14321,10 +14321,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14360,10 +14360,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14406,10 +14406,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14444,10 +14444,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14490,10 +14490,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14528,10 +14528,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14553,10 +14553,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14591,10 +14591,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14629,10 +14629,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14675,10 +14675,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14721,10 +14721,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14767,10 +14767,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14805,10 +14805,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14843,10 +14843,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14881,10 +14881,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14906,10 +14906,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -14944,10 +14944,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15014,10 +15014,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15060,10 +15060,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15099,10 +15099,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15138,10 +15138,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15176,10 +15176,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15214,10 +15214,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15252,10 +15252,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15290,10 +15290,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15315,10 +15315,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15353,10 +15353,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15391,10 +15391,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15429,10 +15429,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15468,10 +15468,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15514,10 +15514,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15552,10 +15552,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15590,10 +15590,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15676,10 +15676,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15733,10 +15733,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15771,10 +15771,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15809,10 +15809,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15855,10 +15855,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15901,10 +15901,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15926,10 +15926,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15964,10 +15964,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -15989,10 +15989,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -16027,10 +16027,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -16065,10 +16065,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -16103,10 +16103,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -16376,10 +16376,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -17552,10 +17552,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -17909,10 +17909,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -17947,10 +17947,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -17985,10 +17985,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -18010,10 +18010,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -18077,10 +18077,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -18110,10 +18110,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -19383,9 +19383,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -19420,9 +19420,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -19464,9 +19464,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -19500,7 +19500,7 @@
         "rules": [
           {
             "courses": [
-              "LANG 1003"
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -19616,8 +19616,8 @@
         "rules": [
           {
             "courses": [
-              "LANG 1002",
-              "LANG 1003"
+              "LANG 1002A", "LANG 1002I", "LANG 1002S",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -19644,8 +19644,8 @@
         "rules": [
           {
             "courses": [
-              "LANG 1002",
-              "LANG 1003"
+              "LANG 1002A", "LANG 1002I", "LANG 1002S",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -19666,7 +19666,7 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402"
+              "LANG 1402", "LANG 1402I"
             ],
             "minCourseCnt": 1
           }
@@ -19685,7 +19685,7 @@
         "rules": [
           {
             "courses": [
-              "LANG 1003"
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -19712,8 +19712,8 @@
         "rules": [
           {
             "courses": [
-              "LANG 1002",
-              "LANG 1003"
+              "LANG 1002A", "LANG 1002I", "LANG 1002S",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -19734,10 +19734,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20082,9 +20082,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20105,9 +20105,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20128,8 +20128,8 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20165,8 +20165,8 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20201,9 +20201,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20224,9 +20224,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20352,9 +20352,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -20429,8 +20429,8 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20508,9 +20508,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -20579,9 +20579,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -20632,9 +20632,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -20667,9 +20667,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -20702,9 +20702,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -20751,9 +20751,9 @@
         "rules": [
           {
             "courses": [
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1003"
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1003A", "LANG 1003S", "LANG1003I"
             ],
             "minCourseCnt": 1
           }
@@ -20817,10 +20817,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -20861,10 +20861,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -22190,10 +22190,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -22228,10 +22228,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -25322,10 +25322,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -26464,10 +26464,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -26502,10 +26502,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -26527,10 +26527,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -26932,10 +26932,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -27521,10 +27521,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -27570,10 +27570,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -27609,10 +27609,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -27688,10 +27688,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -28993,10 +28993,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -29050,10 +29050,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -29075,10 +29075,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -29488,10 +29488,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30365,10 +30365,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30390,10 +30390,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30415,10 +30415,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30461,10 +30461,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30520,10 +30520,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30558,10 +30558,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30596,10 +30596,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30660,10 +30660,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30708,10 +30708,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30763,10 +30763,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30802,10 +30802,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30827,10 +30827,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30865,10 +30865,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30924,10 +30924,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -30962,10 +30962,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31021,10 +31021,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31083,10 +31083,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31206,10 +31206,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31252,10 +31252,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31290,10 +31290,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31350,10 +31350,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31465,10 +31465,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31533,10 +31533,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31587,10 +31587,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31641,10 +31641,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31679,10 +31679,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31758,10 +31758,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31796,10 +31796,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -31879,10 +31879,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -32243,10 +32243,10 @@
           {
             "courses": [
               "LANG 1401",
-              "LANG 1402",
-              "LANG 1403",
-              "LANG 1404",
-              "LANG 1002"
+              "LANG 1402", "LANG 1402I",
+              "LANG 1403A", "LANG 1403S", "LANG 1403I", "CORE 1403A", "CORE 1403S", "CORE 1403I",
+              "LANG 1404", "CORE 1404",
+              "LANG 1002A", "LANG 1002I", "LANG 1002S"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
