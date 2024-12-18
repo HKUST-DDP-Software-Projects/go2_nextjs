@@ -90,6 +90,7 @@ export interface CourseDetail {
   prerequisites: CoursePrerequisite[];
   exclusions: CourseExclusion[];
   corequisites: CourseCorequisite[];
+  courseOverride?: boolean;
 }
 
 export interface CoursePrerequisite {

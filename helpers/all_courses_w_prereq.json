@@ -7410,6 +7410,7 @@
     "code": "COMP 4981",
     "title": "Final Year Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {

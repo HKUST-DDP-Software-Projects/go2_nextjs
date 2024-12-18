@@ -107,8 +107,12 @@ export default function PreEnrollment() {
     const inShoppingCart =
       shoppingCart.find((c) => c.code === course) !== undefined;
     const taken = courseHistory.includes(course);
+    const courseDetail = COURSE_CATALOG.find((c) => c.code === course);
+    if (!courseDetail) {
+      return <Chip label={course} />;
+    }
 
-    if (taken) {
+    if (taken && !(courseDetail.hasOwnProperty('courseOverride'))) {
       return (
         <Chip
           label={course}
@@ -119,10 +123,6 @@ export default function PreEnrollment() {
       );
     }
 
-    const courseDetail = COURSE_CATALOG.find((c) => c.code === course);
-    if (!courseDetail) {
-      return <Chip label={course} />;
-    }
 
     const exclusionResult = checkExclusionGroup(courseDetail, courseHistory);
     const prerequisiteResult = checkPrerequisiteGroup(
@@ -130,7 +130,7 @@ export default function PreEnrollment() {
       courseHistory,
     );
 
-    if (exclusionResult === CourseValidationResult.UNSATISFIED) {
+    if (exclusionResult === CourseValidationResult.UNSATISFIED && !(courseDetail.hasOwnProperty('courseOverride'))) {
       return (
         <Chip
           label={course}
@@ -144,7 +144,7 @@ export default function PreEnrollment() {
       );
     }
 
-    if (prerequisiteResult === CourseValidationResult.UNSATISFIED) {
+    if (prerequisiteResult === CourseValidationResult.UNSATISFIED && !(courseDetail.hasOwnProperty('courseOverride'))) {
       return (
         <Chip
           label={course}
@@ -209,8 +209,8 @@ export default function PreEnrollment() {
       const exclusionResult = checkExclusionGroup(course, courseHistory);
 
       if (
-        prerequisiteResult === CourseValidationResult.SATISFIED &&
-        exclusionResult === CourseValidationResult.SATISFIED
+        ((prerequisiteResult === CourseValidationResult.SATISFIED &&
+        exclusionResult === CourseValidationResult.SATISFIED) || course.courseOverride)
       ) {
         return course.code;
       }
@@ -270,7 +270,6 @@ export default function PreEnrollment() {
         remarks,
       } = prepareSubmission();
       setIsLoading(true);
-
       const response2 = await fetch(
         "/qualtrics_backend.php/api/get_survey_id",
         {
@@ -356,8 +355,8 @@ export default function PreEnrollment() {
     );
     const exclusionResult = checkExclusionGroup(selectedCourse, courseHistory);
     const canAddToCart =
-      prerequisiteResult !== CourseValidationResult.UNSATISFIED &&
-      exclusionResult !== CourseValidationResult.UNSATISFIED;
+      ((prerequisiteResult !== CourseValidationResult.UNSATISFIED &&
+      exclusionResult !== CourseValidationResult.UNSATISFIED) || (selectedCourse.courseOverride && selectedCourse.courseOverride === true));
 
     return (
       <div
@@ -367,7 +366,14 @@ export default function PreEnrollment() {
         <h4 className="text-lg font-semibold">
           {selectedCourse.code} ({selectedCourse.units} credits)
         </h4>
-        <p>{selectedCourse.title}</p>
+        <p >{selectedCourse.courseOverride}</p>
+        {selectedCourse.courseOverride &&
+        <p>
+          NOTE: The course is overridden by the DDP Office for you to be able to take it. Please disregard any warning/excluded messages.
+          This usually happens for multi-semester courses, like FYP's. Do NOT add this to the shopping cart unless
+          you are sure you can take this. Contact DDP Office/SENG/SSCI Major Program Office for eligibility.
+        </p>
+      }
         <div>
           <h4 className="text-lg font-semibold pt-2">Prerequisites</h4>
           {selectedCourse.prerequisites &&
@@ -409,6 +415,8 @@ export default function PreEnrollment() {
             <p>No exclusions</p>
           )}
         </div>
+
+        
         <div className="flex justify-between pt-4 flex-wrap">
           <button
             className={`m-1 px-4 py-2 bg-gray-200 border border-gray-200 w-full ${
