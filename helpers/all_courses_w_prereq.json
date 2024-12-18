@@ -884,6 +884,7 @@
     "code": "BIEN 4920",
     "title": "Bioengineering Capstone Design",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "BIEN 3910",
@@ -919,6 +920,7 @@
     "code": "BIEN 4930",
     "title": "Bioengineering Thesis Research",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "BIEN 3910 AND (CENG 4980 OR UROP 2100)",
@@ -962,6 +964,7 @@
     "code": "BIEN 4940",
     "title": "Bioengineering Industrial Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "BIEN 3910",
@@ -1825,6 +1828,7 @@
     "code": "CENG 4920",
     "title": "Chemical Engineering Capstone Design",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "BIEN 3910 OR CENG 3950",
@@ -1861,6 +1865,7 @@
     "code": "CENG 4930",
     "title": "Chemical Engineering Thesis Research",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "(BIEN 3910 OR CENG 3950) AND (CENG 4980 OR UROP 2100)",
@@ -1905,6 +1910,7 @@
     "code": "CENG 4940",
     "title": "Chemical Engineering Industrial Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "BIEN 3910 OR CENG 3950",
@@ -1944,11 +1950,13 @@
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
+    
   },
   {
     "code": "CENG 4980",
     "title": "Investigation Project",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -5325,6 +5333,7 @@
     "code": "CIVL 4910",
     "title": "Civil and Environmental Engineering Final Year Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -5347,6 +5356,7 @@
     "title": "Civil and Environmental Engineering Final Year Thesis",
     "credits": "6",
     "prerequisites": [],
+    "courseOverride": true,
     "exclusions": [
       {
         "description": "CIVL 4910",
@@ -5367,6 +5377,7 @@
     "code": "CIVL 4950",
     "title": "Civil Engineering Capstone Design Project",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": [
@@ -7354,6 +7365,7 @@
     "code": "COMP 4910",
     "title": "Co-op Program",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -7402,6 +7414,7 @@
     "code": "COMP 4971",
     "title": "Independent Work",
     "credits": "1-4",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -7432,6 +7445,7 @@
     "code": "COMP 4981H",
     "title": "Final Year Thesis",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -7477,6 +7491,7 @@
     "code": "CPEG 4901",
     "title": "Computer Engineering Final Year Project in COMP",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -7485,6 +7500,7 @@
     "code": "CPEG 4902",
     "title": "Computer Engineering Final Year Thesis in COMP",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -7493,6 +7509,7 @@
     "code": "CPEG 4910",
     "title": "Co-op Program",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -7517,6 +7534,7 @@
     "code": "CPEG 4911",
     "title": "Computer Engineering Final Year Project in ELEC",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -7525,6 +7543,7 @@
     "code": "CPEG 4912",
     "title": "Computer Engineering Final Year Thesis in ELEC",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -10465,6 +10484,7 @@
     "code": "ELEC 4900",
     "title": "Final Year Design Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -10473,6 +10493,7 @@
     "code": "ELEC 4901",
     "title": "Final Year Thesis",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -10481,6 +10502,7 @@
     "code": "ELEC 4907",
     "title": "Final Year Project",
     "credits": "9",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -10489,6 +10511,7 @@
     "code": "ELEC 4910",
     "title": "Co-op Program",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -10511,6 +10534,7 @@
     "code": "ELEC 4940",
     "title": "Independent Study",
     "credits": "1-3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -17324,6 +17348,7 @@
     "code": "IEDA 4900",
     "title": "Independent Study in Industrial Engineering and Decision Analytics",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -17332,6 +17357,7 @@
     "code": "IEDA 4901",
     "title": "Final Year Thesis",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -17340,6 +17366,7 @@
     "code": "IEDA 4920",
     "title": "Decision Analytics Final Year Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -17362,6 +17389,7 @@
     "code": "IEDA 4930",
     "title": "Logistics Management and Engineering Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -17370,6 +17398,7 @@
     "code": "IEDA 4950",
     "title": "Industrial Engineering Special Project",
     "credits": "1-4",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -17378,6 +17407,7 @@
     "code": "IEDA 4960",
     "title": "Industrial Engineering and Engineering Management Final Year Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -17402,6 +17432,7 @@
     "code": "IEDA 4990",
     "title": "Industrial Engineering Design Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -17418,6 +17449,7 @@
     "code": "IIMP 4970",
     "title": "Interdisciplinary Industrial Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -17435,11 +17467,13 @@
       }
     ],
     "corequisites": []
+    
   },
   {
     "code": "IIMP 4980",
     "title": "Interdisciplinary Capstone Project I",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -17448,6 +17482,7 @@
     "code": "IIMP 4990",
     "title": "Interdisciplinary Capstone Project II",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "IIMP 4980",
@@ -17842,6 +17877,7 @@
     "code": "ISDN 4001",
     "title": "Final Year Design Project I",
     "credits": "4",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -17850,6 +17886,7 @@
     "code": "ISDN 4002",
     "title": "Final Year Design Project II",
     "credits": "4",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "ISDN 4001",
@@ -22066,6 +22103,7 @@
     "code": "LIFS 4961",
     "title": "Biochemistry and Cell Biology Capstone Project",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -22074,6 +22112,7 @@
     "code": "LIFS 4963",
     "title": "Biotechnology Capstone Project",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -22082,6 +22121,7 @@
     "code": "LIFS 4970",
     "title": "Biological Science Project Research I",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -22090,6 +22130,7 @@
     "code": "LIFS 4971",
     "title": "Biochemistry and Cell Biology Project Research I",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -22098,6 +22139,7 @@
     "code": "LIFS 4973",
     "title": "Biotechnology Project Research I",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "LIFS 3110",
@@ -22119,6 +22161,7 @@
     "code": "LIFS 4980",
     "title": "Biological Science Project Research II",
     "credits": "4",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "LIFS 4970",
@@ -22140,6 +22183,7 @@
     "code": "LIFS 4981",
     "title": "Biochemistry and Cell Biology Project Research II",
     "credits": "4",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "LIFS 4971 OR SCIE 4500",
@@ -22162,6 +22206,7 @@
     "code": "LIFS 4983",
     "title": "Biotechnology Project Research II",
     "credits": "4",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "LIFS 4973 OR SCIE 4500",
@@ -26361,6 +26406,7 @@
     "code": "MECH 4900",
     "title": "Final Year Design Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -26413,6 +26459,7 @@
     "code": "MECH 4950",
     "title": "Co-op Program",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -26421,6 +26468,7 @@
     "code": "MECH 4980",
     "title": "Final Year Aerospace Design Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [
       {
@@ -26442,6 +26490,7 @@
     "code": "MECH 4990",
     "title": "Aerospace Research Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -26450,6 +26499,7 @@
     "code": "MECH 4995",
     "title": "Research Project",
     "credits": "6",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
@@ -29683,6 +29733,7 @@
     "code": "SCIE 4500",
     "title": "IRE Research Project II",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [
       {
         "description": "SCIE 3500",
@@ -29699,11 +29750,13 @@
     ],
     "exclusions": [],
     "corequisites": []
+   
   },
   {
     "code": "SCIE 4860",
     "title": "Young Entrepreneurial Syndicate in Applied Sciences Project",
     "credits": "3",
+    "courseOverride": true,
     "prerequisites": [],
     "exclusions": [],
     "corequisites": []
