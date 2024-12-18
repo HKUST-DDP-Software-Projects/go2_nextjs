@@ -366,6 +366,7 @@ export default function PreEnrollment() {
         <h4 className="text-lg font-semibold">
           {selectedCourse.code} ({selectedCourse.units} credits)
         </h4>
+        <p>{selectedCourse.title}</p>
         <p >{selectedCourse.courseOverride}</p>
         {selectedCourse.courseOverride &&
         <p>
