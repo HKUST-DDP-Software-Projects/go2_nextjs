@@ -67,12 +67,16 @@ export const preenrollmentSlice = createSlice({
       state,
       action: PayloadAction<{ code: string; reason: string }>,
     ) => {
+      // defensive: persisted state may be missing new arrays
+      state.qualtricsUnmetPrereqs = state.qualtricsUnmetPrereqs || [];
       state.qualtricsUnmetPrereqs.push(action.payload);
     },
     clearQualtricsUnmetPrereqs: (state) => {
       state.qualtricsUnmetPrereqs = [];
     },
     addSuggestedAutoAddedCode: (state, action: PayloadAction<string>) => {
+      // defensive: persisted state may be missing new arrays
+      state.suggestedAutoAddedCodes = state.suggestedAutoAddedCodes || [];
       if (!state.suggestedAutoAddedCodes.includes(action.payload)) {
         state.suggestedAutoAddedCodes.push(action.payload);
       }
@@ -81,6 +85,9 @@ export const preenrollmentSlice = createSlice({
       state,
       action: PayloadAction<{ code: string; reason: string }>,
     ) => {
+      // defensive: persisted state may be missing new arrays
+      state.suggestedUnmetPrereqs = state.suggestedUnmetPrereqs || [];
+      state.qualtricsUnmetPrereqs = state.qualtricsUnmetPrereqs || [];
       state.suggestedUnmetPrereqs.push(action.payload);
       state.qualtricsUnmetPrereqs.push(action.payload);
     },
@@ -88,6 +95,9 @@ export const preenrollmentSlice = createSlice({
       state,
       action: PayloadAction<{ code: string; reason: string }>,
     ) => {
+      // defensive: persisted state may be missing new arrays
+      state.suggestedExcluded = state.suggestedExcluded || [];
+      state.qualtricsUnmetPrereqs = state.qualtricsUnmetPrereqs || [];
       state.suggestedExcluded.push(action.payload);
       state.qualtricsUnmetPrereqs.push(action.payload);
     },
@@ -95,6 +105,8 @@ export const preenrollmentSlice = createSlice({
       state,
       action: PayloadAction<{ code: string; reason?: string }>,
     ) => {
+      // defensive: persisted state may be missing new arrays
+      state.suggestedRemoved = state.suggestedRemoved || [];
       state.suggestedRemoved.push(action.payload);
     },
   },
