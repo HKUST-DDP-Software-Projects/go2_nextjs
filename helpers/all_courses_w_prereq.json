@@ -496,6 +496,14 @@
     "corequisites": []
   },
   {
+    "code": "BIEN 1600",
+    "title": "Introduction to Bioengineering",
+    "credits": "3",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
     "code": "BIEN 2310",
     "title": "Modeling for Chemical and Biological Engineering",
     "credits": "3",
@@ -604,6 +612,45 @@
     "credits": "1",
     "prerequisites": [],
     "exclusions": [],
+    "corequisites": []
+  },
+  {
+    "code": "BIEN 3250",
+    "title": "Rate and Transport Processes in Biological Systems",
+    "credits": "3",
+    "prerequisites": [
+      {
+        "description": "(PHYS 1112 OR PHYS 1312) AND CENG 2320",
+        "rules": [
+          {
+            "courses": [
+              "PHYS 1112",
+              "PHYS 1312"
+            ],
+            "minCourseCnt": 1
+          },
+          {
+            "courses": [
+              "CENG 2320"
+            ],
+            "minCourseCnt": 1
+          }
+        ],
+        "needManualCheck": false
+      }
+    ],
+    "exclusions": [{
+        "description": "CENG 2220",
+        "rules": [
+          {
+            "courses": [
+              "CENG 2220"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }],
     "corequisites": []
   },
   {
@@ -758,6 +805,40 @@
   {
     "code": "BIEN 3410",
     "title": "Introduction to Bioinstrumentation and Bioimaging",
+    "credits": "3",
+    "prerequisites": [
+      {
+        "description": "BIEN 1600",
+        "rules": [
+          {
+            "courses": [
+              "BIEN 1600"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }
+    ],
+    "exclusions": [
+      {
+        "description": "ELEC 4810",
+        "rules": [
+          {
+            "courses": [
+              "ELEC 4810"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }
+    ],
+    "corequisites": []
+  },
+  {
+    "code": "BIEN 3420",
+    "title": "Biosensors and Bioinstrumentation for Healthcare",
     "credits": "3",
     "prerequisites": [
       {
@@ -1092,6 +1173,36 @@
     "corequisites": []
   },
   {
+    "code": "CENG 1110",
+    "title": "Introduction to Chemical Engineering",
+    "credits": "3",
+    "prerequisites": [{
+        "description": "CENG 1000",
+        "rules": [
+          {
+            "courses": [
+              "CENG 1000"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }],
+    "exclusions": [],
+    "corequisites": [{
+        "description": "CHEM 1012",
+        "rules": [
+          {
+            "courses": [
+              "CHEM 1012"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }]
+  },
+  {
     "code": "CENG 1500",
     "title": "A First Course on Materials Science and Applications",
     "credits": "3",
@@ -1278,6 +1389,26 @@
               "MATH 1014",
               "MATH 1020",
               "MATH 1024"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }
+    ],
+    "exclusions": [],
+    "corequisites": []
+  },{
+    "code": "CENG 2320",
+    "title": "Modeling for Chemical and Biological Engineering II",
+    "credits": "3",
+    "prerequisites": [
+      {
+        "description": "CENG 2310",
+        "rules": [
+          {
+            "courses": [
+              "CENG 2310"
             ],
             "minCourseCnt": 1,
             "needManualCheck": false
@@ -4051,6 +4182,14 @@
     "corequisites": []
   },
   {
+    "code": "CIVL 1000",
+    "title": "Academic and Professional Development for Civil and Environmental Engineering I",
+    "credits": "0",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
     "code": "CIVL 1010",
     "title": "Academic and Professional Development I",
     "credits": "0",
@@ -4064,6 +4203,27 @@
     "credits": "3",
     "prerequisites": [],
     "exclusions": [],
+    "corequisites": []
+  },
+  {
+    "code": "CIVL 1121",
+    "title": "Introduction to Computation for Civil Engineers",
+    "credits": "3",
+    "prerequisites": [],
+    "exclusions": [{
+        "description": "COMP 1021, COMP 1022P, COMP 1023",
+        "rules": [
+          {
+            "courses": [
+              "COMP 1021",
+              "COMP 1022P",
+              "COMP 1023"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }],
     "corequisites": []
   },
   {
@@ -4189,6 +4349,14 @@
         ]
       }
     ],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
+    "code": "CIVL 2000",
+    "title": "Academic and Professional Development for Civil and Environmental Engineering II",
+    "credits": "0",
+    "prerequisites": [],
     "exclusions": [],
     "corequisites": []
   },
@@ -4447,6 +4615,14 @@
     ]
   },
   {
+    "code": "CIVL 3000",
+    "title": "Academic and Professional Development for Civil and Environmental Engineering III",
+    "credits": "0",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
     "code": "CIVL 3010",
     "title": "Academic and Professional Development III",
     "credits": "0",
@@ -4643,6 +4819,14 @@
         ]
       }
     ],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
+    "code": "CIVL 4000",
+    "title": "Academic and Professional Development for Civil and Environmental Engineering IV",
+    "credits": "0",
+    "prerequisites": [],
     "exclusions": [],
     "corequisites": []
   },
@@ -5484,6 +5668,30 @@
           }
         ],
         "needManualCheck": false
+      }
+    ],
+    "corequisites": []
+  },
+  {
+    "code": "COMP 1023",
+    "title": "Introduction to Python Programming",
+    "credits": "3",
+    "prerequisites": [],
+    "exclusions": [
+      {
+        "description": "COMP 1021, COMP 1022P, COMP 1029P, ISOM 3400",
+        "rules": [
+          {
+            "courses": [
+              "COMP 1021",
+              "COMP 1022P",
+              "COMP 1029P",
+              "ISOM 3400"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
       }
     ],
     "corequisites": []
@@ -7472,6 +7680,14 @@
     "corequisites": []
   },
   {
+    "code": "CPEG 1930",
+    "title": "Academic and Professional Development I",
+    "credits": "0",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
     "code": "CPEG 2930",
     "title": "Academic and Professional Development I",
     "credits": "0",
@@ -9081,6 +9297,14 @@
         ]
       }
     ]
+  },
+  {
+    "code": "ELEC 1910",
+    "title": "Academic and Professional Development I",
+    "credits": "0",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": []
   },
   {
     "code": "ELEC 2100",
@@ -17554,6 +17778,14 @@
     ]
   },
   {
+    "code": "ISDN 1007",
+    "title": "From Design Thinking to Design Action: Defining Problems for Better Solutions",
+    "credits": "3",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
     "code": "ISDN 1010",
     "title": "Academic and Professional Development I",
     "credits": "0",
@@ -22674,6 +22906,74 @@
     "corequisites": []
   },
   {
+    "code": "MATH 1005",
+    "title": "Calculus and Statistics",
+    "credits": "4",
+    "prerequisites": [],
+    "exclusions": [
+      {
+        "description": "Level 5* or above in HKDSE Mathematics Extended Module M1 or M2",
+        "rules": [],
+        "needManualCheck": true
+      },
+      {
+        "description": "MATH 1003, MATH 1006, MATH 1012, MATH 1013, MATH 1014, MATH 1018 (prior to 2013-14), MATH 1020, MATH 1023, MATH 1024",
+        "rules": [
+          {
+            "courses": [
+              "MATH 1003",
+              "MATH 1006",
+              "MATH 1012",
+              "MATH 1013",
+              "MATH 1014",
+              "MATH 1018",
+              "MATH 1020",
+              "MATH 1023",
+              "MATH 1024"
+            ],
+            "minCourseCnt": 1
+          }
+        ],
+        "needManualCheck": false
+      }
+    ],
+    "corequisites": []
+  },
+  {
+    "code": "MATH 1006",
+    "title": "Calculus, Vectors, and Matrices",
+    "credits": "4",
+    "prerequisites": [],
+    "exclusions": [
+      {
+        "description": "Level 5* or above in HKDSE Mathematics Extended Module M1 or M2",
+        "rules": [],
+        "needManualCheck": true
+      },
+      {
+        "description": "MATH 1003, MATH 1005, MATH 1012, MATH 1013, MATH 1014, MATH 1018 (prior to 2013-14), MATH 1020, MATH 1023, MATH 1024",
+        "rules": [
+          {
+            "courses": [
+              "MATH 1003",
+              "MATH 1005",
+              "MATH 1012",
+              "MATH 1013",
+              "MATH 1014",
+              "MATH 1018",
+              "MATH 1020",
+              "MATH 1023",
+              "MATH 1024"
+            ],
+            "minCourseCnt": 1
+          }
+        ],
+        "needManualCheck": false
+      }
+    ],
+    "corequisites": []
+  },
+  {
     "code": "MATH 1012",
     "title": "Calculus IA",
     "credits": "4",
@@ -25350,6 +25650,14 @@
     "corequisites": []
   },
   {
+    "code": "MECH 1001",
+    "title": "Academic and Professional Development I",
+    "credits": "0",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
     "code": "MECH 1902",
     "title": "Energy Systems in a Sustainable World",
     "credits": "3",
@@ -25399,11 +25707,76 @@
     "corequisites": []
   },
   {
+    "code": "MECH 1910",
+    "title": "Foundations of Mechanical and Aerospace Engineering",
+    "credits": "3",
+    "prerequisites": [],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
     "code": "MECH 1990",
     "title": "Industrial Training",
     "credits": "0",
     "prerequisites": [],
     "exclusions": [],
+    "corequisites": []
+  },
+  {
+    "code": "MECH 2002",
+    "title": "Academic and Professional Development II",
+    "credits": "0",
+    "prerequisites": [
+      {
+        "description": "MECH 1001",
+        "rules": [
+          {
+            "courses": [
+              "MECH 1001"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }
+    ],
+    "exclusions": [],
+    "corequisites": []
+  },
+  {
+    "code": "MECH 2007",
+    "title": "Aerospace Engineering: Principles and Systems",
+    "credits": "3",
+    "prerequisites": [
+      {
+        "description": "MATH 1013 OR MATH 1020 OR MATH 1023",
+        "rules": [
+          {
+            "courses": [
+              "MATH 1013",
+              "MATH 1020",
+              "MATH 1023"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }
+    ],
+    "exclusions": [
+      {
+        "description": "CIVL 2110",
+        "rules": [
+          {
+            "courses": [
+              "CIVL 2110"
+            ],
+            "minCourseCnt": 1,
+            "needManualCheck": false
+          }
+        ]
+      }
+    ],
     "corequisites": []
   },
   {

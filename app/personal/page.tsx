@@ -18,6 +18,10 @@ const ENGINEERING_MAJORS = [
     value: "AE",
   },
   {
+    display: "Artificial Intelligence",
+    value: "AI",
+  },
+  {
     display: "Bioengineering",
     value: "BE",
   },
