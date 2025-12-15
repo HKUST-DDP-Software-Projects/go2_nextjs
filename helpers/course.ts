@@ -163,7 +163,7 @@ export function checkPrerequisiteSet(
   selectedCourses: string[],
 ): CourseValidationResult {
   if (pSet.needManualCheck) return CourseValidationResult.NEED_MANUAL_CHECK;
-  if (pSet.rules.some((rule) => checkPrerequisite(rule, selectedCourses))) {
+  if (pSet.rules.every((rule) => checkPrerequisite(rule, selectedCourses))) {
     return CourseValidationResult.SATISFIED;
   }
   return CourseValidationResult.UNSATISFIED;
