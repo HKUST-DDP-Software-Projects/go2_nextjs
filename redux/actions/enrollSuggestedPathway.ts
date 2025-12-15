@@ -16,7 +16,7 @@ export const enrollSuggestedPathway = (admitYear: string, major: string) => {
     const state = getState();
     const raw = suggestedPathways as any;
 
-    console.log("[enrollSuggestedPathway] start", { admitYear, major });
+    // console.log("[enrollSuggestedPathway] start", { admitYear, major });
 
     // Build a normalized map: years -> majors -> array-of-course-codes
     const yearsMap: Record<string, Record<string, any>> = {};
@@ -39,13 +39,13 @@ export const enrollSuggestedPathway = (admitYear: string, major: string) => {
 
     const pathwayYears = yearsMap[admitYear];
     if (!pathwayYears) {
-      console.log("[enrollSuggestedPathway] no pathwayYears for admitYear", admitYear);
+      // console.log("[enrollSuggestedPathway] no pathwayYears for admitYear", admitYear);
       return { added: [], unmet: [] };
     }
 
     const majorPathwayRaw = pathwayYears[major];
     if (!majorPathwayRaw) {
-      console.log("[enrollSuggestedPathway] no majorPathwayRaw for major", major, "in year", admitYear);
+      // console.log("[enrollSuggestedPathway] no majorPathwayRaw for major", major, "in year", admitYear);
       return { added: [], unmet: [] };
     }
 
@@ -82,10 +82,10 @@ export const enrollSuggestedPathway = (admitYear: string, major: string) => {
     };
 
     const majorPathway = extractCourseCodes(majorPathwayRaw);
-    console.log("[enrollSuggestedPathway] majorPathwayRaw:", majorPathwayRaw);
-    console.log("[enrollSuggestedPathway] extracted majorPathway:", majorPathway);
+    // console.log("[enrollSuggestedPathway] majorPathwayRaw:", majorPathwayRaw);
+    // console.log("[enrollSuggestedPathway] extracted majorPathway:", majorPathway);
     if (!majorPathway || majorPathway.length === 0) {
-      console.log("[enrollSuggestedPathway] no courses extracted for", major, admitYear);
+      // console.log("[enrollSuggestedPathway] no courses extracted for", major, admitYear);
       return { added: [], unmet: [] };
     }
 
@@ -105,11 +105,11 @@ export const enrollSuggestedPathway = (admitYear: string, major: string) => {
     // majorPathway is now an array of course codes
     majorPathway.forEach((courseCode: string) => {
         if (takenCodes.includes(courseCode)) {
-          console.log(`[enrollSuggestedPathway] skipping ${courseCode} - already taken`);
+          // console.log(`[enrollSuggestedPathway] skipping ${courseCode} - already taken`);
           return; // already taken
         }
         if (cartCodes.includes(courseCode)) {
-          console.log(`[enrollSuggestedPathway] skipping ${courseCode} - already in cart`);
+          // console.log(`[enrollSuggestedPathway] skipping ${courseCode} - already in cart`);
           return; // already in cart
         }
 
@@ -118,7 +118,7 @@ export const enrollSuggestedPathway = (admitYear: string, major: string) => {
 
         const prereqStatus = checkPrerequisiteGroup(courseDetail, selectedCodes);
         const exclusionStatus = checkExclusionGroup(courseDetail, selectedCodes);
-        console.log(`[enrollSuggestedPathway] evaluate ${courseCode}`, { prereqStatus, exclusionStatus, selectedCodesCount: selectedCodes.length });
+        // console.log(`[enrollSuggestedPathway] evaluate ${courseCode}`, { prereqStatus, exclusionStatus, selectedCodesCount: selectedCodes.length });
 
         // Decision logic:
         // - If prerequisite UNSATISFIED -> do NOT add to cart; record as suggested unmet

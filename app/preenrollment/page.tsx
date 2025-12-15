@@ -341,6 +341,15 @@ export default function PreEnrollment() {
 
       const reasons = issues.join("; ");
 
+      // Combine reasons and remarks for comprehensive information
+      let combinedRemarks = "";
+      if (reasons) {
+        combinedRemarks += `Issues: ${reasons}\n`;
+      }
+      if (remarks) {
+        combinedRemarks += `Additional Notes: ${remarks}`;
+      }
+
       const survey_responses = {
         advance: true,
         responses: {
@@ -350,24 +359,18 @@ export default function PreEnrollment() {
           QID4: email,
           QID5: admissionYear,
           QID6: enrolledCourse,
-          QID7: reasons,
-          QID8: "",
-          QID9: "",
-          QID10: "",
-          QID11: "",
-          QID12: "",
-          QID13: remarks,
+          QID7: combinedRemarks
         },
       };
       const req_body = {
         qual_body: survey_responses,
         survey_id: response_id,
       };
-      try {
-        console.log("Qualtrics payload (preview):", req_body);
-      } catch (e) {
-        // ignore logging errors
-      }
+      // try {
+      //   console.log("Qualtrics payload (preview):", req_body);
+      // } catch (e) {
+      //   // ignore logging errors
+      // }
       const submission_options = {
         method: "POST",
         headers: {
