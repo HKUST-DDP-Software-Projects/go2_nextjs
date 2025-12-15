@@ -15,6 +15,7 @@ import {
   gradeToNumber,
   isCourseGradeRelevant,
 } from "@/helpers/course";
+import { enrollSuggestedPathway } from "@/redux/actions/enrollSuggestedPathway";
 import {
   addCourse,
   moveCourseToFront,
@@ -46,6 +47,20 @@ export default function PreEnrollment() {
 
   const shoppingCart = useAppSelector(
     (state) => state.preenrollmentReducer.shoppingCart || [],
+  );
+
+  const qualtricsUnmet = useAppSelector(
+    (state) => state.preenrollmentReducer.qualtricsUnmetPrereqs || [],
+  );
+
+  const suggestedUnmet = useAppSelector(
+    (state) => state.preenrollmentReducer.suggestedUnmetPrereqs || [],
+  );
+  const suggestedExcluded = useAppSelector(
+    (state) => state.preenrollmentReducer.suggestedExcluded || [],
+  );
+  const suggestedRemoved = useAppSelector(
+    (state) => state.preenrollmentReducer.suggestedRemoved || [],
   );
 
   const shoppingCartCredits = useAppSelector(
@@ -99,6 +114,10 @@ export default function PreEnrollment() {
   const [creditCnt, setCreditCnt] = useState<number>(shoppingCartCredits);
 
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setCreditCnt(shoppingCartCredits);
+  }, [shoppingCartCredits]);
 
   const isSelectedCourseInCart =
     shoppingCart.find((c) => c.code === selectedCourse?.code) !== undefined;
@@ -191,6 +210,15 @@ export default function PreEnrollment() {
     // if there's no courses in the list, redirect to the course page.
     if (Object.keys(courseHistory).length === 0) {
       router.push("/course");
+    }
+    // Enroll suggested pathways automatically once per visit if personal details are present
+    const admissionYear = personalDetails.admissionYear;
+    const engMajor = personalDetails.engineeringMajor;
+    const busMajor = personalDetails.businessMajor;
+    if (admissionYear) {
+      // If the student has both majors set, enroll suggested pathways for both
+      if (engMajor) dispatch(enrollSuggestedPathway(admissionYear, engMajor));
+      if (busMajor) dispatch(enrollSuggestedPathway(admissionYear, busMajor));
     }
   }, []);
   const prepareSubmission = () => {
@@ -287,7 +315,32 @@ export default function PreEnrollment() {
 
       const response_id = sur_id_req_result.sessionId;
 
-      // console.log({ response_id: response_id });
+      console.log({ response_id: response_id });
+      const enrolledCourse = shoppingCart.map((c) => c.code).join(", ");
+
+      const processed = new Set<string>();
+      const issues: string[] = [];
+      (suggestedUnmet || []).forEach((u: any) => {
+        if (!processed.has(u.code)) {
+          issues.push(`${u.code} (${u.reason})`);
+          processed.add(u.code);
+        }
+      });
+      (suggestedExcluded || []).forEach((u: any) => {
+        if (!processed.has(u.code)) {
+          issues.push(`${u.code} (${u.reason})`);
+          processed.add(u.code);
+        }
+      });
+      (suggestedRemoved || []).forEach((u: any) => {
+        if (!processed.has(u.code)) {
+          issues.push(`${u.code} (${u.reason || "removed-by-user"})`);
+          processed.add(u.code);
+        }
+      });
+
+      const reasons = issues.join("; ");
+
       const survey_responses = {
         advance: true,
         responses: {
@@ -296,13 +349,13 @@ export default function PreEnrollment() {
           QID3: program,
           QID4: email,
           QID5: admissionYear,
-          QID6: courses[0],
-          QID7: courses[1],
-          QID8: courses[2],
-          QID9: courses[3],
-          QID10: courses[4],
-          QID11: courses[5],
-          QID12: courses[6],
+          QID6: enrolledCourse,
+          QID7: reasons,
+          QID8: "",
+          QID9: "",
+          QID10: "",
+          QID11: "",
+          QID12: "",
           QID13: remarks,
         },
       };
@@ -310,6 +363,11 @@ export default function PreEnrollment() {
         qual_body: survey_responses,
         survey_id: response_id,
       };
+      try {
+        console.log("Qualtrics payload (preview):", req_body);
+      } catch (e) {
+        // ignore logging errors
+      }
       const submission_options = {
         method: "POST",
         headers: {

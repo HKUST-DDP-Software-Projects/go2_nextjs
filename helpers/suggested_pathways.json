@@ -1,0 +1,342 @@
+{
+  "engineeringMajors": {
+        "2021": {
+            "AE": [
+            { "term": "", "courses": ["MECH 4980"] }
+            ],
+            "BE": [
+            { "term": "", "courses": ["BIEN 4920"] }
+            ],
+            "CE": [
+            { "term": "", "courses": ["CENG 4920"] }
+            ],
+            "CI": [
+            { "term": "", "courses": ["CIVL 4910"] }
+            ],
+            "CV": [
+            { "term": "", "courses": ["CIVL 4910"] }
+            ],
+            "CP": [
+            { "term": "", "courses": ["CPEG 4901"] }
+            ],
+            "CO": [
+            { "term": "", "courses": ["COMP 4981"] }
+            ],
+            "DA": [
+            { "term": "", "courses": ["IEDA 4901"] }
+            ],
+            "EE": [
+            { "term": "", "courses": ["ELEC 4900"] }
+            ],
+            "IE": [
+            { "term": "", "courses": ["IEDA 4901"] }
+            ],
+            "ID": [
+            { "term": "", "courses": ["ISDN 4002"] }
+            ],
+            "ME": [
+            { "term": "", "courses": ["MECH 4900"] }
+            ],
+            "BT": [
+            { "term": "", "courses": ["LIFS 4963", "LANG 3024"] }
+            ]
+        },
+        "2122":{
+            "AE": [
+            { "term": "", "courses": ["MECH 4980"] }
+            ],
+            "BE": [
+            { "term": "", "courses": ["BIEN 4920", "BIEN 4990"] }
+            ],
+            "CE": [
+            { "term": "", "courses": ["CENG 1980", "CENG 4920"] }
+            ],
+            "CI": [
+            { "term": "", "courses": ["CIVL 4910"] }
+            ],
+            "CV": [
+            { "term": "", "courses": ["CIVL 4910"] }
+            ],
+            "CP": [
+            { "term": "", "courses": ["CPEG 4901"] }
+            ],
+            "CO": [
+            { "term": "", "courses": ["COMP 4981", "COMP 4900"] }
+            ],
+            "DA": [
+            { "term": "", "courses": ["IEDA 4901"] }
+            ],
+            "EE": [
+            { "term": "", "courses": ["ELEC 4900"] }
+            ],
+            "IE": [
+            { "term": "", "courses": ["IEDA 4901"] }
+            ],
+            "ID": [
+            { "term": "", "courses": ["ISDN 4002"] }
+            ],
+            "ME": [
+            { "term": "", "courses": ["MECH 4900"] }
+            ],
+            "BT": [
+            { "term": "", "courses": ["LIFS 4963", "LANG 3024"] }
+            ]
+        },
+        "2223":{
+            "AE": [
+            { "term": "", "courses": ["MECH 3620", "MECH 3660", "MECH 3690", "LANG 4034"] }
+            ],
+            "BE": [
+            { "term": "", "courses": [] }
+            ],
+            "CE": [
+            { "term": "", "courses": ["CENG 3950"] }
+            ],
+            "CI": [
+            { "term": "", "courses": ["CIVL 3740"] }
+            ],
+            "CV": [
+            { "term": "", "courses": ["CIVL 3740","CIVL 4450"] }
+            ],
+            "CP": [
+            { "term": "", "courses": ["COMP3511","ELEC 3300"] }
+            ],
+            "CO": [
+            { "term": "", "courses": [] }
+            ],
+            "DA": [
+            { "term": "", "courses": ["IEDA 1901"] }
+            ],
+            "EE": [
+            { "term": "", "courses": [] }
+            ],
+            "IE": [
+            { "term": "", "courses": ["IEDA 4100", "IEDA 4130"] }
+            ],
+            "ID": [
+            { "term": "", "courses": ["ISDN 3002"] }
+            ],
+            "ME": [
+            { "term": "", "courses": ["MECH 3830", "LANG 4034"] }
+            ],
+            "BT": [
+            { "term": "", "courses": [] }
+            ]
+        },
+        "2324":{
+            "AE": [
+            { "term": "", "courses": ["MECH 2410", "MECH 3680", "ENGG 2010"] }
+            ],
+            "BE": [
+            { "term": "", "courses": ["BIEN 2410", "ENGG 2010"] }
+            ],
+            "CE": [
+            { "term": "", "courses": ["CENG 3110", "CENG 3150", "ENGG 2010"] }
+            ],
+            "CI": [
+            { "term": "", "courses": ["CIVL 2010", "CIVL 3210", "CIVL 3320", "CIVL 3610"] }
+            ],
+            "CV": [
+            { "term": "", "courses": ["CIVL 2010", "CIVL 3210", "CIVL 3320", "CIVL 3420"] }
+            ],
+            "CP": [
+            { "term": "", "courses": ["PHYS 1114", "ELEC 2400"] }
+            ],
+            "CO": [
+            { "term": "", "courses": ["COMP 2611"] }
+            ],
+            "DA": [
+            { "term": "", "courses": ["IEDA 1020", "IEDA 3560", "LANG 4032"] }
+            ],
+            "EE": [
+            { "term": "", "courses": ["ELEC 2400", "ELEC 3910"] }
+            ],
+            "IE": [
+            { "term": "", "courses": ["IEDA 1020", "IEDA 3230"] }
+            ],
+            "ID": [
+            { "term": "", "courses": ["ISDN 2002", "ISDN 2010", "ISDN 2400", "ISDN 2603"] }
+            ],
+            "ME": [
+            { "term": "", "courses": ["MECH 2040", "MECH 2210", "MECH 3630", "MECH 3907"] }
+            ],
+            "BT": [
+            { "term": "", "courses": ["LIFS 2220", "CHEM 2155"] }
+            ]
+        },
+        "2425":{
+            "AE": [
+            { "term": "", "courses": ["MATH 2111","MECH 1990", "MECH 2040", "MECH 2210"] }
+            ],
+            "BE": [
+            { "term": "", "courses": ["BIEN 3310", "CENG 2210"] }
+            ],
+            "CE": [
+            { "term": "", "courses": ["CENG 2210", "CENG 2220","CHEM 2111", "CHEM 2155", "BIEN 2410"] }
+            ],
+            "CI": [
+            { "term": "", "courses": ["CIVL 1010", "CIVL 2020", "CIVL 2120", "CIVL 2170", "CIVL 2410", "CIVL 2510"] }
+            ],
+            "CV": [
+            { "term": "", "courses": ["CIVL 1010", "CIVL 2020", "CIVL 2120", "CIVL 2170", "CIVL 2410", "CIVL 2510"] }
+            ],
+            "CP": [
+            { "term": "", "courses": ["COMP 2611", "ELEC 2400"] }
+            ],
+            "CO": [
+            { "term": "", "courses": ["COMP 2012"] }
+            ],
+            "DA": [
+            { "term": "", "courses": ["MATH 2011", "IEDA 1010", "IEDA 2540", "IEDA 3230"] }
+            ],
+            "EE": [
+            { "term": "", "courses": ["ELEC 1200", "ELEC 2910"] }
+            ],
+            "IE": [
+            { "term": "", "courses": ["MATH 2011", "IEDA 1010", "IEDA 2540"] }
+            ],
+            "ID": [
+            { "term": "", "courses": ["ISDN 1006", "ISDN 1010", "ISDN 2601"] }
+            ],
+            "ME": [
+            { "term": "", "courses": ["MECH 1990", "MECH 2410", "MECH 2520"] }
+            ],
+            "BT": [
+            { "term": "", "courses": ["LIFS 2040", "LIFS 2080", "LIFS 2210"] }
+            ]
+        },
+        "2526":{
+            "AE": [
+            { "term": "", "courses": ["PHYS 1112", "CHEM 1008", "MATH 1023"] }
+            ],
+            "AI": [
+            { "term": "", "courses": ["MATH 1023","COMP 2011"] }
+            ],
+            "BE": [
+            { "term": "", "courses": ["COMP 1023", "CHEM 1052", "PHYS 1112", "BIEN 1600"] }
+            ],
+            "CE": [
+            { "term": "", "courses": ["COMP 1023", "PHYS 1112", "CENG 1110"] }
+            ],
+            "CI": [
+            { "term": "", "courses": ["COMP 1023", "MATH 1014", "CIVL 1000", "CIVL 1100"] }
+            ],
+            "CV": [
+            { "term": "", "courses": ["COMP 1023", "MATH 1014", "CIVL 1000", "CIVL 1100"] }
+            ],
+            "CP": [
+            { "term": "", "courses": ["MATH 1014", "PHYS 1114", "ELEC 1100", "CPEG 1930"] }
+            ],
+            "CO": [
+            { "term": "", "courses": ["MATH 1014", "COMP 2011"] }
+            ],
+            "DA": [
+            { "term": "", "courses": ["MATH 1014", "IEDA 1010", "ECON 2103"] }
+            ],
+            "EE": [
+            { "term": "", "courses": ["MATH 1014", "PHYS 1114", "ELEC 1200", "ELEC 1910"] }
+            ],
+            "IE": [
+            { "term": "", "courses": ["MATH 1014", "IEDA 1010", "ECON 2103"] }
+            ],
+            "ID": [
+            { "term": "", "courses": ["ISDN 1004","ISDN 1007", "ISDN 1010", "COMP 1023", "MATH 1014"] }
+            ],
+            "ME": [
+            { "term": "", "courses": ["MATH 1014", "PHYS 1112", "CHEM 1008", "MECH 1001"] }
+            ],
+            "BT": [
+            { "term": "", "courses": ["CHEM 1008", "LIFS 1904", "CHEM 1012", "CHEM 1052"] }
+            ]
+        }
+    },
+    "businessMajors": {
+        "2021": {
+            "ECON": [
+            { "term": "", "courses": [] }
+            ],
+            "FINA": [
+            { "term": "", "courses": [] }
+            ],
+            "GBM": [
+            { "term": "", "courses": [] }
+            ],
+            "MGMT": [
+            { "term": "", "courses": ["ISOM 2700"] }
+            ],
+            "MARK": [
+            { "term": "", "courses": ["MARK 4210"] }
+            ]
+        },
+        "2122": {
+            "ECON": [
+            { "term": "", "courses": [] }
+            ],
+            "FINA": [
+            { "term": "", "courses": [] }
+            ],
+            "GBM": [
+            { "term": "", "courses": [] }
+            ],
+            "MGMT": [
+            { "term": "", "courses": [] }
+            ],
+            "MARK": [
+            { "term": "", "courses": ["MARK 4210"] }
+            ],
+            "GBUS": [
+            { "term": "", "courses": ["GBUS 4910"] }
+            ]
+        },
+        "2223": {
+            "ECON": [
+            { "term": "", "courses": ["ECON 3700"] }
+            ],
+            "FINA": [
+            { "term": "", "courses": ["ECON 2103"] }
+            ],
+            "GBM": [
+            { "term": "", "courses": [] }
+            ],
+            "MGMT": [
+            { "term": "", "courses": [] }
+            ],
+            "MARK": [
+            { "term": "", "courses": [] }
+            ],
+            "GBUS": [
+            { "term": "", "courses": ["GBUS 3030"] }
+            ]
+        },
+        "2324": {
+            "ECON": [
+            { "term": "", "courses": ["ACCT 2200", "ECON 3024"] }
+            ],
+            "FINA": [
+            { "term": "", "courses": ["ACCT 2200", "FINA 3203", "ISOM 3230"] }
+            ],
+            "GBM": [
+            { "term": "", "courses": ["ACCT 2200"] }
+            ],
+            "MGMT": [
+            { "term": "", "courses": ["ACCT 2200", "GBUS 2010", "GBUS 2020"] }
+            ],
+            "MARK": [
+            { "term": "", "courses": ["ACCT 2200", "MGMT 3140"] }
+            ],
+            "GBUS": [
+            { "term": "", "courses": ["ACCT 2200", "MARK 3420"] }
+            ]
+        },
+        "2425": {
+            "SBM": [
+            { "term": "", "courses": ["MARK 2120", "MGMT 2110"] }
+            ]
+        },
+        "2526": {
+            "SBM": [
+            { "term": "", "courses": ["ECON 2113", "TEMG 3950"] }
+            ]
+        }
+    }
+}
