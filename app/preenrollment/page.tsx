@@ -21,6 +21,7 @@ import {
   moveCourseToFront,
   removeCourse,
 } from "@/redux/features/preenrollmentSlice";
+import suggestedPathways from "@/helpers/suggested_pathways.json";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -61,6 +62,9 @@ export default function PreEnrollment() {
   );
   const suggestedRemoved = useAppSelector(
     (state) => state.preenrollmentReducer.suggestedRemoved || [],
+  );
+  const suggestedAutoAddedCodes = useAppSelector(
+    (state) => state.preenrollmentReducer.suggestedAutoAddedCodes || [],
   );
 
   const shoppingCartCredits = useAppSelector(
@@ -320,14 +324,15 @@ export default function PreEnrollment() {
 
       const processed = new Set<string>();
       const issues: string[] = [];
+      const addedByUser: string[] = [];
       (suggestedUnmet || []).forEach((u: any) => {
-        if (!processed.has(u.code)) {
+        if (!processed.has(u.code) && !u.reason.includes("Need Manual Check")) {
           issues.push(`${u.code} (${u.reason})`);
           processed.add(u.code);
         }
       });
       (suggestedExcluded || []).forEach((u: any) => {
-        if (!processed.has(u.code)) {
+        if (!processed.has(u.code) && !u.reason.includes("Need Manual Check")) {
           issues.push(`${u.code} (${u.reason})`);
           processed.add(u.code);
         }
@@ -338,13 +343,66 @@ export default function PreEnrollment() {
           processed.add(u.code);
         }
       });
+      
+      // Add courses that were manually added by user (not from suggested pathways)
+      shoppingCart.forEach((course) => {
+        if (!processed.has(course.code) && !suggestedAutoAddedCodes.includes(course.code)) {
+          addedByUser.push(`${course.code} (added-by-user)`);
+          processed.add(course.code);
+        }
+      });
+
+      // Add taken courses from THIS student's specific suggested pathway to issues
+      // Use the actual suggested pathways data to match enrollSuggestedPathway logic
+      
+      courseHistory.forEach((course) => {
+        if (!processed.has(course)) {
+          let isInActualSuggestedPathway = false;
+          
+          // Check engineering pathway from suggested_pathways.json
+          if (personalDetails.engineeringMajor) {
+            const engPathway = (suggestedPathways as any).engineeringMajors?.[personalDetails.admissionYear]?.[personalDetails.engineeringMajor];
+            if (engPathway && Array.isArray(engPathway)) {
+              engPathway.forEach((pathwayItem: any) => {
+                if (pathwayItem.courses && Array.isArray(pathwayItem.courses)) {
+                  if (pathwayItem.courses.includes(course)) {
+                    isInActualSuggestedPathway = true;
+                  }
+                }
+              });
+            }
+          }
+          
+          // Check business pathway from suggested_pathways.json
+          if (personalDetails.businessMajor && !isInActualSuggestedPathway) {
+            const busPathway = (suggestedPathways as any).businessMajors?.[personalDetails.admissionYear]?.[personalDetails.businessMajor];
+            if (busPathway && Array.isArray(busPathway)) {
+              busPathway.forEach((pathwayItem: any) => {
+                if (pathwayItem.courses && Array.isArray(pathwayItem.courses)) {
+                  if (pathwayItem.courses.includes(course)) {
+                    isInActualSuggestedPathway = true;
+                  }
+                }
+              });
+            }
+          }
+          
+          if (isInActualSuggestedPathway) {
+            issues.push(`${course} (course already taken)`);
+            processed.add(course);
+          }
+        }
+      });
 
       const reasons = issues.join("; ");
 
       // Combine reasons and remarks for comprehensive information
       let combinedRemarks = "";
       if (reasons) {
-        combinedRemarks += `Issues: ${reasons}\n`;
+        combinedRemarks += `Issues with suggested pathway: ${reasons}\n`;
+      }
+      if(addedByUser) {
+        combinedRemarks += `Added by User: ${addedByUser.join(", ")}\n`;
       }
       if (remarks) {
         combinedRemarks += `Additional Notes: ${remarks}`;
